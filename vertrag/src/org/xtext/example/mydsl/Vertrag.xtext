@@ -25,7 +25,6 @@ Vertrag:
 		('datenvolumen'datenvolumen=INT)* &
 		('monatl_kosten'monatl_kosten=FLOAT)* &
 		('netzanbieter' netzanbieter=ID)* &
-		('internetseite' internetseite=ID)* &
 		
 	'}'
 ;
