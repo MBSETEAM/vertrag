@@ -37,6 +37,18 @@ class VertragValidator extends AbstractVertragValidator {
 		if(datenvolumen <= 0) {
 			error("datenvolumen muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
 		}
+		
+		var monatl_kosten = -12.0;
+		try {
+			monatl_kosten = Float.parseFloat(ver.monatl_kosten);
+		}catch(Exception e){
+			error("monatl_kosten muss Float sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+		}
+		if(datenvolumen <= 0) {
+			error("monatl_kosten muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+		}
+		
+		
 	}
 	
 }
