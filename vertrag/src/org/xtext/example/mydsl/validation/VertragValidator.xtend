@@ -28,10 +28,14 @@ class VertragValidator extends AbstractVertragValidator {
 	
 	@Check
 	def checkVertrag(Vertrag ver) {
+		var datenvolumen = -12;
 		try {
-			var datenvolumen = Integer.parseInt(ver.datenvolumen);
+			datenvolumen = Integer.parseInt(ver.datenvolumen);
 		}catch(Exception e){
 			error("datenvolumen muss Integer sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+		}
+		if(datenvolumen <= 0) {
+			error("datenvolumen muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
 		}
 	}
 	
