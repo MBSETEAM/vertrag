@@ -20,9 +20,9 @@ import org.xtext.example.mydsl.vertrag.VertragPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#getSystem <em>System</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#getMarke <em>Marke</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#getSpeicher <em>Speicher</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#isSystem <em>System</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#isMarke <em>Marke</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl#isSpeicher <em>Speicher</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,64 +30,64 @@ import org.xtext.example.mydsl.vertrag.VertragPackage;
 public class HandyImpl extends ElementImpl implements Handy
 {
   /**
-   * The default value of the '{@link #getSystem() <em>System</em>}' attribute.
+   * The default value of the '{@link #isSystem() <em>System</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSystem()
+   * @see #isSystem()
    * @generated
    * @ordered
    */
-  protected static final String SYSTEM_EDEFAULT = null;
+  protected static final boolean SYSTEM_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getSystem() <em>System</em>}' attribute.
+   * The cached value of the '{@link #isSystem() <em>System</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSystem()
+   * @see #isSystem()
    * @generated
    * @ordered
    */
-  protected String system = SYSTEM_EDEFAULT;
+  protected boolean system = SYSTEM_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMarke() <em>Marke</em>}' attribute.
+   * The default value of the '{@link #isMarke() <em>Marke</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMarke()
+   * @see #isMarke()
    * @generated
    * @ordered
    */
-  protected static final String MARKE_EDEFAULT = null;
+  protected static final boolean MARKE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getMarke() <em>Marke</em>}' attribute.
+   * The cached value of the '{@link #isMarke() <em>Marke</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMarke()
+   * @see #isMarke()
    * @generated
    * @ordered
    */
-  protected String marke = MARKE_EDEFAULT;
+  protected boolean marke = MARKE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSpeicher() <em>Speicher</em>}' attribute.
+   * The default value of the '{@link #isSpeicher() <em>Speicher</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSpeicher()
+   * @see #isSpeicher()
    * @generated
    * @ordered
    */
-  protected static final int SPEICHER_EDEFAULT = 0;
+  protected static final boolean SPEICHER_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getSpeicher() <em>Speicher</em>}' attribute.
+   * The cached value of the '{@link #isSpeicher() <em>Speicher</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSpeicher()
+   * @see #isSpeicher()
    * @generated
    * @ordered
    */
-  protected int speicher = SPEICHER_EDEFAULT;
+  protected boolean speicher = SPEICHER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSystem()
+  public boolean isSystem()
   {
     return system;
   }
@@ -125,9 +125,9 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSystem(String newSystem)
+  public void setSystem(boolean newSystem)
   {
-    String oldSystem = system;
+    boolean oldSystem = system;
     system = newSystem;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.HANDY__SYSTEM, oldSystem, system));
@@ -138,7 +138,7 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMarke()
+  public boolean isMarke()
   {
     return marke;
   }
@@ -148,9 +148,9 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMarke(String newMarke)
+  public void setMarke(boolean newMarke)
   {
-    String oldMarke = marke;
+    boolean oldMarke = marke;
     marke = newMarke;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.HANDY__MARKE, oldMarke, marke));
@@ -161,7 +161,7 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getSpeicher()
+  public boolean isSpeicher()
   {
     return speicher;
   }
@@ -171,9 +171,9 @@ public class HandyImpl extends ElementImpl implements Handy
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSpeicher(int newSpeicher)
+  public void setSpeicher(boolean newSpeicher)
   {
-    int oldSpeicher = speicher;
+    boolean oldSpeicher = speicher;
     speicher = newSpeicher;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.HANDY__SPEICHER, oldSpeicher, speicher));
@@ -190,11 +190,11 @@ public class HandyImpl extends ElementImpl implements Handy
     switch (featureID)
     {
       case VertragPackage.HANDY__SYSTEM:
-        return getSystem();
+        return isSystem();
       case VertragPackage.HANDY__MARKE:
-        return getMarke();
+        return isMarke();
       case VertragPackage.HANDY__SPEICHER:
-        return getSpeicher();
+        return isSpeicher();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,13 +210,13 @@ public class HandyImpl extends ElementImpl implements Handy
     switch (featureID)
     {
       case VertragPackage.HANDY__SYSTEM:
-        setSystem((String)newValue);
+        setSystem((Boolean)newValue);
         return;
       case VertragPackage.HANDY__MARKE:
-        setMarke((String)newValue);
+        setMarke((Boolean)newValue);
         return;
       case VertragPackage.HANDY__SPEICHER:
-        setSpeicher((Integer)newValue);
+        setSpeicher((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -256,9 +256,9 @@ public class HandyImpl extends ElementImpl implements Handy
     switch (featureID)
     {
       case VertragPackage.HANDY__SYSTEM:
-        return SYSTEM_EDEFAULT == null ? system != null : !SYSTEM_EDEFAULT.equals(system);
+        return system != SYSTEM_EDEFAULT;
       case VertragPackage.HANDY__MARKE:
-        return MARKE_EDEFAULT == null ? marke != null : !MARKE_EDEFAULT.equals(marke);
+        return marke != MARKE_EDEFAULT;
       case VertragPackage.HANDY__SPEICHER:
         return speicher != SPEICHER_EDEFAULT;
     }

@@ -171,7 +171,7 @@ public class VertragPackageImpl extends EPackageImpl implements VertragPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVertrag_Mindestvertragslaufzeit()
+  public EAttribute getVertrag_Datenvolumen()
   {
     return (EAttribute)vertragEClass.getEStructuralFeatures().get(0);
   }
@@ -181,7 +181,7 @@ public class VertragPackageImpl extends EPackageImpl implements VertragPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVertrag_Datenvolumen()
+  public EAttribute getVertrag_Mindestvertragslaufzeit()
   {
     return (EAttribute)vertragEClass.getEStructuralFeatures().get(1);
   }
@@ -204,16 +204,6 @@ public class VertragPackageImpl extends EPackageImpl implements VertragPackage
   public EAttribute getVertrag_Netzanbieter()
   {
     return (EAttribute)vertragEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVertrag_Internetseite()
-  {
-    return (EAttribute)vertragEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -293,11 +283,10 @@ public class VertragPackageImpl extends EPackageImpl implements VertragPackage
     createEAttribute(elementEClass, ELEMENT__NAME);
 
     vertragEClass = createEClass(VERTRAG);
-    createEAttribute(vertragEClass, VERTRAG__MINDESTVERTRAGSLAUFZEIT);
     createEAttribute(vertragEClass, VERTRAG__DATENVOLUMEN);
+    createEAttribute(vertragEClass, VERTRAG__MINDESTVERTRAGSLAUFZEIT);
     createEAttribute(vertragEClass, VERTRAG__MONATL_KOSTEN);
     createEAttribute(vertragEClass, VERTRAG__NETZANBIETER);
-    createEAttribute(vertragEClass, VERTRAG__INTERNETSEITE);
 
     handyEClass = createEClass(HANDY);
     createEAttribute(handyEClass, HANDY__SYSTEM);
@@ -345,16 +334,15 @@ public class VertragPackageImpl extends EPackageImpl implements VertragPackage
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vertragEClass, Vertrag.class, "Vertrag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVertrag_Mindestvertragslaufzeit(), ecorePackage.getEInt(), "mindestvertragslaufzeit", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVertrag_Datenvolumen(), ecorePackage.getEInt(), "datenvolumen", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVertrag_Monatl_kosten(), ecorePackage.getEFloat(), "monatl_kosten", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVertrag_Datenvolumen(), ecorePackage.getEString(), "datenvolumen", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVertrag_Mindestvertragslaufzeit(), ecorePackage.getEString(), "mindestvertragslaufzeit", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVertrag_Monatl_kosten(), ecorePackage.getEString(), "monatl_kosten", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVertrag_Netzanbieter(), ecorePackage.getEString(), "netzanbieter", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVertrag_Internetseite(), ecorePackage.getEString(), "internetseite", null, 0, 1, Vertrag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(handyEClass, Handy.class, "Handy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHandy_System(), ecorePackage.getEString(), "system", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getHandy_Marke(), ecorePackage.getEString(), "marke", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getHandy_Speicher(), ecorePackage.getEInt(), "speicher", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHandy_System(), ecorePackage.getEBoolean(), "system", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHandy_Marke(), ecorePackage.getEBoolean(), "marke", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHandy_Speicher(), ecorePackage.getEBoolean(), "speicher", null, 0, 1, Handy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

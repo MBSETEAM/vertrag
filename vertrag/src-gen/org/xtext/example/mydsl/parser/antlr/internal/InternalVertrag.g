@@ -165,9 +165,9 @@ ruleVertrag returns [EObject current=null]
 							}
 							(
 								(
-									lv_name_2_0=RULE_ID
+									lv_name_2_0=RULE_ZEICHENFOLGE
 									{
-										newLeafNode(lv_name_2_0, grammarAccess.getVertragAccess().getNameIDTerminalRuleCall_0_1_0());
+										newLeafNode(lv_name_2_0, grammarAccess.getVertragAccess().getNameZEICHENFOLGETerminalRuleCall_0_1_0());
 									}
 									{
 										if ($current==null) {
@@ -177,7 +177,7 @@ ruleVertrag returns [EObject current=null]
 											$current,
 											"name",
 											lv_name_2_0,
-											"org.xtext.example.mydsl.Vertrag.ID");
+											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
 									}
 								)
 							)
@@ -186,15 +186,15 @@ ruleVertrag returns [EObject current=null]
 								newLeafNode(otherlv_3, grammarAccess.getVertragAccess().getLeftCurlyBracketKeyword_0_2());
 							}
 							(
-								otherlv_4='mindestvertragslaufzeit'
+								otherlv_4='datenvolumen'
 								{
-									newLeafNode(otherlv_4, grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_0_3_0());
+									newLeafNode(otherlv_4, grammarAccess.getVertragAccess().getDatenvolumenKeyword_0_3_0());
 								}
 								(
 									(
-										lv_mindestvertragslaufzeit_5_0=RULE_INT
+										lv_datenvolumen_5_0=RULE_ZEICHENFOLGE
 										{
-											newLeafNode(lv_mindestvertragslaufzeit_5_0, grammarAccess.getVertragAccess().getMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0());
+											newLeafNode(lv_datenvolumen_5_0, grammarAccess.getVertragAccess().getDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0());
 										}
 										{
 											if ($current==null) {
@@ -202,9 +202,9 @@ ruleVertrag returns [EObject current=null]
 											}
 											setWithLastConsumed(
 												$current,
-												"mindestvertragslaufzeit",
-												lv_mindestvertragslaufzeit_5_0,
-												"org.xtext.example.mydsl.Vertrag.INT");
+												"datenvolumen",
+												lv_datenvolumen_5_0,
+												"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
 										}
 									)
 								)
@@ -220,15 +220,15 @@ ruleVertrag returns [EObject current=null]
 				{
 					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 1);
 				}
-							({true}?=>(otherlv_6='datenvolumen'
+							({true}?=>(otherlv_6='mindestvertragslaufzeit'
 							{
-								newLeafNode(otherlv_6, grammarAccess.getVertragAccess().getDatenvolumenKeyword_1_0());
+								newLeafNode(otherlv_6, grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_1_0());
 							}
 							(
 								(
-									lv_datenvolumen_7_0=RULE_INT
+									lv_mindestvertragslaufzeit_7_0=RULE_ZEICHENFOLGE
 									{
-										newLeafNode(lv_datenvolumen_7_0, grammarAccess.getVertragAccess().getDatenvolumenINTTerminalRuleCall_1_1_0());
+										newLeafNode(lv_mindestvertragslaufzeit_7_0, grammarAccess.getVertragAccess().getMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0());
 									}
 									{
 										if ($current==null) {
@@ -236,9 +236,9 @@ ruleVertrag returns [EObject current=null]
 										}
 										setWithLastConsumed(
 											$current,
-											"datenvolumen",
-											lv_datenvolumen_7_0,
-											"org.xtext.example.mydsl.Vertrag.INT");
+											"mindestvertragslaufzeit",
+											lv_mindestvertragslaufzeit_7_0,
+											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
 									}
 								)
 							)
@@ -259,9 +259,9 @@ ruleVertrag returns [EObject current=null]
 							}
 							(
 								(
-									lv_monatl_kosten_9_0=RULE_FLOAT
+									lv_monatl_kosten_9_0=RULE_ZEICHENFOLGE
 									{
-										newLeafNode(lv_monatl_kosten_9_0, grammarAccess.getVertragAccess().getMonatl_kostenFLOATTerminalRuleCall_2_1_0());
+										newLeafNode(lv_monatl_kosten_9_0, grammarAccess.getVertragAccess().getMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0());
 									}
 									{
 										if ($current==null) {
@@ -271,7 +271,7 @@ ruleVertrag returns [EObject current=null]
 											$current,
 											"monatl_kosten",
 											lv_monatl_kosten_9_0,
-											"org.xtext.example.mydsl.Vertrag.FLOAT");
+											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
 									}
 								)
 							)
@@ -292,9 +292,9 @@ ruleVertrag returns [EObject current=null]
 							}
 							(
 								(
-									lv_netzanbieter_11_0=RULE_ID
+									lv_netzanbieter_11_0=RULE_ZEICHENFOLGE
 									{
-										newLeafNode(lv_netzanbieter_11_0, grammarAccess.getVertragAccess().getNetzanbieterIDTerminalRuleCall_3_1_0());
+										newLeafNode(lv_netzanbieter_11_0, grammarAccess.getVertragAccess().getNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0());
 									}
 									{
 										if ($current==null) {
@@ -304,7 +304,7 @@ ruleVertrag returns [EObject current=null]
 											$current,
 											"netzanbieter",
 											lv_netzanbieter_11_0,
-											"org.xtext.example.mydsl.Vertrag.ID");
+											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
 									}
 								)
 							)
@@ -319,42 +319,9 @@ ruleVertrag returns [EObject current=null]
 				{
 					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 4);
 				}
-							({true}?=>(otherlv_12='internetseite'
+							({true}?=>(otherlv_12='}'
 							{
-								newLeafNode(otherlv_12, grammarAccess.getVertragAccess().getInternetseiteKeyword_4_0());
-							}
-							(
-								(
-									lv_internetseite_13_0=RULE_ID
-									{
-										newLeafNode(lv_internetseite_13_0, grammarAccess.getVertragAccess().getInternetseiteIDTerminalRuleCall_4_1_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getVertragRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"internetseite",
-											lv_internetseite_13_0,
-											"org.xtext.example.mydsl.Vertrag.ID");
-									}
-								)
-							)
-							))+
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVertragAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 5);
-				}
-							({true}?=>(otherlv_14='}'
-							{
-								newLeafNode(otherlv_14, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_5());
+								newLeafNode(otherlv_12, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4());
 							}
 							))
 				{ 
@@ -388,169 +355,98 @@ ruleHandy returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='handy'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getHandyAccess().getHandyKeyword_0());
+		}
 		(
-			{ 
-			  getUnorderedGroupHelper().enter(grammarAccess.getHandyAccess().getUnorderedGroup());
-			}
 			(
-				(
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0)}?=>(
+				lv_name_1_0=RULE_ID
 				{
-					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 0);
+					newLeafNode(lv_name_1_0, grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0());
 				}
-							({true}?=>(otherlv_1='handy'
-							{
-								newLeafNode(otherlv_1, grammarAccess.getHandyAccess().getHandyKeyword_0_0());
-							}
-							(
-								(
-									lv_name_2_0=RULE_ID
-									{
-										newLeafNode(lv_name_2_0, grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_0_1_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getHandyRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"name",
-											lv_name_2_0,
-											"org.xtext.example.mydsl.Vertrag.ID");
-									}
-								)
-							)
-							otherlv_3='{'
-							{
-								newLeafNode(otherlv_3, grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_0_2());
-							}
-							(
-								otherlv_4='system'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getHandyAccess().getSystemKeyword_0_3_0());
-								}
-								(
-									(
-										lv_system_5_0=RULE_ID
-										{
-											newLeafNode(lv_system_5_0, grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_0_3_1_0());
-										}
-										{
-											if ($current==null) {
-												$current = createModelElement(grammarAccess.getHandyRule());
-											}
-											setWithLastConsumed(
-												$current,
-												"system",
-												lv_system_5_0,
-												"org.xtext.example.mydsl.Vertrag.ID");
-										}
-									)
-								)
-							)?
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1)}?=>(
 				{
-					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 1);
-				}
-							({true}?=>(otherlv_6='marke'
-							{
-								newLeafNode(otherlv_6, grammarAccess.getHandyAccess().getMarkeKeyword_1_0());
-							}
-							(
-								(
-									lv_marke_7_0=RULE_ID
-									{
-										newLeafNode(lv_marke_7_0, grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_1_1_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getHandyRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"marke",
-											lv_marke_7_0,
-											"org.xtext.example.mydsl.Vertrag.ID");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 2);
-				}
-							({true}?=>(otherlv_8='speicher'
-							{
-								newLeafNode(otherlv_8, grammarAccess.getHandyAccess().getSpeicherKeyword_2_0());
-							}
-							(
-								(
-									lv_speicher_9_0=RULE_INT
-									{
-										newLeafNode(lv_speicher_9_0, grammarAccess.getHandyAccess().getSpeicherINTTerminalRuleCall_2_1_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getHandyRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"speicher",
-											lv_speicher_9_0,
-											"org.xtext.example.mydsl.Vertrag.INT");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 3);
-				}
-							({true}?=>(otherlv_10='}'
-							{
-								newLeafNode(otherlv_10, grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_3());
-							}
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHandyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-				)+
-				{getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup())}?
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				lv_system_3_0=RULE_ID
+				{
+					newLeafNode(lv_system_3_0, grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHandyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"system",
+						true,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
 			)
 		)
-			{ 
-			  getUnorderedGroupHelper().leave(grammarAccess.getHandyAccess().getUnorderedGroup());
-			}
+		(
+			(
+				lv_marke_4_0=RULE_ID
+				{
+					newLeafNode(lv_marke_4_0, grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHandyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"marke",
+						true,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_speicher_5_0=RULE_ID
+				{
+					newLeafNode(lv_speicher_5_0, grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHandyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"speicher",
+						true,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_6());
+		}
 	)
 ;
+
+RULE_ZEICHENFOLGE : ('0'..'9'|'a'..'z')+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
-
-RULE_FLOAT : RULE_INT ('.' RULE_INT)?;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

@@ -13,9 +13,9 @@ package org.xtext.example.mydsl.vertrag;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#getSystem <em>System</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#getMarke <em>Marke</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#getSpeicher <em>Speicher</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#isSystem <em>System</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#isMarke <em>Marke</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Handy#isSpeicher <em>Speicher</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.vertrag.VertragPackage#getHandy()
@@ -33,22 +33,22 @@ public interface Handy extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>System</em>' attribute.
-   * @see #setSystem(String)
+   * @see #setSystem(boolean)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getHandy_System()
    * @model
    * @generated
    */
-  String getSystem();
+  boolean isSystem();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#getSystem <em>System</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#isSystem <em>System</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>System</em>' attribute.
-   * @see #getSystem()
+   * @see #isSystem()
    * @generated
    */
-  void setSystem(String value);
+  void setSystem(boolean value);
 
   /**
    * Returns the value of the '<em><b>Marke</b></em>' attribute.
@@ -59,22 +59,22 @@ public interface Handy extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Marke</em>' attribute.
-   * @see #setMarke(String)
+   * @see #setMarke(boolean)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getHandy_Marke()
    * @model
    * @generated
    */
-  String getMarke();
+  boolean isMarke();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#getMarke <em>Marke</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#isMarke <em>Marke</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Marke</em>' attribute.
-   * @see #getMarke()
+   * @see #isMarke()
    * @generated
    */
-  void setMarke(String value);
+  void setMarke(boolean value);
 
   /**
    * Returns the value of the '<em><b>Speicher</b></em>' attribute.
@@ -85,21 +85,21 @@ public interface Handy extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Speicher</em>' attribute.
-   * @see #setSpeicher(int)
+   * @see #setSpeicher(boolean)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getHandy_Speicher()
    * @model
    * @generated
    */
-  int getSpeicher();
+  boolean isSpeicher();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#getSpeicher <em>Speicher</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Handy#isSpeicher <em>Speicher</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Speicher</em>' attribute.
-   * @see #getSpeicher()
+   * @see #isSpeicher()
    * @generated
    */
-  void setSpeicher(int value);
+  void setSpeicher(boolean value);
 
 } // Handy

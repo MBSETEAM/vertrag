@@ -13,11 +13,10 @@ package org.xtext.example.mydsl.vertrag;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getMonatl_kosten <em>Monatl kosten</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getNetzanbieter <em>Netzanbieter</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag()
@@ -27,32 +26,6 @@ package org.xtext.example.mydsl.vertrag;
 public interface Vertrag extends Element
 {
   /**
-   * Returns the value of the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Mindestvertragslaufzeit</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Mindestvertragslaufzeit</em>' attribute.
-   * @see #setMindestvertragslaufzeit(int)
-   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Mindestvertragslaufzeit()
-   * @model
-   * @generated
-   */
-  int getMindestvertragslaufzeit();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mindestvertragslaufzeit</em>' attribute.
-   * @see #getMindestvertragslaufzeit()
-   * @generated
-   */
-  void setMindestvertragslaufzeit(int value);
-
-  /**
    * Returns the value of the '<em><b>Datenvolumen</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -61,12 +34,12 @@ public interface Vertrag extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Datenvolumen</em>' attribute.
-   * @see #setDatenvolumen(int)
+   * @see #setDatenvolumen(String)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Datenvolumen()
    * @model
    * @generated
    */
-  int getDatenvolumen();
+  String getDatenvolumen();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}' attribute.
@@ -76,7 +49,33 @@ public interface Vertrag extends Element
    * @see #getDatenvolumen()
    * @generated
    */
-  void setDatenvolumen(int value);
+  void setDatenvolumen(String value);
+
+  /**
+   * Returns the value of the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mindestvertragslaufzeit</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mindestvertragslaufzeit</em>' attribute.
+   * @see #setMindestvertragslaufzeit(String)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Mindestvertragslaufzeit()
+   * @model
+   * @generated
+   */
+  String getMindestvertragslaufzeit();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mindestvertragslaufzeit</em>' attribute.
+   * @see #getMindestvertragslaufzeit()
+   * @generated
+   */
+  void setMindestvertragslaufzeit(String value);
 
   /**
    * Returns the value of the '<em><b>Monatl kosten</b></em>' attribute.
@@ -87,12 +86,12 @@ public interface Vertrag extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Monatl kosten</em>' attribute.
-   * @see #setMonatl_kosten(float)
+   * @see #setMonatl_kosten(String)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Monatl_kosten()
    * @model
    * @generated
    */
-  float getMonatl_kosten();
+  String getMonatl_kosten();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMonatl_kosten <em>Monatl kosten</em>}' attribute.
@@ -102,7 +101,7 @@ public interface Vertrag extends Element
    * @see #getMonatl_kosten()
    * @generated
    */
-  void setMonatl_kosten(float value);
+  void setMonatl_kosten(String value);
 
   /**
    * Returns the value of the '<em><b>Netzanbieter</b></em>' attribute.
@@ -129,31 +128,5 @@ public interface Vertrag extends Element
    * @generated
    */
   void setNetzanbieter(String value);
-
-  /**
-   * Returns the value of the '<em><b>Internetseite</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Internetseite</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Internetseite</em>' attribute.
-   * @see #setInternetseite(String)
-   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Internetseite()
-   * @model
-   * @generated
-   */
-  String getInternetseite();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Internetseite</em>' attribute.
-   * @see #getInternetseite()
-   * @generated
-   */
-  void setInternetseite(String value);
 
 } // Vertrag

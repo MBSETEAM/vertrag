@@ -133,22 +133,22 @@ public interface VertragPackage extends EPackage
   int VERTRAG__NAME = ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERTRAG__MINDESTVERTRAGSLAUFZEIT = ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Datenvolumen</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERTRAG__DATENVOLUMEN = ELEMENT_FEATURE_COUNT + 1;
+  int VERTRAG__DATENVOLUMEN = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__MINDESTVERTRAGSLAUFZEIT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Monatl kosten</b></em>' attribute.
@@ -169,22 +169,13 @@ public interface VertragPackage extends EPackage
   int VERTRAG__NETZANBIETER = ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Internetseite</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERTRAG__INTERNETSEITE = ELEMENT_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Vertrag</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERTRAG_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
+  int VERTRAG_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl <em>Handy</em>}' class.
@@ -295,17 +286,6 @@ public interface VertragPackage extends EPackage
   EClass getVertrag();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mindestvertragslaufzeit</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit()
-   * @see #getVertrag()
-   * @generated
-   */
-  EAttribute getVertrag_Mindestvertragslaufzeit();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -315,6 +295,17 @@ public interface VertragPackage extends EPackage
    * @generated
    */
   EAttribute getVertrag_Datenvolumen();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mindestvertragslaufzeit</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit()
+   * @see #getVertrag()
+   * @generated
+   */
+  EAttribute getVertrag_Mindestvertragslaufzeit();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMonatl_kosten <em>Monatl kosten</em>}'.
@@ -339,17 +330,6 @@ public interface VertragPackage extends EPackage
   EAttribute getVertrag_Netzanbieter();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Internetseite</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite()
-   * @see #getVertrag()
-   * @generated
-   */
-  EAttribute getVertrag_Internetseite();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.vertrag.Handy <em>Handy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -360,33 +340,33 @@ public interface VertragPackage extends EPackage
   EClass getHandy();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#getSystem <em>System</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#isSystem <em>System</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>System</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Handy#getSystem()
+   * @see org.xtext.example.mydsl.vertrag.Handy#isSystem()
    * @see #getHandy()
    * @generated
    */
   EAttribute getHandy_System();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#getMarke <em>Marke</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#isMarke <em>Marke</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Marke</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Handy#getMarke()
+   * @see org.xtext.example.mydsl.vertrag.Handy#isMarke()
    * @see #getHandy()
    * @generated
    */
   EAttribute getHandy_Marke();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#getSpeicher <em>Speicher</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Handy#isSpeicher <em>Speicher</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Speicher</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Handy#getSpeicher()
+   * @see org.xtext.example.mydsl.vertrag.Handy#isSpeicher()
    * @see #getHandy()
    * @generated
    */
@@ -462,20 +442,20 @@ public interface VertragPackage extends EPackage
     EClass VERTRAG = eINSTANCE.getVertrag();
 
     /**
-     * The meta object literal for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERTRAG__MINDESTVERTRAGSLAUFZEIT = eINSTANCE.getVertrag_Mindestvertragslaufzeit();
-
-    /**
      * The meta object literal for the '<em><b>Datenvolumen</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute VERTRAG__DATENVOLUMEN = eINSTANCE.getVertrag_Datenvolumen();
+
+    /**
+     * The meta object literal for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERTRAG__MINDESTVERTRAGSLAUFZEIT = eINSTANCE.getVertrag_Mindestvertragslaufzeit();
 
     /**
      * The meta object literal for the '<em><b>Monatl kosten</b></em>' attribute feature.
@@ -492,14 +472,6 @@ public interface VertragPackage extends EPackage
      * @generated
      */
     EAttribute VERTRAG__NETZANBIETER = eINSTANCE.getVertrag_Netzanbieter();
-
-    /**
-     * The meta object literal for the '<em><b>Internetseite</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERTRAG__INTERNETSEITE = eINSTANCE.getVertrag_Internetseite();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl <em>Handy</em>}' class.

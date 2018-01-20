@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.example.mydsl.vertrag.Vertrag
+import com.google.inject.Inject
 
 /**
  * Generates code from your model files on save.
@@ -21,11 +23,18 @@ class VertragGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
-		fsa.generateFile("Main.java", compile);
+		//fsa.generateFile("Main.java", compile());
+		        for (e : resource.allContents.toIterable.filter(Vertrag)) {
+            fsa.generateFile(
+                "Main.java",
+                e.compile)
+        }
+		//«v.datenvolumen»
 	}
 	
-	def compile() {
+	def compile(Vertrag v) {
 		'''
+		
 		import java.io.FileNotFoundException;
 		import java.io.PrintWriter;
 		import java.io.UnsupportedEncodingException;
@@ -49,7 +58,7 @@ class VertragGenerator extends AbstractGenerator {
 			public static void loadPage() throws InterruptedException {
 				jse = (JavascriptExecutor) driver;
 				for (int i = 0; i < 2; i++) {
-					Thread.sleep(500);
+					Thread.sleep(100);
 					jse.executeScript("window.scrollBy(0,8000)", "");
 				}
 			}
@@ -85,7 +94,7 @@ class VertragGenerator extends AbstractGenerator {
 				for(String link : Anbieter) {
 					try {
 					driver.get(link);
-					Thread.sleep(500);
+					Thread.sleep(1000);
 					try {
 						driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/ul/li[1]")).click();
 						}catch (Exception e) {
@@ -105,7 +114,7 @@ class VertragGenerator extends AbstractGenerator {
 						}
 						handyyy.get(c).click();
 						loadPage();
-						Thread.sleep(500);
+						Thread.sleep(1000);
 						
 						
 						
@@ -117,7 +126,11 @@ class VertragGenerator extends AbstractGenerator {
 						try {
 						for(WebElement x : divClassProvider){
 							counter = counter + 1;
-							
+							if(counter == 10) {
+								driver.quit();
+								writer.close();
+								return;
+							}
 							System.out.println(counter);
 							
 							writer.println("ID: " + counter);
@@ -187,13 +200,13 @@ class VertragGenerator extends AbstractGenerator {
 					
 					driver.get(link);
 					//wait(driver);
-					Thread.sleep(500);
+					Thread.sleep(1000);
 					try {
 					driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/ul/li[2]")).click();
 					}catch (Exception e) {
 						continue;
 					}
-					Thread.sleep(500);
+					Thread.sleep(1000);
 					loadPage();
 					
 					List <WebElement> divClassProvider = driver.findElements(By.tagName("product-item"));

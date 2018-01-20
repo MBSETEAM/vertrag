@@ -21,8 +21,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVertragParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Vertrag'", "'{'", "'mindestvertragslaufzeit'", "'datenvolumen'", "'monatl_kosten'", "'netzanbieter'", "'internetseite'", "'}'", "'handy'", "'system'", "'marke'", "'speicher'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ZEICHENFOLGE", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Vertrag'", "'{'", "'datenvolumen'", "'mindestvertragslaufzeit'", "'monatl_kosten'", "'netzanbieter'", "'}'", "'handy'"
     };
+    public static final int RULE_ZEICHENFOLGE=4;
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
@@ -34,16 +35,11 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
-    public static final int RULE_INT=5;
-    public static final int T__22=22;
+    public static final int RULE_INT=6;
     public static final int RULE_ML_COMMENT=8;
-    public static final int T__23=23;
-    public static final int RULE_FLOAT=6;
-    public static final int T__20=20;
-    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -141,7 +137,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||(LA1_0>=15 && LA1_0<=20)||(LA1_0>=22 && LA1_0<=23)) ) {
+                if ( (LA1_0==12||(LA1_0>=15 && LA1_0<=19)) ) {
                     alt1=1;
                 }
 
@@ -258,35 +254,20 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             {
             // InternalVertrag.g:114:2: (this_Vertrag_0= ruleVertrag | this_Handy_1= ruleHandy )
             int alt2=2;
-            switch ( input.LA(1) ) {
-            case 12:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-                {
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==12||(LA2_0>=15 && LA2_0<=18)) ) {
                 alt2=1;
-                }
-                break;
-            case 19:
-                {
-                alt2=1;
-                }
-                break;
-            case 20:
-            case 22:
-            case 23:
-                {
+            }
+            else if ( (LA2_0==19) ) {
                 alt2=2;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
-
             switch (alt2) {
                 case 1 :
                     // InternalVertrag.g:115:3: this_Vertrag_0= ruleVertrag
@@ -383,7 +364,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVertrag"
-    // InternalVertrag.g:143:1: ruleVertrag returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) ) ) ;
+    // InternalVertrag.g:143:1: ruleVertrag returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleVertrag() throws RecognitionException {
         EObject current = null;
 
@@ -391,80 +372,78 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
         Token lv_name_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token lv_mindestvertragslaufzeit_5_0=null;
+        Token lv_datenvolumen_5_0=null;
         Token otherlv_6=null;
-        Token lv_datenvolumen_7_0=null;
+        Token lv_mindestvertragslaufzeit_7_0=null;
         Token otherlv_8=null;
         Token lv_monatl_kosten_9_0=null;
         Token otherlv_10=null;
         Token lv_netzanbieter_11_0=null;
         Token otherlv_12=null;
-        Token lv_internetseite_13_0=null;
-        Token otherlv_14=null;
 
 
         	enterRule();
 
         try {
-            // InternalVertrag.g:149:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) ) ) )
-            // InternalVertrag.g:150:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalVertrag.g:149:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) ) ) )
+            // InternalVertrag.g:150:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) ) )
             {
-            // InternalVertrag.g:150:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) ) )
-            // InternalVertrag.g:151:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) )
+            // InternalVertrag.g:150:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalVertrag.g:151:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) )
             {
-            // InternalVertrag.g:151:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?) )
-            // InternalVertrag.g:152:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?)
+            // InternalVertrag.g:151:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?) )
+            // InternalVertrag.g:152:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getVertragAccess().getUnorderedGroup());
             			
-            // InternalVertrag.g:155:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?)
-            // InternalVertrag.g:156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+ {...}?
+            // InternalVertrag.g:155:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?)
+            // InternalVertrag.g:156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+ {...}?
             {
-            // InternalVertrag.g:156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+
-            int cnt8=0;
-            loop8:
+            // InternalVertrag.g:156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+
+            int cnt7=0;
+            loop7:
             do {
-                int alt8=7;
-                alt8 = dfa8.predict(input);
-                switch (alt8) {
+                int alt7=6;
+                alt7 = dfa7.predict(input);
+                switch (alt7) {
             	case 1 :
-            	    // InternalVertrag.g:157:3: ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) )
+            	    // InternalVertrag.g:157:3: ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) )
             	    {
-            	    // InternalVertrag.g:157:3: ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) )
-            	    // InternalVertrag.g:158:4: {...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) )
+            	    // InternalVertrag.g:157:3: ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) )
+            	    // InternalVertrag.g:158:4: {...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0)");
             	    }
-            	    // InternalVertrag.g:158:101: ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) )
-            	    // InternalVertrag.g:159:5: ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) )
+            	    // InternalVertrag.g:158:101: ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) )
+            	    // InternalVertrag.g:159:5: ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 0);
             	    				
-            	    // InternalVertrag.g:162:8: ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) )
-            	    // InternalVertrag.g:162:9: {...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* )
+            	    // InternalVertrag.g:162:8: ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) )
+            	    // InternalVertrag.g:162:9: {...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "true");
             	    }
-            	    // InternalVertrag.g:162:18: (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* )
-            	    // InternalVertrag.g:162:19: otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )*
+            	    // InternalVertrag.g:162:18: (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* )
+            	    // InternalVertrag.g:162:19: otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )*
             	    {
             	    otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
             	    								newLeafNode(otherlv_1, grammarAccess.getVertragAccess().getVertragKeyword_0_0());
             	    							
-            	    // InternalVertrag.g:166:8: ( (lv_name_2_0= RULE_ID ) )
-            	    // InternalVertrag.g:167:9: (lv_name_2_0= RULE_ID )
+            	    // InternalVertrag.g:166:8: ( (lv_name_2_0= RULE_ZEICHENFOLGE ) )
+            	    // InternalVertrag.g:167:9: (lv_name_2_0= RULE_ZEICHENFOLGE )
             	    {
-            	    // InternalVertrag.g:167:9: (lv_name_2_0= RULE_ID )
-            	    // InternalVertrag.g:168:10: lv_name_2_0= RULE_ID
+            	    // InternalVertrag.g:167:9: (lv_name_2_0= RULE_ZEICHENFOLGE )
+            	    // InternalVertrag.g:168:10: lv_name_2_0= RULE_ZEICHENFOLGE
             	    {
-            	    lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            	    lv_name_2_0=(Token)match(input,RULE_ZEICHENFOLGE,FOLLOW_5); 
 
-            	    										newLeafNode(lv_name_2_0, grammarAccess.getVertragAccess().getNameIDTerminalRuleCall_0_1_0());
+            	    										newLeafNode(lv_name_2_0, grammarAccess.getVertragAccess().getNameZEICHENFOLGETerminalRuleCall_0_1_0());
             	    									
 
             	    										if (current==null) {
@@ -474,7 +453,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    											current,
             	    											"name",
             	    											lv_name_2_0,
-            	    											"org.xtext.example.mydsl.Vertrag.ID");
+            	    											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
             	    									
 
             	    }
@@ -486,7 +465,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
             	    								newLeafNode(otherlv_3, grammarAccess.getVertragAccess().getLeftCurlyBracketKeyword_0_2());
             	    							
-            	    // InternalVertrag.g:188:8: (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )*
+            	    // InternalVertrag.g:188:8: (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )*
             	    loop3:
             	    do {
             	        int alt3=2;
@@ -499,21 +478,21 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
             	        switch (alt3) {
             	    	case 1 :
-            	    	    // InternalVertrag.g:189:9: otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) )
+            	    	    // InternalVertrag.g:189:9: otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) )
             	    	    {
-            	    	    otherlv_4=(Token)match(input,14,FOLLOW_7); 
+            	    	    otherlv_4=(Token)match(input,14,FOLLOW_4); 
 
-            	    	    									newLeafNode(otherlv_4, grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_0_3_0());
+            	    	    									newLeafNode(otherlv_4, grammarAccess.getVertragAccess().getDatenvolumenKeyword_0_3_0());
             	    	    								
-            	    	    // InternalVertrag.g:193:9: ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) )
-            	    	    // InternalVertrag.g:194:10: (lv_mindestvertragslaufzeit_5_0= RULE_INT )
+            	    	    // InternalVertrag.g:193:9: ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) )
+            	    	    // InternalVertrag.g:194:10: (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE )
             	    	    {
-            	    	    // InternalVertrag.g:194:10: (lv_mindestvertragslaufzeit_5_0= RULE_INT )
-            	    	    // InternalVertrag.g:195:11: lv_mindestvertragslaufzeit_5_0= RULE_INT
+            	    	    // InternalVertrag.g:194:10: (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE )
+            	    	    // InternalVertrag.g:195:11: lv_datenvolumen_5_0= RULE_ZEICHENFOLGE
             	    	    {
-            	    	    lv_mindestvertragslaufzeit_5_0=(Token)match(input,RULE_INT,FOLLOW_6); 
+            	    	    lv_datenvolumen_5_0=(Token)match(input,RULE_ZEICHENFOLGE,FOLLOW_6); 
 
-            	    	    											newLeafNode(lv_mindestvertragslaufzeit_5_0, grammarAccess.getVertragAccess().getMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0());
+            	    	    											newLeafNode(lv_datenvolumen_5_0, grammarAccess.getVertragAccess().getDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0());
             	    	    										
 
             	    	    											if (current==null) {
@@ -521,9 +500,9 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    	    											}
             	    	    											setWithLastConsumed(
             	    	    												current,
-            	    	    												"mindestvertragslaufzeit",
-            	    	    												lv_mindestvertragslaufzeit_5_0,
-            	    	    												"org.xtext.example.mydsl.Vertrag.INT");
+            	    	    												"datenvolumen",
+            	    	    												lv_datenvolumen_5_0,
+            	    	    												"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
             	    	    										
 
             	    	    }
@@ -559,21 +538,21 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalVertrag.g:218:3: ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) )
+            	    // InternalVertrag.g:218:3: ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
             	    {
-            	    // InternalVertrag.g:218:3: ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) )
-            	    // InternalVertrag.g:219:4: {...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ )
+            	    // InternalVertrag.g:218:3: ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
+            	    // InternalVertrag.g:219:4: {...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1)");
             	    }
-            	    // InternalVertrag.g:219:101: ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ )
-            	    // InternalVertrag.g:220:5: ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+
+            	    // InternalVertrag.g:219:101: ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ )
+            	    // InternalVertrag.g:220:5: ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 1);
             	    				
-            	    // InternalVertrag.g:223:8: ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+
+            	    // InternalVertrag.g:223:8: ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    int cnt4=0;
             	    loop4:
             	    do {
@@ -593,27 +572,27 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
             	        switch (alt4) {
             	    	case 1 :
-            	    	    // InternalVertrag.g:223:9: {...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) )
+            	    	    // InternalVertrag.g:223:9: {...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) )
             	    	    {
             	    	    if ( !((true)) ) {
             	    	        throw new FailedPredicateException(input, "ruleVertrag", "true");
             	    	    }
-            	    	    // InternalVertrag.g:223:18: (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) )
-            	    	    // InternalVertrag.g:223:19: otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) )
+            	    	    // InternalVertrag.g:223:18: (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) )
+            	    	    // InternalVertrag.g:223:19: otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) )
             	    	    {
-            	    	    otherlv_6=(Token)match(input,15,FOLLOW_7); 
+            	    	    otherlv_6=(Token)match(input,15,FOLLOW_4); 
 
-            	    	    								newLeafNode(otherlv_6, grammarAccess.getVertragAccess().getDatenvolumenKeyword_1_0());
+            	    	    								newLeafNode(otherlv_6, grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_1_0());
             	    	    							
-            	    	    // InternalVertrag.g:227:8: ( (lv_datenvolumen_7_0= RULE_INT ) )
-            	    	    // InternalVertrag.g:228:9: (lv_datenvolumen_7_0= RULE_INT )
+            	    	    // InternalVertrag.g:227:8: ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) )
+            	    	    // InternalVertrag.g:228:9: (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE )
             	    	    {
-            	    	    // InternalVertrag.g:228:9: (lv_datenvolumen_7_0= RULE_INT )
-            	    	    // InternalVertrag.g:229:10: lv_datenvolumen_7_0= RULE_INT
+            	    	    // InternalVertrag.g:228:9: (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE )
+            	    	    // InternalVertrag.g:229:10: lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE
             	    	    {
-            	    	    lv_datenvolumen_7_0=(Token)match(input,RULE_INT,FOLLOW_8); 
+            	    	    lv_mindestvertragslaufzeit_7_0=(Token)match(input,RULE_ZEICHENFOLGE,FOLLOW_7); 
 
-            	    	    										newLeafNode(lv_datenvolumen_7_0, grammarAccess.getVertragAccess().getDatenvolumenINTTerminalRuleCall_1_1_0());
+            	    	    										newLeafNode(lv_mindestvertragslaufzeit_7_0, grammarAccess.getVertragAccess().getMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0());
             	    	    									
 
             	    	    										if (current==null) {
@@ -621,9 +600,9 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    	    										}
             	    	    										setWithLastConsumed(
             	    	    											current,
-            	    	    											"datenvolumen",
-            	    	    											lv_datenvolumen_7_0,
-            	    	    											"org.xtext.example.mydsl.Vertrag.INT");
+            	    	    											"mindestvertragslaufzeit",
+            	    	    											lv_mindestvertragslaufzeit_7_0,
+            	    	    											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
             	    	    									
 
             	    	    }
@@ -660,21 +639,21 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalVertrag.g:251:3: ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) )
+            	    // InternalVertrag.g:251:3: ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
             	    {
-            	    // InternalVertrag.g:251:3: ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) )
-            	    // InternalVertrag.g:252:4: {...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ )
+            	    // InternalVertrag.g:251:3: ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
+            	    // InternalVertrag.g:252:4: {...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2)");
             	    }
-            	    // InternalVertrag.g:252:101: ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ )
-            	    // InternalVertrag.g:253:5: ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+
+            	    // InternalVertrag.g:252:101: ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ )
+            	    // InternalVertrag.g:253:5: ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 2);
             	    				
-            	    // InternalVertrag.g:256:8: ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+
+            	    // InternalVertrag.g:256:8: ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    int cnt5=0;
             	    loop5:
             	    do {
@@ -694,27 +673,27 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
             	        switch (alt5) {
             	    	case 1 :
-            	    	    // InternalVertrag.g:256:9: {...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) )
+            	    	    // InternalVertrag.g:256:9: {...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) )
             	    	    {
             	    	    if ( !((true)) ) {
             	    	        throw new FailedPredicateException(input, "ruleVertrag", "true");
             	    	    }
-            	    	    // InternalVertrag.g:256:18: (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) )
-            	    	    // InternalVertrag.g:256:19: otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) )
+            	    	    // InternalVertrag.g:256:18: (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) )
+            	    	    // InternalVertrag.g:256:19: otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) )
             	    	    {
-            	    	    otherlv_8=(Token)match(input,16,FOLLOW_9); 
+            	    	    otherlv_8=(Token)match(input,16,FOLLOW_4); 
 
             	    	    								newLeafNode(otherlv_8, grammarAccess.getVertragAccess().getMonatl_kostenKeyword_2_0());
             	    	    							
-            	    	    // InternalVertrag.g:260:8: ( (lv_monatl_kosten_9_0= RULE_FLOAT ) )
-            	    	    // InternalVertrag.g:261:9: (lv_monatl_kosten_9_0= RULE_FLOAT )
+            	    	    // InternalVertrag.g:260:8: ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) )
+            	    	    // InternalVertrag.g:261:9: (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE )
             	    	    {
-            	    	    // InternalVertrag.g:261:9: (lv_monatl_kosten_9_0= RULE_FLOAT )
-            	    	    // InternalVertrag.g:262:10: lv_monatl_kosten_9_0= RULE_FLOAT
+            	    	    // InternalVertrag.g:261:9: (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE )
+            	    	    // InternalVertrag.g:262:10: lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE
             	    	    {
-            	    	    lv_monatl_kosten_9_0=(Token)match(input,RULE_FLOAT,FOLLOW_8); 
+            	    	    lv_monatl_kosten_9_0=(Token)match(input,RULE_ZEICHENFOLGE,FOLLOW_7); 
 
-            	    	    										newLeafNode(lv_monatl_kosten_9_0, grammarAccess.getVertragAccess().getMonatl_kostenFLOATTerminalRuleCall_2_1_0());
+            	    	    										newLeafNode(lv_monatl_kosten_9_0, grammarAccess.getVertragAccess().getMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0());
             	    	    									
 
             	    	    										if (current==null) {
@@ -724,7 +703,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    	    											current,
             	    	    											"monatl_kosten",
             	    	    											lv_monatl_kosten_9_0,
-            	    	    											"org.xtext.example.mydsl.Vertrag.FLOAT");
+            	    	    											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
             	    	    									
 
             	    	    }
@@ -761,21 +740,21 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalVertrag.g:284:3: ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) )
+            	    // InternalVertrag.g:284:3: ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
             	    {
-            	    // InternalVertrag.g:284:3: ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) )
-            	    // InternalVertrag.g:285:4: {...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ )
+            	    // InternalVertrag.g:284:3: ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) )
+            	    // InternalVertrag.g:285:4: {...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3)");
             	    }
-            	    // InternalVertrag.g:285:101: ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ )
-            	    // InternalVertrag.g:286:5: ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+
+            	    // InternalVertrag.g:285:101: ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ )
+            	    // InternalVertrag.g:286:5: ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 3);
             	    				
-            	    // InternalVertrag.g:289:8: ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+
+            	    // InternalVertrag.g:289:8: ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+
             	    int cnt6=0;
             	    loop6:
             	    do {
@@ -795,27 +774,27 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
             	        switch (alt6) {
             	    	case 1 :
-            	    	    // InternalVertrag.g:289:9: {...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) )
+            	    	    // InternalVertrag.g:289:9: {...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) )
             	    	    {
             	    	    if ( !((true)) ) {
             	    	        throw new FailedPredicateException(input, "ruleVertrag", "true");
             	    	    }
-            	    	    // InternalVertrag.g:289:18: (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) )
-            	    	    // InternalVertrag.g:289:19: otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) )
+            	    	    // InternalVertrag.g:289:18: (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) )
+            	    	    // InternalVertrag.g:289:19: otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) )
             	    	    {
             	    	    otherlv_10=(Token)match(input,17,FOLLOW_4); 
 
             	    	    								newLeafNode(otherlv_10, grammarAccess.getVertragAccess().getNetzanbieterKeyword_3_0());
             	    	    							
-            	    	    // InternalVertrag.g:293:8: ( (lv_netzanbieter_11_0= RULE_ID ) )
-            	    	    // InternalVertrag.g:294:9: (lv_netzanbieter_11_0= RULE_ID )
+            	    	    // InternalVertrag.g:293:8: ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) )
+            	    	    // InternalVertrag.g:294:9: (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE )
             	    	    {
-            	    	    // InternalVertrag.g:294:9: (lv_netzanbieter_11_0= RULE_ID )
-            	    	    // InternalVertrag.g:295:10: lv_netzanbieter_11_0= RULE_ID
+            	    	    // InternalVertrag.g:294:9: (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE )
+            	    	    // InternalVertrag.g:295:10: lv_netzanbieter_11_0= RULE_ZEICHENFOLGE
             	    	    {
-            	    	    lv_netzanbieter_11_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            	    	    lv_netzanbieter_11_0=(Token)match(input,RULE_ZEICHENFOLGE,FOLLOW_7); 
 
-            	    	    										newLeafNode(lv_netzanbieter_11_0, grammarAccess.getVertragAccess().getNetzanbieterIDTerminalRuleCall_3_1_0());
+            	    	    										newLeafNode(lv_netzanbieter_11_0, grammarAccess.getVertragAccess().getNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0());
             	    	    									
 
             	    	    										if (current==null) {
@@ -825,7 +804,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    	    											current,
             	    	    											"netzanbieter",
             	    	    											lv_netzanbieter_11_0,
-            	    	    											"org.xtext.example.mydsl.Vertrag.ID");
+            	    	    											"org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
             	    	    									
 
             	    	    }
@@ -862,133 +841,32 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalVertrag.g:317:3: ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) )
+            	    // InternalVertrag.g:317:3: ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) )
             	    {
-            	    // InternalVertrag.g:317:3: ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) )
-            	    // InternalVertrag.g:318:4: {...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ )
+            	    // InternalVertrag.g:317:3: ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) )
+            	    // InternalVertrag.g:318:4: {...}? => ( ({...}? => (otherlv_12= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4)");
             	    }
-            	    // InternalVertrag.g:318:101: ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ )
-            	    // InternalVertrag.g:319:5: ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+
+            	    // InternalVertrag.g:318:101: ( ({...}? => (otherlv_12= '}' ) ) )
+            	    // InternalVertrag.g:319:5: ({...}? => (otherlv_12= '}' ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 4);
             	    				
-            	    // InternalVertrag.g:322:8: ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+
-            	    int cnt7=0;
-            	    loop7:
-            	    do {
-            	        int alt7=2;
-            	        int LA7_0 = input.LA(1);
-
-            	        if ( (LA7_0==18) ) {
-            	            int LA7_2 = input.LA(2);
-
-            	            if ( ((true)) ) {
-            	                alt7=1;
-            	            }
-
-
-            	        }
-
-
-            	        switch (alt7) {
-            	    	case 1 :
-            	    	    // InternalVertrag.g:322:9: {...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) )
-            	    	    {
-            	    	    if ( !((true)) ) {
-            	    	        throw new FailedPredicateException(input, "ruleVertrag", "true");
-            	    	    }
-            	    	    // InternalVertrag.g:322:18: (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) )
-            	    	    // InternalVertrag.g:322:19: otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) )
-            	    	    {
-            	    	    otherlv_12=(Token)match(input,18,FOLLOW_4); 
-
-            	    	    								newLeafNode(otherlv_12, grammarAccess.getVertragAccess().getInternetseiteKeyword_4_0());
-            	    	    							
-            	    	    // InternalVertrag.g:326:8: ( (lv_internetseite_13_0= RULE_ID ) )
-            	    	    // InternalVertrag.g:327:9: (lv_internetseite_13_0= RULE_ID )
-            	    	    {
-            	    	    // InternalVertrag.g:327:9: (lv_internetseite_13_0= RULE_ID )
-            	    	    // InternalVertrag.g:328:10: lv_internetseite_13_0= RULE_ID
-            	    	    {
-            	    	    lv_internetseite_13_0=(Token)match(input,RULE_ID,FOLLOW_8); 
-
-            	    	    										newLeafNode(lv_internetseite_13_0, grammarAccess.getVertragAccess().getInternetseiteIDTerminalRuleCall_4_1_0());
-            	    	    									
-
-            	    	    										if (current==null) {
-            	    	    											current = createModelElement(grammarAccess.getVertragRule());
-            	    	    										}
-            	    	    										setWithLastConsumed(
-            	    	    											current,
-            	    	    											"internetseite",
-            	    	    											lv_internetseite_13_0,
-            	    	    											"org.xtext.example.mydsl.Vertrag.ID");
-            	    	    									
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    if ( cnt7 >= 1 ) break loop7;
-            	                EarlyExitException eee =
-            	                    new EarlyExitException(7, input);
-            	                throw eee;
-            	        }
-            	        cnt7++;
-            	    } while (true);
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getVertragAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 6 :
-            	    // InternalVertrag.g:350:3: ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) )
-            	    {
-            	    // InternalVertrag.g:350:3: ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) )
-            	    // InternalVertrag.g:351:4: {...}? => ( ({...}? => (otherlv_14= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {
-            	        throw new FailedPredicateException(input, "ruleVertrag", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5)");
-            	    }
-            	    // InternalVertrag.g:351:101: ( ({...}? => (otherlv_14= '}' ) ) )
-            	    // InternalVertrag.g:352:5: ({...}? => (otherlv_14= '}' ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 5);
-            	    				
-            	    // InternalVertrag.g:355:8: ({...}? => (otherlv_14= '}' ) )
-            	    // InternalVertrag.g:355:9: {...}? => (otherlv_14= '}' )
+            	    // InternalVertrag.g:322:8: ({...}? => (otherlv_12= '}' ) )
+            	    // InternalVertrag.g:322:9: {...}? => (otherlv_12= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleVertrag", "true");
             	    }
-            	    // InternalVertrag.g:355:18: (otherlv_14= '}' )
-            	    // InternalVertrag.g:355:19: otherlv_14= '}'
+            	    // InternalVertrag.g:322:18: (otherlv_12= '}' )
+            	    // InternalVertrag.g:322:19: otherlv_12= '}'
             	    {
-            	    otherlv_14=(Token)match(input,19,FOLLOW_8); 
+            	    otherlv_12=(Token)match(input,18,FOLLOW_7); 
 
-            	    								newLeafNode(otherlv_14, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_5());
+            	    								newLeafNode(otherlv_12, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4());
             	    							
 
             	    }
@@ -1010,12 +888,12 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt8 >= 1 ) break loop8;
+            	    if ( cnt7 >= 1 ) break loop7;
                         EarlyExitException eee =
-                            new EarlyExitException(8, input);
+                            new EarlyExitException(7, input);
                         throw eee;
                 }
-                cnt8++;
+                cnt7++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {
@@ -1053,7 +931,7 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHandy"
-    // InternalVertrag.g:376:1: entryRuleHandy returns [EObject current=null] : iv_ruleHandy= ruleHandy EOF ;
+    // InternalVertrag.g:343:1: entryRuleHandy returns [EObject current=null] : iv_ruleHandy= ruleHandy EOF ;
     public final EObject entryRuleHandy() throws RecognitionException {
         EObject current = null;
 
@@ -1061,8 +939,8 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVertrag.g:376:46: (iv_ruleHandy= ruleHandy EOF )
-            // InternalVertrag.g:377:2: iv_ruleHandy= ruleHandy EOF
+            // InternalVertrag.g:343:46: (iv_ruleHandy= ruleHandy EOF )
+            // InternalVertrag.g:344:2: iv_ruleHandy= ruleHandy EOF
             {
              newCompositeNode(grammarAccess.getHandyRule()); 
             pushFollow(FOLLOW_1);
@@ -1089,382 +967,144 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHandy"
-    // InternalVertrag.g:383:1: ruleHandy returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) ) ) ;
+    // InternalVertrag.g:350:1: ruleHandy returns [EObject current=null] : (otherlv_0= 'handy' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_system_3_0= RULE_ID ) ) ( (lv_marke_4_0= RULE_ID ) ) ( (lv_speicher_5_0= RULE_ID ) ) otherlv_6= '}' ) ;
     public final EObject ruleHandy() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token lv_system_5_0=null;
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Token otherlv_2=null;
+        Token lv_system_3_0=null;
+        Token lv_marke_4_0=null;
+        Token lv_speicher_5_0=null;
         Token otherlv_6=null;
-        Token lv_marke_7_0=null;
-        Token otherlv_8=null;
-        Token lv_speicher_9_0=null;
-        Token otherlv_10=null;
 
 
         	enterRule();
 
         try {
-            // InternalVertrag.g:389:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) ) ) )
-            // InternalVertrag.g:390:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalVertrag.g:356:2: ( (otherlv_0= 'handy' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_system_3_0= RULE_ID ) ) ( (lv_marke_4_0= RULE_ID ) ) ( (lv_speicher_5_0= RULE_ID ) ) otherlv_6= '}' ) )
+            // InternalVertrag.g:357:2: (otherlv_0= 'handy' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_system_3_0= RULE_ID ) ) ( (lv_marke_4_0= RULE_ID ) ) ( (lv_speicher_5_0= RULE_ID ) ) otherlv_6= '}' )
             {
-            // InternalVertrag.g:390:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) ) )
-            // InternalVertrag.g:391:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) )
+            // InternalVertrag.g:357:2: (otherlv_0= 'handy' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_system_3_0= RULE_ID ) ) ( (lv_marke_4_0= RULE_ID ) ) ( (lv_speicher_5_0= RULE_ID ) ) otherlv_6= '}' )
+            // InternalVertrag.g:358:3: otherlv_0= 'handy' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_system_3_0= RULE_ID ) ) ( (lv_marke_4_0= RULE_ID ) ) ( (lv_speicher_5_0= RULE_ID ) ) otherlv_6= '}'
             {
-            // InternalVertrag.g:391:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?) )
-            // InternalVertrag.g:392:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?)
+            otherlv_0=(Token)match(input,19,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getHandyAccess().getHandyKeyword_0());
+            		
+            // InternalVertrag.g:362:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalVertrag.g:363:4: (lv_name_1_0= RULE_ID )
             {
-             
-            			  getUnorderedGroupHelper().enter(grammarAccess.getHandyAccess().getUnorderedGroup());
-            			
-            // InternalVertrag.g:395:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?)
-            // InternalVertrag.g:396:5: ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+ {...}?
+            // InternalVertrag.g:363:4: (lv_name_1_0= RULE_ID )
+            // InternalVertrag.g:364:5: lv_name_1_0= RULE_ID
             {
-            // InternalVertrag.g:396:5: ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+
-            int cnt10=0;
-            loop10:
-            do {
-                int alt10=5;
-                alt10 = dfa10.predict(input);
-                switch (alt10) {
-            	case 1 :
-            	    // InternalVertrag.g:397:3: ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) )
-            	    {
-            	    // InternalVertrag.g:397:3: ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) )
-            	    // InternalVertrag.g:398:4: {...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0)");
-            	    }
-            	    // InternalVertrag.g:398:99: ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) )
-            	    // InternalVertrag.g:399:5: ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 0);
-            	    				
-            	    // InternalVertrag.g:402:8: ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) )
-            	    // InternalVertrag.g:402:9: {...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "true");
-            	    }
-            	    // InternalVertrag.g:402:18: (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? )
-            	    // InternalVertrag.g:402:19: otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )?
-            	    {
-            	    otherlv_1=(Token)match(input,20,FOLLOW_4); 
-
-            	    								newLeafNode(otherlv_1, grammarAccess.getHandyAccess().getHandyKeyword_0_0());
-            	    							
-            	    // InternalVertrag.g:406:8: ( (lv_name_2_0= RULE_ID ) )
-            	    // InternalVertrag.g:407:9: (lv_name_2_0= RULE_ID )
-            	    {
-            	    // InternalVertrag.g:407:9: (lv_name_2_0= RULE_ID )
-            	    // InternalVertrag.g:408:10: lv_name_2_0= RULE_ID
-            	    {
-            	    lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_5); 
-
-            	    										newLeafNode(lv_name_2_0, grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_0_1_0());
-            	    									
-
-            	    										if (current==null) {
-            	    											current = createModelElement(grammarAccess.getHandyRule());
-            	    										}
-            	    										setWithLastConsumed(
-            	    											current,
-            	    											"name",
-            	    											lv_name_2_0,
-            	    											"org.xtext.example.mydsl.Vertrag.ID");
-            	    									
-
-            	    }
-
-
-            	    }
-
-            	    otherlv_3=(Token)match(input,13,FOLLOW_10); 
-
-            	    								newLeafNode(otherlv_3, grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_0_2());
-            	    							
-            	    // InternalVertrag.g:428:8: (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )?
-            	    int alt9=2;
-            	    int LA9_0 = input.LA(1);
-
-            	    if ( (LA9_0==21) ) {
-            	        alt9=1;
-            	    }
-            	    switch (alt9) {
-            	        case 1 :
-            	            // InternalVertrag.g:429:9: otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) )
-            	            {
-            	            otherlv_4=(Token)match(input,21,FOLLOW_4); 
-
-            	            									newLeafNode(otherlv_4, grammarAccess.getHandyAccess().getSystemKeyword_0_3_0());
-            	            								
-            	            // InternalVertrag.g:433:9: ( (lv_system_5_0= RULE_ID ) )
-            	            // InternalVertrag.g:434:10: (lv_system_5_0= RULE_ID )
-            	            {
-            	            // InternalVertrag.g:434:10: (lv_system_5_0= RULE_ID )
-            	            // InternalVertrag.g:435:11: lv_system_5_0= RULE_ID
-            	            {
-            	            lv_system_5_0=(Token)match(input,RULE_ID,FOLLOW_11); 
-
-            	            											newLeafNode(lv_system_5_0, grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_0_3_1_0());
-            	            										
-
-            	            											if (current==null) {
-            	            												current = createModelElement(grammarAccess.getHandyRule());
-            	            											}
-            	            											setWithLastConsumed(
-            	            												current,
-            	            												"system",
-            	            												lv_system_5_0,
-            	            												"org.xtext.example.mydsl.Vertrag.ID");
-            	            										
-
-            	            }
-
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalVertrag.g:458:3: ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) )
-            	    {
-            	    // InternalVertrag.g:458:3: ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) )
-            	    // InternalVertrag.g:459:4: {...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1)");
-            	    }
-            	    // InternalVertrag.g:459:99: ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) )
-            	    // InternalVertrag.g:460:5: ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 1);
-            	    				
-            	    // InternalVertrag.g:463:8: ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) )
-            	    // InternalVertrag.g:463:9: {...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "true");
-            	    }
-            	    // InternalVertrag.g:463:18: (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) )
-            	    // InternalVertrag.g:463:19: otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) )
-            	    {
-            	    otherlv_6=(Token)match(input,22,FOLLOW_4); 
-
-            	    								newLeafNode(otherlv_6, grammarAccess.getHandyAccess().getMarkeKeyword_1_0());
-            	    							
-            	    // InternalVertrag.g:467:8: ( (lv_marke_7_0= RULE_ID ) )
-            	    // InternalVertrag.g:468:9: (lv_marke_7_0= RULE_ID )
-            	    {
-            	    // InternalVertrag.g:468:9: (lv_marke_7_0= RULE_ID )
-            	    // InternalVertrag.g:469:10: lv_marke_7_0= RULE_ID
-            	    {
-            	    lv_marke_7_0=(Token)match(input,RULE_ID,FOLLOW_11); 
-
-            	    										newLeafNode(lv_marke_7_0, grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_1_1_0());
-            	    									
-
-            	    										if (current==null) {
-            	    											current = createModelElement(grammarAccess.getHandyRule());
-            	    										}
-            	    										setWithLastConsumed(
-            	    											current,
-            	    											"marke",
-            	    											lv_marke_7_0,
-            	    											"org.xtext.example.mydsl.Vertrag.ID");
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // InternalVertrag.g:491:3: ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) )
-            	    {
-            	    // InternalVertrag.g:491:3: ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) )
-            	    // InternalVertrag.g:492:4: {...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2)");
-            	    }
-            	    // InternalVertrag.g:492:99: ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) )
-            	    // InternalVertrag.g:493:5: ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 2);
-            	    				
-            	    // InternalVertrag.g:496:8: ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) )
-            	    // InternalVertrag.g:496:9: {...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "true");
-            	    }
-            	    // InternalVertrag.g:496:18: (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) )
-            	    // InternalVertrag.g:496:19: otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) )
-            	    {
-            	    otherlv_8=(Token)match(input,23,FOLLOW_7); 
-
-            	    								newLeafNode(otherlv_8, grammarAccess.getHandyAccess().getSpeicherKeyword_2_0());
-            	    							
-            	    // InternalVertrag.g:500:8: ( (lv_speicher_9_0= RULE_INT ) )
-            	    // InternalVertrag.g:501:9: (lv_speicher_9_0= RULE_INT )
-            	    {
-            	    // InternalVertrag.g:501:9: (lv_speicher_9_0= RULE_INT )
-            	    // InternalVertrag.g:502:10: lv_speicher_9_0= RULE_INT
-            	    {
-            	    lv_speicher_9_0=(Token)match(input,RULE_INT,FOLLOW_11); 
-
-            	    										newLeafNode(lv_speicher_9_0, grammarAccess.getHandyAccess().getSpeicherINTTerminalRuleCall_2_1_0());
-            	    									
-
-            	    										if (current==null) {
-            	    											current = createModelElement(grammarAccess.getHandyRule());
-            	    										}
-            	    										setWithLastConsumed(
-            	    											current,
-            	    											"speicher",
-            	    											lv_speicher_9_0,
-            	    											"org.xtext.example.mydsl.Vertrag.INT");
-            	    									
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 4 :
-            	    // InternalVertrag.g:524:3: ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) )
-            	    {
-            	    // InternalVertrag.g:524:3: ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) )
-            	    // InternalVertrag.g:525:4: {...}? => ( ({...}? => (otherlv_10= '}' ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3)");
-            	    }
-            	    // InternalVertrag.g:525:99: ( ({...}? => (otherlv_10= '}' ) ) )
-            	    // InternalVertrag.g:526:5: ({...}? => (otherlv_10= '}' ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 3);
-            	    				
-            	    // InternalVertrag.g:529:8: ({...}? => (otherlv_10= '}' ) )
-            	    // InternalVertrag.g:529:9: {...}? => (otherlv_10= '}' )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleHandy", "true");
-            	    }
-            	    // InternalVertrag.g:529:18: (otherlv_10= '}' )
-            	    // InternalVertrag.g:529:19: otherlv_10= '}'
-            	    {
-            	    otherlv_10=(Token)match(input,19,FOLLOW_11); 
-
-            	    								newLeafNode(otherlv_10, grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_3());
-            	    							
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt10 >= 1 ) break loop10;
-                        EarlyExitException eee =
-                            new EarlyExitException(10, input);
-                        throw eee;
-                }
-                cnt10++;
-            } while (true);
-
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {
-                throw new FailedPredicateException(input, "ruleHandy", "getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup())");
-            }
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHandyRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
 
             }
 
 
             }
 
-             
-            			  getUnorderedGroupHelper().leave(grammarAccess.getHandyAccess().getUnorderedGroup());
-            			
+            otherlv_2=(Token)match(input,13,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalVertrag.g:384:3: ( (lv_system_3_0= RULE_ID ) )
+            // InternalVertrag.g:385:4: (lv_system_3_0= RULE_ID )
+            {
+            // InternalVertrag.g:385:4: (lv_system_3_0= RULE_ID )
+            // InternalVertrag.g:386:5: lv_system_3_0= RULE_ID
+            {
+            lv_system_3_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+
+            					newLeafNode(lv_system_3_0, grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHandyRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"system",
+            						true,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalVertrag.g:402:3: ( (lv_marke_4_0= RULE_ID ) )
+            // InternalVertrag.g:403:4: (lv_marke_4_0= RULE_ID )
+            {
+            // InternalVertrag.g:403:4: (lv_marke_4_0= RULE_ID )
+            // InternalVertrag.g:404:5: lv_marke_4_0= RULE_ID
+            {
+            lv_marke_4_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+
+            					newLeafNode(lv_marke_4_0, grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHandyRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"marke",
+            						true,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalVertrag.g:420:3: ( (lv_speicher_5_0= RULE_ID ) )
+            // InternalVertrag.g:421:4: (lv_speicher_5_0= RULE_ID )
+            {
+            // InternalVertrag.g:421:4: (lv_speicher_5_0= RULE_ID )
+            // InternalVertrag.g:422:5: lv_speicher_5_0= RULE_ID
+            {
+            lv_speicher_5_0=(Token)match(input,RULE_ID,FOLLOW_9); 
+
+            					newLeafNode(lv_speicher_5_0, grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getHandyRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"speicher",
+            						true,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_6());
+            		
 
             }
 
@@ -1489,24 +1129,21 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA8 dfa8 = new DFA8(this);
-    protected DFA10 dfa10 = new DFA10(this);
-    static final String dfa_1s = "\16\uffff";
-    static final String dfa_2s = "\1\1\15\uffff";
-    static final String dfa_3s = "\1\14\1\uffff\6\0\6\uffff";
-    static final String dfa_4s = "\1\27\1\uffff\6\0\6\uffff";
-    static final String dfa_5s = "\1\uffff\1\7\6\uffff\1\1\1\2\1\3\1\4\1\5\1\6";
-    static final String dfa_6s = "\2\uffff\1\5\1\3\1\4\1\0\1\2\1\1\6\uffff}>";
+    protected DFA7 dfa7 = new DFA7(this);
+    static final String dfa_1s = "\14\uffff";
+    static final String dfa_2s = "\1\1\13\uffff";
+    static final String dfa_3s = "\1\14\1\uffff\5\0\5\uffff";
+    static final String dfa_4s = "\1\23\1\uffff\5\0\5\uffff";
+    static final String dfa_5s = "\1\uffff\1\6\5\uffff\1\1\1\2\1\3\1\4\1\5";
+    static final String dfa_6s = "\2\uffff\1\3\1\4\1\2\1\0\1\1\5\uffff}>";
     static final String[] dfa_7s = {
-            "\1\2\2\uffff\1\3\1\4\1\5\1\6\1\7\1\1\1\uffff\2\1",
+            "\1\2\2\uffff\1\3\1\4\1\5\1\6\1\1",
             "",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
-            "\1\uffff",
-            "",
             "",
             "",
             "",
@@ -1522,11 +1159,11 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA8 extends DFA {
+    class DFA7 extends DFA {
 
-        public DFA8(BaseRecognizer recognizer) {
+        public DFA7(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 8;
+            this.decisionNumber = 7;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -1536,219 +1173,90 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "()+ loopback of 156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_5_0= RULE_INT ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'datenvolumen' ( (lv_datenvolumen_7_0= RULE_INT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_FLOAT ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= 'internetseite' ( (lv_internetseite_13_0= RULE_ID ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_14= '}' ) ) ) ) )+";
+            return "()+ loopback of 156:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Vertrag' ( (lv_name_2_0= RULE_ZEICHENFOLGE ) ) otherlv_3= '{' (otherlv_4= 'datenvolumen' ( (lv_datenvolumen_5_0= RULE_ZEICHENFOLGE ) ) )* ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'mindestvertragslaufzeit' ( (lv_mindestvertragslaufzeit_7_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_8= 'monatl_kosten' ( (lv_monatl_kosten_9_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_10= 'netzanbieter' ( (lv_netzanbieter_11_0= RULE_ZEICHENFOLGE ) ) ) )+ ) ) | ({...}? => ( ({...}? => (otherlv_12= '}' ) ) ) ) )+";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA8_5 = input.LA(1);
+                        int LA7_5 = input.LA(1);
 
                          
-                        int index8_5 = input.index();
+                        int index7_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 11;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 10;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
 
                          
-                        input.seek(index8_5);
+                        input.seek(index7_5);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA8_7 = input.LA(1);
+                        int LA7_6 = input.LA(1);
 
                          
-                        int index8_7 = input.index();
+                        int index7_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 11;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
 
                          
-                        input.seek(index8_7);
+                        input.seek(index7_6);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA8_6 = input.LA(1);
+                        int LA7_4 = input.LA(1);
 
                          
-                        int index8_6 = input.index();
+                        int index7_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 12;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 9;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
 
                          
-                        input.seek(index8_6);
+                        input.seek(index7_4);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA8_3 = input.LA(1);
+                        int LA7_2 = input.LA(1);
 
                          
-                        int index8_3 = input.index();
+                        int index7_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 9;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 7;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
 
                          
-                        input.seek(index8_3);
+                        input.seek(index7_2);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA8_4 = input.LA(1);
+                        int LA7_3 = input.LA(1);
 
                          
-                        int index8_4 = input.index();
+                        int index7_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 10;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 8;}
 
                         else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
 
                          
-                        input.seek(index8_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA8_2 = input.LA(1);
-
-                         
-                        int index8_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 8;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 1;}
-
-                         
-                        input.seek(index8_2);
+                        input.seek(index7_3);
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 8, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_8s = "\12\uffff";
-    static final String dfa_9s = "\1\1\11\uffff";
-    static final String dfa_10s = "\1\14\1\uffff\4\0\4\uffff";
-    static final String dfa_11s = "\1\27\1\uffff\4\0\4\uffff";
-    static final String dfa_12s = "\1\uffff\1\5\4\uffff\1\4\1\1\1\2\1\3";
-    static final String dfa_13s = "\2\uffff\1\3\1\1\1\0\1\2\4\uffff}>";
-    static final String[] dfa_14s = {
-            "\1\1\2\uffff\4\1\1\2\1\3\1\uffff\1\4\1\5",
-            "",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
-    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
-    static final char[] dfa_10 = DFA.unpackEncodedStringToUnsignedChars(dfa_10s);
-    static final char[] dfa_11 = DFA.unpackEncodedStringToUnsignedChars(dfa_11s);
-    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
-    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
-    static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
-
-    class DFA10 extends DFA {
-
-        public DFA10(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 10;
-            this.eot = dfa_8;
-            this.eof = dfa_9;
-            this.min = dfa_10;
-            this.max = dfa_11;
-            this.accept = dfa_12;
-            this.special = dfa_13;
-            this.transition = dfa_14;
-        }
-        public String getDescription() {
-            return "()+ loopback of 396:5: ( ({...}? => ( ({...}? => (otherlv_1= 'handy' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'system' ( (lv_system_5_0= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'marke' ( (lv_marke_7_0= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'speicher' ( (lv_speicher_9_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= '}' ) ) ) ) )+";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA10_4 = input.LA(1);
-
-                         
-                        int index10_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {s = 8;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 1;}
-
-                         
-                        input.seek(index10_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA10_3 = input.LA(1);
-
-                         
-                        int index10_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {s = 7;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 1;}
-
-                         
-                        input.seek(index10_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA10_5 = input.LA(1);
-
-                         
-                        int index10_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 1;}
-
-                         
-                        input.seek(index10_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA10_2 = input.LA(1);
-
-                         
-                        int index10_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {s = 6;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 1;}
-
-                         
-                        input.seek(index10_2);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 10, _s, input);
+                new NoViableAltException(getDescription(), 7, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -1757,14 +1265,12 @@ public class InternalVertragParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000DF9002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000000F9002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000000FD002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000F9002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000F80002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000D80002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000007D002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000079002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000040000L});
 
 }

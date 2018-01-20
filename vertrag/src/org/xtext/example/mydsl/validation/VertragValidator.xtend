@@ -3,6 +3,9 @@
  */
 package org.xtext.example.mydsl.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.example.mydsl.vertrag.Vertrag
+import org.xtext.example.mydsl.vertrag.VertragPackage
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +24,15 @@ class VertragValidator extends AbstractVertragValidator {
 //					INVALID_NAME)
 //		}
 //	}
+
+	
+	@Check
+	def checkVertrag(Vertrag ver) {
+		try {
+			var datenvolumen = Integer.parseInt(ver.datenvolumen);
+		}catch(Exception e){
+			error("datenvolumen muss Integer sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+		}
+	}
 	
 }

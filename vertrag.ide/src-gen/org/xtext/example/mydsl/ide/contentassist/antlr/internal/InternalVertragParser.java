@@ -23,8 +23,9 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalVertragParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Vertrag'", "'{'", "'mindestvertragslaufzeit'", "'datenvolumen'", "'monatl_kosten'", "'netzanbieter'", "'internetseite'", "'handy'", "'system'", "'marke'", "'speicher'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ZEICHENFOLGE", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Vertrag'", "'{'", "'datenvolumen'", "'mindestvertragslaufzeit'", "'monatl_kosten'", "'netzanbieter'", "'handy'", "'}'"
     };
+    public static final int RULE_ZEICHENFOLGE=4;
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
@@ -36,16 +37,11 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
-    public static final int RULE_INT=5;
-    public static final int T__22=22;
+    public static final int RULE_INT=6;
     public static final int RULE_ML_COMMENT=8;
-    public static final int T__23=23;
-    public static final int RULE_FLOAT=6;
-    public static final int T__20=20;
-    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -138,7 +134,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||(LA1_0>=15 && LA1_0<=19)||(LA1_0>=21 && LA1_0<=23)) ) {
+                if ( (LA1_0==12||(LA1_0>=15 && LA1_0<=19)) ) {
                     alt1=1;
                 }
 
@@ -390,26 +386,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleHandy"
-    // InternalVertrag.g:137:1: ruleHandy : ( ( rule__Handy__UnorderedGroup ) ) ;
+    // InternalVertrag.g:137:1: ruleHandy : ( ( rule__Handy__Group__0 ) ) ;
     public final void ruleHandy() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:141:2: ( ( ( rule__Handy__UnorderedGroup ) ) )
-            // InternalVertrag.g:142:2: ( ( rule__Handy__UnorderedGroup ) )
+            // InternalVertrag.g:141:2: ( ( ( rule__Handy__Group__0 ) ) )
+            // InternalVertrag.g:142:2: ( ( rule__Handy__Group__0 ) )
             {
-            // InternalVertrag.g:142:2: ( ( rule__Handy__UnorderedGroup ) )
-            // InternalVertrag.g:143:3: ( rule__Handy__UnorderedGroup )
+            // InternalVertrag.g:142:2: ( ( rule__Handy__Group__0 ) )
+            // InternalVertrag.g:143:3: ( rule__Handy__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getUnorderedGroup()); 
+               before(grammarAccess.getHandyAccess().getGroup()); 
             }
-            // InternalVertrag.g:144:3: ( rule__Handy__UnorderedGroup )
-            // InternalVertrag.g:144:4: rule__Handy__UnorderedGroup
+            // InternalVertrag.g:144:3: ( rule__Handy__Group__0 )
+            // InternalVertrag.g:144:4: rule__Handy__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Handy__UnorderedGroup();
+            rule__Handy__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -417,7 +413,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getUnorderedGroup()); 
+               after(grammarAccess.getHandyAccess().getGroup()); 
             }
 
             }
@@ -449,36 +445,21 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         try {
             // InternalVertrag.g:156:1: ( ( ruleVertrag ) | ( ruleHandy ) )
             int alt2=2;
-            switch ( input.LA(1) ) {
-            case 12:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-                {
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==12||(LA2_0>=15 && LA2_0<=17)||LA2_0==19) ) {
                 alt2=1;
-                }
-                break;
-            case 23:
-                {
-                alt2=1;
-                }
-                break;
-            case 19:
-            case 21:
-            case 22:
-                {
+            }
+            else if ( (LA2_0==18) ) {
                 alt2=2;
-                }
-                break;
-            default:
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
-
             switch (alt2) {
                 case 1 :
                     // InternalVertrag.g:157:2: ( ruleVertrag )
@@ -902,7 +883,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             // InternalVertrag.g:285:1: ( rule__Vertrag__Group_0_3__0__Impl rule__Vertrag__Group_0_3__1 )
             // InternalVertrag.g:286:2: rule__Vertrag__Group_0_3__0__Impl rule__Vertrag__Group_0_3__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_4);
             rule__Vertrag__Group_0_3__0__Impl();
 
             state._fsp--;
@@ -931,24 +912,24 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__Group_0_3__0__Impl"
-    // InternalVertrag.g:293:1: rule__Vertrag__Group_0_3__0__Impl : ( 'mindestvertragslaufzeit' ) ;
+    // InternalVertrag.g:293:1: rule__Vertrag__Group_0_3__0__Impl : ( 'datenvolumen' ) ;
     public final void rule__Vertrag__Group_0_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:297:1: ( ( 'mindestvertragslaufzeit' ) )
-            // InternalVertrag.g:298:1: ( 'mindestvertragslaufzeit' )
+            // InternalVertrag.g:297:1: ( ( 'datenvolumen' ) )
+            // InternalVertrag.g:298:1: ( 'datenvolumen' )
             {
-            // InternalVertrag.g:298:1: ( 'mindestvertragslaufzeit' )
-            // InternalVertrag.g:299:2: 'mindestvertragslaufzeit'
+            // InternalVertrag.g:298:1: ( 'datenvolumen' )
+            // InternalVertrag.g:299:2: 'datenvolumen'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_0_3_0()); 
+               before(grammarAccess.getVertragAccess().getDatenvolumenKeyword_0_3_0()); 
             }
             match(input,14,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_0_3_0()); 
+               after(grammarAccess.getVertragAccess().getDatenvolumenKeyword_0_3_0()); 
             }
 
             }
@@ -1005,26 +986,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__Group_0_3__1__Impl"
-    // InternalVertrag.g:319:1: rule__Vertrag__Group_0_3__1__Impl : ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 ) ) ;
+    // InternalVertrag.g:319:1: rule__Vertrag__Group_0_3__1__Impl : ( ( rule__Vertrag__DatenvolumenAssignment_0_3_1 ) ) ;
     public final void rule__Vertrag__Group_0_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:323:1: ( ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 ) ) )
-            // InternalVertrag.g:324:1: ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 ) )
+            // InternalVertrag.g:323:1: ( ( ( rule__Vertrag__DatenvolumenAssignment_0_3_1 ) ) )
+            // InternalVertrag.g:324:1: ( ( rule__Vertrag__DatenvolumenAssignment_0_3_1 ) )
             {
-            // InternalVertrag.g:324:1: ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 ) )
-            // InternalVertrag.g:325:2: ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 )
+            // InternalVertrag.g:324:1: ( ( rule__Vertrag__DatenvolumenAssignment_0_3_1 ) )
+            // InternalVertrag.g:325:2: ( rule__Vertrag__DatenvolumenAssignment_0_3_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitAssignment_0_3_1()); 
+               before(grammarAccess.getVertragAccess().getDatenvolumenAssignment_0_3_1()); 
             }
-            // InternalVertrag.g:326:2: ( rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 )
-            // InternalVertrag.g:326:3: rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1
+            // InternalVertrag.g:326:2: ( rule__Vertrag__DatenvolumenAssignment_0_3_1 )
+            // InternalVertrag.g:326:3: rule__Vertrag__DatenvolumenAssignment_0_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1();
+            rule__Vertrag__DatenvolumenAssignment_0_3_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1032,7 +1013,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitAssignment_0_3_1()); 
+               after(grammarAccess.getVertragAccess().getDatenvolumenAssignment_0_3_1()); 
             }
 
             }
@@ -1065,7 +1046,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             // InternalVertrag.g:339:1: ( rule__Vertrag__Group_1__0__Impl rule__Vertrag__Group_1__1 )
             // InternalVertrag.g:340:2: rule__Vertrag__Group_1__0__Impl rule__Vertrag__Group_1__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_4);
             rule__Vertrag__Group_1__0__Impl();
 
             state._fsp--;
@@ -1094,24 +1075,24 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__Group_1__0__Impl"
-    // InternalVertrag.g:347:1: rule__Vertrag__Group_1__0__Impl : ( 'datenvolumen' ) ;
+    // InternalVertrag.g:347:1: rule__Vertrag__Group_1__0__Impl : ( 'mindestvertragslaufzeit' ) ;
     public final void rule__Vertrag__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:351:1: ( ( 'datenvolumen' ) )
-            // InternalVertrag.g:352:1: ( 'datenvolumen' )
+            // InternalVertrag.g:351:1: ( ( 'mindestvertragslaufzeit' ) )
+            // InternalVertrag.g:352:1: ( 'mindestvertragslaufzeit' )
             {
-            // InternalVertrag.g:352:1: ( 'datenvolumen' )
-            // InternalVertrag.g:353:2: 'datenvolumen'
+            // InternalVertrag.g:352:1: ( 'mindestvertragslaufzeit' )
+            // InternalVertrag.g:353:2: 'mindestvertragslaufzeit'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getDatenvolumenKeyword_1_0()); 
+               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_1_0()); 
             }
             match(input,15,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getDatenvolumenKeyword_1_0()); 
+               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitKeyword_1_0()); 
             }
 
             }
@@ -1168,26 +1149,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__Group_1__1__Impl"
-    // InternalVertrag.g:373:1: rule__Vertrag__Group_1__1__Impl : ( ( rule__Vertrag__DatenvolumenAssignment_1_1 ) ) ;
+    // InternalVertrag.g:373:1: rule__Vertrag__Group_1__1__Impl : ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 ) ) ;
     public final void rule__Vertrag__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:377:1: ( ( ( rule__Vertrag__DatenvolumenAssignment_1_1 ) ) )
-            // InternalVertrag.g:378:1: ( ( rule__Vertrag__DatenvolumenAssignment_1_1 ) )
+            // InternalVertrag.g:377:1: ( ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 ) ) )
+            // InternalVertrag.g:378:1: ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 ) )
             {
-            // InternalVertrag.g:378:1: ( ( rule__Vertrag__DatenvolumenAssignment_1_1 ) )
-            // InternalVertrag.g:379:2: ( rule__Vertrag__DatenvolumenAssignment_1_1 )
+            // InternalVertrag.g:378:1: ( ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 ) )
+            // InternalVertrag.g:379:2: ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getDatenvolumenAssignment_1_1()); 
+               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitAssignment_1_1()); 
             }
-            // InternalVertrag.g:380:2: ( rule__Vertrag__DatenvolumenAssignment_1_1 )
-            // InternalVertrag.g:380:3: rule__Vertrag__DatenvolumenAssignment_1_1
+            // InternalVertrag.g:380:2: ( rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 )
+            // InternalVertrag.g:380:3: rule__Vertrag__MindestvertragslaufzeitAssignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__Vertrag__DatenvolumenAssignment_1_1();
+            rule__Vertrag__MindestvertragslaufzeitAssignment_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1195,7 +1176,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getDatenvolumenAssignment_1_1()); 
+               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitAssignment_1_1()); 
             }
 
             }
@@ -1228,7 +1209,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             // InternalVertrag.g:393:1: ( rule__Vertrag__Group_2__0__Impl rule__Vertrag__Group_2__1 )
             // InternalVertrag.g:394:2: rule__Vertrag__Group_2__0__Impl rule__Vertrag__Group_2__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_4);
             rule__Vertrag__Group_2__0__Impl();
 
             state._fsp--;
@@ -1544,23 +1525,23 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Vertrag__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__Vertrag__Group_4__0"
-    // InternalVertrag.g:497:1: rule__Vertrag__Group_4__0 : rule__Vertrag__Group_4__0__Impl rule__Vertrag__Group_4__1 ;
-    public final void rule__Vertrag__Group_4__0() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__0"
+    // InternalVertrag.g:497:1: rule__Handy__Group__0 : rule__Handy__Group__0__Impl rule__Handy__Group__1 ;
+    public final void rule__Handy__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:501:1: ( rule__Vertrag__Group_4__0__Impl rule__Vertrag__Group_4__1 )
-            // InternalVertrag.g:502:2: rule__Vertrag__Group_4__0__Impl rule__Vertrag__Group_4__1
+            // InternalVertrag.g:501:1: ( rule__Handy__Group__0__Impl rule__Handy__Group__1 )
+            // InternalVertrag.g:502:2: rule__Handy__Group__0__Impl rule__Handy__Group__1
             {
-            pushFollow(FOLLOW_4);
-            rule__Vertrag__Group_4__0__Impl();
+            pushFollow(FOLLOW_8);
+            rule__Handy__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Vertrag__Group_4__1();
+            rule__Handy__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1579,28 +1560,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Vertrag__Group_4__0"
+    // $ANTLR end "rule__Handy__Group__0"
 
 
-    // $ANTLR start "rule__Vertrag__Group_4__0__Impl"
-    // InternalVertrag.g:509:1: rule__Vertrag__Group_4__0__Impl : ( 'internetseite' ) ;
-    public final void rule__Vertrag__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__0__Impl"
+    // InternalVertrag.g:509:1: rule__Handy__Group__0__Impl : ( 'handy' ) ;
+    public final void rule__Handy__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:513:1: ( ( 'internetseite' ) )
-            // InternalVertrag.g:514:1: ( 'internetseite' )
+            // InternalVertrag.g:513:1: ( ( 'handy' ) )
+            // InternalVertrag.g:514:1: ( 'handy' )
             {
-            // InternalVertrag.g:514:1: ( 'internetseite' )
-            // InternalVertrag.g:515:2: 'internetseite'
+            // InternalVertrag.g:514:1: ( 'handy' )
+            // InternalVertrag.g:515:2: 'handy'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getInternetseiteKeyword_4_0()); 
+               before(grammarAccess.getHandyAccess().getHandyKeyword_0()); 
             }
             match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getInternetseiteKeyword_4_0()); 
+               after(grammarAccess.getHandyAccess().getHandyKeyword_0()); 
             }
 
             }
@@ -1620,189 +1601,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Vertrag__Group_4__0__Impl"
+    // $ANTLR end "rule__Handy__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Vertrag__Group_4__1"
-    // InternalVertrag.g:524:1: rule__Vertrag__Group_4__1 : rule__Vertrag__Group_4__1__Impl ;
-    public final void rule__Vertrag__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:528:1: ( rule__Vertrag__Group_4__1__Impl )
-            // InternalVertrag.g:529:2: rule__Vertrag__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Vertrag__Group_4__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Vertrag__Group_4__1"
-
-
-    // $ANTLR start "rule__Vertrag__Group_4__1__Impl"
-    // InternalVertrag.g:535:1: rule__Vertrag__Group_4__1__Impl : ( ( rule__Vertrag__InternetseiteAssignment_4_1 ) ) ;
-    public final void rule__Vertrag__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__1"
+    // InternalVertrag.g:524:1: rule__Handy__Group__1 : rule__Handy__Group__1__Impl rule__Handy__Group__2 ;
+    public final void rule__Handy__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:539:1: ( ( ( rule__Vertrag__InternetseiteAssignment_4_1 ) ) )
-            // InternalVertrag.g:540:1: ( ( rule__Vertrag__InternetseiteAssignment_4_1 ) )
-            {
-            // InternalVertrag.g:540:1: ( ( rule__Vertrag__InternetseiteAssignment_4_1 ) )
-            // InternalVertrag.g:541:2: ( rule__Vertrag__InternetseiteAssignment_4_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getInternetseiteAssignment_4_1()); 
-            }
-            // InternalVertrag.g:542:2: ( rule__Vertrag__InternetseiteAssignment_4_1 )
-            // InternalVertrag.g:542:3: rule__Vertrag__InternetseiteAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Vertrag__InternetseiteAssignment_4_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getInternetseiteAssignment_4_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Vertrag__Group_4__1__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_0__0"
-    // InternalVertrag.g:551:1: rule__Handy__Group_0__0 : rule__Handy__Group_0__0__Impl rule__Handy__Group_0__1 ;
-    public final void rule__Handy__Group_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:555:1: ( rule__Handy__Group_0__0__Impl rule__Handy__Group_0__1 )
-            // InternalVertrag.g:556:2: rule__Handy__Group_0__0__Impl rule__Handy__Group_0__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__Handy__Group_0__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_0__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0__0"
-
-
-    // $ANTLR start "rule__Handy__Group_0__0__Impl"
-    // InternalVertrag.g:563:1: rule__Handy__Group_0__0__Impl : ( 'handy' ) ;
-    public final void rule__Handy__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:567:1: ( ( 'handy' ) )
-            // InternalVertrag.g:568:1: ( 'handy' )
-            {
-            // InternalVertrag.g:568:1: ( 'handy' )
-            // InternalVertrag.g:569:2: 'handy'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getHandyKeyword_0_0()); 
-            }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getHandyKeyword_0_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_0__1"
-    // InternalVertrag.g:578:1: rule__Handy__Group_0__1 : rule__Handy__Group_0__1__Impl rule__Handy__Group_0__2 ;
-    public final void rule__Handy__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:582:1: ( rule__Handy__Group_0__1__Impl rule__Handy__Group_0__2 )
-            // InternalVertrag.g:583:2: rule__Handy__Group_0__1__Impl rule__Handy__Group_0__2
+            // InternalVertrag.g:528:1: ( rule__Handy__Group__1__Impl rule__Handy__Group__2 )
+            // InternalVertrag.g:529:2: rule__Handy__Group__1__Impl rule__Handy__Group__2
             {
             pushFollow(FOLLOW_5);
-            rule__Handy__Group_0__1__Impl();
+            rule__Handy__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Handy__Group_0__2();
+            rule__Handy__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1821,30 +1639,30 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_0__1"
+    // $ANTLR end "rule__Handy__Group__1"
 
 
-    // $ANTLR start "rule__Handy__Group_0__1__Impl"
-    // InternalVertrag.g:590:1: rule__Handy__Group_0__1__Impl : ( ( rule__Handy__NameAssignment_0_1 ) ) ;
-    public final void rule__Handy__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__1__Impl"
+    // InternalVertrag.g:536:1: rule__Handy__Group__1__Impl : ( ( rule__Handy__NameAssignment_1 ) ) ;
+    public final void rule__Handy__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:594:1: ( ( ( rule__Handy__NameAssignment_0_1 ) ) )
-            // InternalVertrag.g:595:1: ( ( rule__Handy__NameAssignment_0_1 ) )
+            // InternalVertrag.g:540:1: ( ( ( rule__Handy__NameAssignment_1 ) ) )
+            // InternalVertrag.g:541:1: ( ( rule__Handy__NameAssignment_1 ) )
             {
-            // InternalVertrag.g:595:1: ( ( rule__Handy__NameAssignment_0_1 ) )
-            // InternalVertrag.g:596:2: ( rule__Handy__NameAssignment_0_1 )
+            // InternalVertrag.g:541:1: ( ( rule__Handy__NameAssignment_1 ) )
+            // InternalVertrag.g:542:2: ( rule__Handy__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getNameAssignment_0_1()); 
+               before(grammarAccess.getHandyAccess().getNameAssignment_1()); 
             }
-            // InternalVertrag.g:597:2: ( rule__Handy__NameAssignment_0_1 )
-            // InternalVertrag.g:597:3: rule__Handy__NameAssignment_0_1
+            // InternalVertrag.g:543:2: ( rule__Handy__NameAssignment_1 )
+            // InternalVertrag.g:543:3: rule__Handy__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Handy__NameAssignment_0_1();
+            rule__Handy__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1852,7 +1670,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getNameAssignment_0_1()); 
+               after(grammarAccess.getHandyAccess().getNameAssignment_1()); 
             }
 
             }
@@ -1872,26 +1690,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_0__1__Impl"
+    // $ANTLR end "rule__Handy__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Handy__Group_0__2"
-    // InternalVertrag.g:605:1: rule__Handy__Group_0__2 : rule__Handy__Group_0__2__Impl rule__Handy__Group_0__3 ;
-    public final void rule__Handy__Group_0__2() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__2"
+    // InternalVertrag.g:551:1: rule__Handy__Group__2 : rule__Handy__Group__2__Impl rule__Handy__Group__3 ;
+    public final void rule__Handy__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:609:1: ( rule__Handy__Group_0__2__Impl rule__Handy__Group_0__3 )
-            // InternalVertrag.g:610:2: rule__Handy__Group_0__2__Impl rule__Handy__Group_0__3
+            // InternalVertrag.g:555:1: ( rule__Handy__Group__2__Impl rule__Handy__Group__3 )
+            // InternalVertrag.g:556:2: rule__Handy__Group__2__Impl rule__Handy__Group__3
             {
-            pushFollow(FOLLOW_10);
-            rule__Handy__Group_0__2__Impl();
+            pushFollow(FOLLOW_8);
+            rule__Handy__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Handy__Group_0__3();
+            rule__Handy__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1910,28 +1728,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_0__2"
+    // $ANTLR end "rule__Handy__Group__2"
 
 
-    // $ANTLR start "rule__Handy__Group_0__2__Impl"
-    // InternalVertrag.g:617:1: rule__Handy__Group_0__2__Impl : ( '{' ) ;
-    public final void rule__Handy__Group_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__2__Impl"
+    // InternalVertrag.g:563:1: rule__Handy__Group__2__Impl : ( '{' ) ;
+    public final void rule__Handy__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:621:1: ( ( '{' ) )
-            // InternalVertrag.g:622:1: ( '{' )
+            // InternalVertrag.g:567:1: ( ( '{' ) )
+            // InternalVertrag.g:568:1: ( '{' )
             {
-            // InternalVertrag.g:622:1: ( '{' )
-            // InternalVertrag.g:623:2: '{'
+            // InternalVertrag.g:568:1: ( '{' )
+            // InternalVertrag.g:569:2: '{'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_0_2()); 
+               before(grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_2()); 
             }
             match(input,13,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_0_2()); 
+               after(grammarAccess.getHandyAccess().getLeftCurlyBracketKeyword_2()); 
             }
 
             }
@@ -1951,447 +1769,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_0__2__Impl"
+    // $ANTLR end "rule__Handy__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Handy__Group_0__3"
-    // InternalVertrag.g:632:1: rule__Handy__Group_0__3 : rule__Handy__Group_0__3__Impl ;
-    public final void rule__Handy__Group_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:636:1: ( rule__Handy__Group_0__3__Impl )
-            // InternalVertrag.g:637:2: rule__Handy__Group_0__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_0__3__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0__3"
-
-
-    // $ANTLR start "rule__Handy__Group_0__3__Impl"
-    // InternalVertrag.g:643:1: rule__Handy__Group_0__3__Impl : ( ( rule__Handy__Group_0_3__0 )? ) ;
-    public final void rule__Handy__Group_0__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__3"
+    // InternalVertrag.g:578:1: rule__Handy__Group__3 : rule__Handy__Group__3__Impl rule__Handy__Group__4 ;
+    public final void rule__Handy__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:647:1: ( ( ( rule__Handy__Group_0_3__0 )? ) )
-            // InternalVertrag.g:648:1: ( ( rule__Handy__Group_0_3__0 )? )
-            {
-            // InternalVertrag.g:648:1: ( ( rule__Handy__Group_0_3__0 )? )
-            // InternalVertrag.g:649:2: ( rule__Handy__Group_0_3__0 )?
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getGroup_0_3()); 
-            }
-            // InternalVertrag.g:650:2: ( rule__Handy__Group_0_3__0 )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==20) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalVertrag.g:650:3: rule__Handy__Group_0_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__Group_0_3__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getGroup_0_3()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0__3__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_0_3__0"
-    // InternalVertrag.g:659:1: rule__Handy__Group_0_3__0 : rule__Handy__Group_0_3__0__Impl rule__Handy__Group_0_3__1 ;
-    public final void rule__Handy__Group_0_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:663:1: ( rule__Handy__Group_0_3__0__Impl rule__Handy__Group_0_3__1 )
-            // InternalVertrag.g:664:2: rule__Handy__Group_0_3__0__Impl rule__Handy__Group_0_3__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__Handy__Group_0_3__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_0_3__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0_3__0"
-
-
-    // $ANTLR start "rule__Handy__Group_0_3__0__Impl"
-    // InternalVertrag.g:671:1: rule__Handy__Group_0_3__0__Impl : ( 'system' ) ;
-    public final void rule__Handy__Group_0_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:675:1: ( ( 'system' ) )
-            // InternalVertrag.g:676:1: ( 'system' )
-            {
-            // InternalVertrag.g:676:1: ( 'system' )
-            // InternalVertrag.g:677:2: 'system'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSystemKeyword_0_3_0()); 
-            }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSystemKeyword_0_3_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0_3__0__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_0_3__1"
-    // InternalVertrag.g:686:1: rule__Handy__Group_0_3__1 : rule__Handy__Group_0_3__1__Impl ;
-    public final void rule__Handy__Group_0_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:690:1: ( rule__Handy__Group_0_3__1__Impl )
-            // InternalVertrag.g:691:2: rule__Handy__Group_0_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_0_3__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0_3__1"
-
-
-    // $ANTLR start "rule__Handy__Group_0_3__1__Impl"
-    // InternalVertrag.g:697:1: rule__Handy__Group_0_3__1__Impl : ( ( rule__Handy__SystemAssignment_0_3_1 ) ) ;
-    public final void rule__Handy__Group_0_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:701:1: ( ( ( rule__Handy__SystemAssignment_0_3_1 ) ) )
-            // InternalVertrag.g:702:1: ( ( rule__Handy__SystemAssignment_0_3_1 ) )
-            {
-            // InternalVertrag.g:702:1: ( ( rule__Handy__SystemAssignment_0_3_1 ) )
-            // InternalVertrag.g:703:2: ( rule__Handy__SystemAssignment_0_3_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSystemAssignment_0_3_1()); 
-            }
-            // InternalVertrag.g:704:2: ( rule__Handy__SystemAssignment_0_3_1 )
-            // InternalVertrag.g:704:3: rule__Handy__SystemAssignment_0_3_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__SystemAssignment_0_3_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSystemAssignment_0_3_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_0_3__1__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_1__0"
-    // InternalVertrag.g:713:1: rule__Handy__Group_1__0 : rule__Handy__Group_1__0__Impl rule__Handy__Group_1__1 ;
-    public final void rule__Handy__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:717:1: ( rule__Handy__Group_1__0__Impl rule__Handy__Group_1__1 )
-            // InternalVertrag.g:718:2: rule__Handy__Group_1__0__Impl rule__Handy__Group_1__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__Handy__Group_1__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_1__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_1__0"
-
-
-    // $ANTLR start "rule__Handy__Group_1__0__Impl"
-    // InternalVertrag.g:725:1: rule__Handy__Group_1__0__Impl : ( 'marke' ) ;
-    public final void rule__Handy__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:729:1: ( ( 'marke' ) )
-            // InternalVertrag.g:730:1: ( 'marke' )
-            {
-            // InternalVertrag.g:730:1: ( 'marke' )
-            // InternalVertrag.g:731:2: 'marke'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getMarkeKeyword_1_0()); 
-            }
-            match(input,21,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getMarkeKeyword_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_1__1"
-    // InternalVertrag.g:740:1: rule__Handy__Group_1__1 : rule__Handy__Group_1__1__Impl ;
-    public final void rule__Handy__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:744:1: ( rule__Handy__Group_1__1__Impl )
-            // InternalVertrag.g:745:2: rule__Handy__Group_1__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__Group_1__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_1__1"
-
-
-    // $ANTLR start "rule__Handy__Group_1__1__Impl"
-    // InternalVertrag.g:751:1: rule__Handy__Group_1__1__Impl : ( ( rule__Handy__MarkeAssignment_1_1 ) ) ;
-    public final void rule__Handy__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:755:1: ( ( ( rule__Handy__MarkeAssignment_1_1 ) ) )
-            // InternalVertrag.g:756:1: ( ( rule__Handy__MarkeAssignment_1_1 ) )
-            {
-            // InternalVertrag.g:756:1: ( ( rule__Handy__MarkeAssignment_1_1 ) )
-            // InternalVertrag.g:757:2: ( rule__Handy__MarkeAssignment_1_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getMarkeAssignment_1_1()); 
-            }
-            // InternalVertrag.g:758:2: ( rule__Handy__MarkeAssignment_1_1 )
-            // InternalVertrag.g:758:3: rule__Handy__MarkeAssignment_1_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__MarkeAssignment_1_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getMarkeAssignment_1_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_2__0"
-    // InternalVertrag.g:767:1: rule__Handy__Group_2__0 : rule__Handy__Group_2__0__Impl rule__Handy__Group_2__1 ;
-    public final void rule__Handy__Group_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:771:1: ( rule__Handy__Group_2__0__Impl rule__Handy__Group_2__1 )
-            // InternalVertrag.g:772:2: rule__Handy__Group_2__0__Impl rule__Handy__Group_2__1
+            // InternalVertrag.g:582:1: ( rule__Handy__Group__3__Impl rule__Handy__Group__4 )
+            // InternalVertrag.g:583:2: rule__Handy__Group__3__Impl rule__Handy__Group__4
             {
             pushFollow(FOLLOW_8);
-            rule__Handy__Group_2__0__Impl();
+            rule__Handy__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Handy__Group_2__1();
+            rule__Handy__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2410,65 +1807,42 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_2__0"
+    // $ANTLR end "rule__Handy__Group__3"
 
 
-    // $ANTLR start "rule__Handy__Group_2__0__Impl"
-    // InternalVertrag.g:779:1: rule__Handy__Group_2__0__Impl : ( 'speicher' ) ;
-    public final void rule__Handy__Group_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:783:1: ( ( 'speicher' ) )
-            // InternalVertrag.g:784:1: ( 'speicher' )
-            {
-            // InternalVertrag.g:784:1: ( 'speicher' )
-            // InternalVertrag.g:785:2: 'speicher'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSpeicherKeyword_2_0()); 
-            }
-            match(input,22,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSpeicherKeyword_2_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__Group_2__0__Impl"
-
-
-    // $ANTLR start "rule__Handy__Group_2__1"
-    // InternalVertrag.g:794:1: rule__Handy__Group_2__1 : rule__Handy__Group_2__1__Impl ;
-    public final void rule__Handy__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__3__Impl"
+    // InternalVertrag.g:590:1: rule__Handy__Group__3__Impl : ( ( rule__Handy__SystemAssignment_3 ) ) ;
+    public final void rule__Handy__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:798:1: ( rule__Handy__Group_2__1__Impl )
-            // InternalVertrag.g:799:2: rule__Handy__Group_2__1__Impl
+            // InternalVertrag.g:594:1: ( ( ( rule__Handy__SystemAssignment_3 ) ) )
+            // InternalVertrag.g:595:1: ( ( rule__Handy__SystemAssignment_3 ) )
+            {
+            // InternalVertrag.g:595:1: ( ( rule__Handy__SystemAssignment_3 ) )
+            // InternalVertrag.g:596:2: ( rule__Handy__SystemAssignment_3 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getHandyAccess().getSystemAssignment_3()); 
+            }
+            // InternalVertrag.g:597:2: ( rule__Handy__SystemAssignment_3 )
+            // InternalVertrag.g:597:3: rule__Handy__SystemAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Handy__Group_2__1__Impl();
+            rule__Handy__SystemAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getHandyAccess().getSystemAssignment_3()); 
+            }
+
+            }
+
 
             }
 
@@ -2484,30 +1858,68 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_2__1"
+    // $ANTLR end "rule__Handy__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Handy__Group_2__1__Impl"
-    // InternalVertrag.g:805:1: rule__Handy__Group_2__1__Impl : ( ( rule__Handy__SpeicherAssignment_2_1 ) ) ;
-    public final void rule__Handy__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Handy__Group__4"
+    // InternalVertrag.g:605:1: rule__Handy__Group__4 : rule__Handy__Group__4__Impl rule__Handy__Group__5 ;
+    public final void rule__Handy__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:809:1: ( ( ( rule__Handy__SpeicherAssignment_2_1 ) ) )
-            // InternalVertrag.g:810:1: ( ( rule__Handy__SpeicherAssignment_2_1 ) )
+            // InternalVertrag.g:609:1: ( rule__Handy__Group__4__Impl rule__Handy__Group__5 )
+            // InternalVertrag.g:610:2: rule__Handy__Group__4__Impl rule__Handy__Group__5
             {
-            // InternalVertrag.g:810:1: ( ( rule__Handy__SpeicherAssignment_2_1 ) )
-            // InternalVertrag.g:811:2: ( rule__Handy__SpeicherAssignment_2_1 )
+            pushFollow(FOLLOW_8);
+            rule__Handy__Group__4__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__Handy__Group__5();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Handy__Group__4"
+
+
+    // $ANTLR start "rule__Handy__Group__4__Impl"
+    // InternalVertrag.g:617:1: rule__Handy__Group__4__Impl : ( ( rule__Handy__MarkeAssignment_4 ) ) ;
+    public final void rule__Handy__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalVertrag.g:621:1: ( ( ( rule__Handy__MarkeAssignment_4 ) ) )
+            // InternalVertrag.g:622:1: ( ( rule__Handy__MarkeAssignment_4 ) )
+            {
+            // InternalVertrag.g:622:1: ( ( rule__Handy__MarkeAssignment_4 ) )
+            // InternalVertrag.g:623:2: ( rule__Handy__MarkeAssignment_4 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSpeicherAssignment_2_1()); 
+               before(grammarAccess.getHandyAccess().getMarkeAssignment_4()); 
             }
-            // InternalVertrag.g:812:2: ( rule__Handy__SpeicherAssignment_2_1 )
-            // InternalVertrag.g:812:3: rule__Handy__SpeicherAssignment_2_1
+            // InternalVertrag.g:624:2: ( rule__Handy__MarkeAssignment_4 )
+            // InternalVertrag.g:624:3: rule__Handy__MarkeAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Handy__SpeicherAssignment_2_1();
+            rule__Handy__MarkeAssignment_4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2515,7 +1927,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSpeicherAssignment_2_1()); 
+               after(grammarAccess.getHandyAccess().getMarkeAssignment_4()); 
             }
 
             }
@@ -2535,19 +1947,182 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__Group_2__1__Impl"
+    // $ANTLR end "rule__Handy__Group__4__Impl"
+
+
+    // $ANTLR start "rule__Handy__Group__5"
+    // InternalVertrag.g:632:1: rule__Handy__Group__5 : rule__Handy__Group__5__Impl rule__Handy__Group__6 ;
+    public final void rule__Handy__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalVertrag.g:636:1: ( rule__Handy__Group__5__Impl rule__Handy__Group__6 )
+            // InternalVertrag.g:637:2: rule__Handy__Group__5__Impl rule__Handy__Group__6
+            {
+            pushFollow(FOLLOW_9);
+            rule__Handy__Group__5__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__Handy__Group__6();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Handy__Group__5"
+
+
+    // $ANTLR start "rule__Handy__Group__5__Impl"
+    // InternalVertrag.g:644:1: rule__Handy__Group__5__Impl : ( ( rule__Handy__SpeicherAssignment_5 ) ) ;
+    public final void rule__Handy__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalVertrag.g:648:1: ( ( ( rule__Handy__SpeicherAssignment_5 ) ) )
+            // InternalVertrag.g:649:1: ( ( rule__Handy__SpeicherAssignment_5 ) )
+            {
+            // InternalVertrag.g:649:1: ( ( rule__Handy__SpeicherAssignment_5 ) )
+            // InternalVertrag.g:650:2: ( rule__Handy__SpeicherAssignment_5 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getHandyAccess().getSpeicherAssignment_5()); 
+            }
+            // InternalVertrag.g:651:2: ( rule__Handy__SpeicherAssignment_5 )
+            // InternalVertrag.g:651:3: rule__Handy__SpeicherAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Handy__SpeicherAssignment_5();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getHandyAccess().getSpeicherAssignment_5()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Handy__Group__5__Impl"
+
+
+    // $ANTLR start "rule__Handy__Group__6"
+    // InternalVertrag.g:659:1: rule__Handy__Group__6 : rule__Handy__Group__6__Impl ;
+    public final void rule__Handy__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalVertrag.g:663:1: ( rule__Handy__Group__6__Impl )
+            // InternalVertrag.g:664:2: rule__Handy__Group__6__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Handy__Group__6__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Handy__Group__6"
+
+
+    // $ANTLR start "rule__Handy__Group__6__Impl"
+    // InternalVertrag.g:670:1: rule__Handy__Group__6__Impl : ( '}' ) ;
+    public final void rule__Handy__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalVertrag.g:674:1: ( ( '}' ) )
+            // InternalVertrag.g:675:1: ( '}' )
+            {
+            // InternalVertrag.g:675:1: ( '}' )
+            // InternalVertrag.g:676:2: '}'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_6()); 
+            }
+            match(input,19,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_6()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Handy__Group__6__Impl"
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup"
-    // InternalVertrag.g:821:1: rule__Vertrag__UnorderedGroup : rule__Vertrag__UnorderedGroup__0 {...}?;
+    // InternalVertrag.g:686:1: rule__Vertrag__UnorderedGroup : rule__Vertrag__UnorderedGroup__0 {...}?;
     public final void rule__Vertrag__UnorderedGroup() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getVertragAccess().getUnorderedGroup());
         	
         try {
-            // InternalVertrag.g:826:1: ( rule__Vertrag__UnorderedGroup__0 {...}?)
-            // InternalVertrag.g:827:2: rule__Vertrag__UnorderedGroup__0 {...}?
+            // InternalVertrag.g:691:1: ( rule__Vertrag__UnorderedGroup__0 {...}?)
+            // InternalVertrag.g:692:2: rule__Vertrag__UnorderedGroup__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__Vertrag__UnorderedGroup__0();
@@ -2578,69 +2153,66 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__Impl"
-    // InternalVertrag.g:835:1: rule__Vertrag__UnorderedGroup__Impl : ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) ;
+    // InternalVertrag.g:700:1: rule__Vertrag__UnorderedGroup__Impl : ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) ;
     public final void rule__Vertrag__UnorderedGroup__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalVertrag.g:840:1: ( ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) )
-            // InternalVertrag.g:841:3: ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
+            // InternalVertrag.g:705:1: ( ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) )
+            // InternalVertrag.g:706:3: ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
             {
-            // InternalVertrag.g:841:3: ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
-            int alt9=6;
-            int LA9_0 = input.LA(1);
+            // InternalVertrag.g:706:3: ( ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) ) | ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
+            int alt7=5;
+            int LA7_0 = input.LA(1);
 
-            if ( LA9_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {
-                alt9=1;
+            if ( LA7_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {
+                alt7=1;
             }
-            else if ( LA9_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {
-                alt9=2;
+            else if ( LA7_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {
+                alt7=2;
             }
-            else if ( LA9_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {
-                alt9=3;
+            else if ( LA7_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {
+                alt7=3;
             }
-            else if ( LA9_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {
-                alt9=4;
+            else if ( LA7_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {
+                alt7=4;
             }
-            else if ( LA9_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {
-                alt9=5;
-            }
-            else if ( LA9_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {
-                alt9=6;
+            else if ( LA7_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {
+                alt7=5;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt7) {
                 case 1 :
-                    // InternalVertrag.g:842:3: ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) )
+                    // InternalVertrag.g:707:3: ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) )
                     {
-                    // InternalVertrag.g:842:3: ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) )
-                    // InternalVertrag.g:843:4: {...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) )
+                    // InternalVertrag.g:707:3: ({...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) ) )
+                    // InternalVertrag.g:708:4: {...}? => ( ( ( rule__Vertrag__Group_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0)");
                     }
-                    // InternalVertrag.g:843:101: ( ( ( rule__Vertrag__Group_0__0 ) ) )
-                    // InternalVertrag.g:844:5: ( ( rule__Vertrag__Group_0__0 ) )
+                    // InternalVertrag.g:708:101: ( ( ( rule__Vertrag__Group_0__0 ) ) )
+                    // InternalVertrag.g:709:5: ( ( rule__Vertrag__Group_0__0 ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 0);
                     selected = true;
-                    // InternalVertrag.g:850:5: ( ( rule__Vertrag__Group_0__0 ) )
-                    // InternalVertrag.g:851:6: ( rule__Vertrag__Group_0__0 )
+                    // InternalVertrag.g:715:5: ( ( rule__Vertrag__Group_0__0 ) )
+                    // InternalVertrag.g:716:6: ( rule__Vertrag__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_0()); 
                     }
-                    // InternalVertrag.g:852:6: ( rule__Vertrag__Group_0__0 )
-                    // InternalVertrag.g:852:7: rule__Vertrag__Group_0__0
+                    // InternalVertrag.g:717:6: ( rule__Vertrag__Group_0__0 )
+                    // InternalVertrag.g:717:7: rule__Vertrag__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Vertrag__Group_0__0();
@@ -2666,33 +2238,33 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalVertrag.g:857:3: ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) )
+                    // InternalVertrag.g:722:3: ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) )
                     {
-                    // InternalVertrag.g:857:3: ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) )
-                    // InternalVertrag.g:858:4: {...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) )
+                    // InternalVertrag.g:722:3: ({...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) ) )
+                    // InternalVertrag.g:723:4: {...}? => ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1)");
                     }
-                    // InternalVertrag.g:858:101: ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) )
-                    // InternalVertrag.g:859:5: ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) )
+                    // InternalVertrag.g:723:101: ( ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) ) )
+                    // InternalVertrag.g:724:5: ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 1);
                     selected = true;
-                    // InternalVertrag.g:865:5: ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) )
-                    // InternalVertrag.g:866:6: ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* )
+                    // InternalVertrag.g:730:5: ( ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* ) )
+                    // InternalVertrag.g:731:6: ( ( rule__Vertrag__Group_1__0 ) ) ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* )
                     {
-                    // InternalVertrag.g:866:6: ( ( rule__Vertrag__Group_1__0 ) )
-                    // InternalVertrag.g:867:7: ( rule__Vertrag__Group_1__0 )
+                    // InternalVertrag.g:731:6: ( ( rule__Vertrag__Group_1__0 ) )
+                    // InternalVertrag.g:732:7: ( rule__Vertrag__Group_1__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_1()); 
                     }
-                    // InternalVertrag.g:868:7: ( rule__Vertrag__Group_1__0 )
-                    // InternalVertrag.g:868:8: rule__Vertrag__Group_1__0
+                    // InternalVertrag.g:733:7: ( rule__Vertrag__Group_1__0 )
+                    // InternalVertrag.g:733:8: rule__Vertrag__Group_1__0
                     {
-                    pushFollow(FOLLOW_11);
+                    pushFollow(FOLLOW_10);
                     rule__Vertrag__Group_1__0();
 
                     state._fsp--;
@@ -2706,26 +2278,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                    // InternalVertrag.g:871:6: ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* )
-                    // InternalVertrag.g:872:7: ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )*
+                    // InternalVertrag.g:736:6: ( ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )* )
+                    // InternalVertrag.g:737:7: ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )*
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_1()); 
                     }
-                    // InternalVertrag.g:873:7: ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )*
-                    loop5:
+                    // InternalVertrag.g:738:7: ( ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0 )*
+                    loop4:
                     do {
-                        int alt5=2;
-                        int LA5_0 = input.LA(1);
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
 
-                        if ( (LA5_0==15) ) {
-                            int LA5_2 = input.LA(2);
+                        if ( (LA4_0==15) ) {
+                            int LA4_2 = input.LA(2);
 
-                            if ( (LA5_2==RULE_INT) ) {
-                                int LA5_3 = input.LA(3);
+                            if ( (LA4_2==RULE_ZEICHENFOLGE) ) {
+                                int LA4_3 = input.LA(3);
 
                                 if ( (synpred1_InternalVertrag()) ) {
-                                    alt5=1;
+                                    alt4=1;
                                 }
 
 
@@ -2735,11 +2307,11 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                         }
 
 
-                        switch (alt5) {
+                        switch (alt4) {
                     	case 1 :
-                    	    // InternalVertrag.g:873:8: ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0
+                    	    // InternalVertrag.g:738:8: ( rule__Vertrag__Group_1__0 )=> rule__Vertrag__Group_1__0
                     	    {
-                    	    pushFollow(FOLLOW_11);
+                    	    pushFollow(FOLLOW_10);
                     	    rule__Vertrag__Group_1__0();
 
                     	    state._fsp--;
@@ -2749,7 +2321,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     	    break;
 
                     	default :
-                    	    break loop5;
+                    	    break loop4;
                         }
                     } while (true);
 
@@ -2772,33 +2344,33 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalVertrag.g:879:3: ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) )
+                    // InternalVertrag.g:744:3: ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) )
                     {
-                    // InternalVertrag.g:879:3: ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) )
-                    // InternalVertrag.g:880:4: {...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) )
+                    // InternalVertrag.g:744:3: ({...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) ) )
+                    // InternalVertrag.g:745:4: {...}? => ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2)");
                     }
-                    // InternalVertrag.g:880:101: ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) )
-                    // InternalVertrag.g:881:5: ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) )
+                    // InternalVertrag.g:745:101: ( ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) ) )
+                    // InternalVertrag.g:746:5: ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 2);
                     selected = true;
-                    // InternalVertrag.g:887:5: ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) )
-                    // InternalVertrag.g:888:6: ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* )
+                    // InternalVertrag.g:752:5: ( ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* ) )
+                    // InternalVertrag.g:753:6: ( ( rule__Vertrag__Group_2__0 ) ) ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* )
                     {
-                    // InternalVertrag.g:888:6: ( ( rule__Vertrag__Group_2__0 ) )
-                    // InternalVertrag.g:889:7: ( rule__Vertrag__Group_2__0 )
+                    // InternalVertrag.g:753:6: ( ( rule__Vertrag__Group_2__0 ) )
+                    // InternalVertrag.g:754:7: ( rule__Vertrag__Group_2__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_2()); 
                     }
-                    // InternalVertrag.g:890:7: ( rule__Vertrag__Group_2__0 )
-                    // InternalVertrag.g:890:8: rule__Vertrag__Group_2__0
+                    // InternalVertrag.g:755:7: ( rule__Vertrag__Group_2__0 )
+                    // InternalVertrag.g:755:8: rule__Vertrag__Group_2__0
                     {
-                    pushFollow(FOLLOW_12);
+                    pushFollow(FOLLOW_11);
                     rule__Vertrag__Group_2__0();
 
                     state._fsp--;
@@ -2812,26 +2384,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                    // InternalVertrag.g:893:6: ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* )
-                    // InternalVertrag.g:894:7: ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )*
+                    // InternalVertrag.g:758:6: ( ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )* )
+                    // InternalVertrag.g:759:7: ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )*
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_2()); 
                     }
-                    // InternalVertrag.g:895:7: ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )*
-                    loop6:
+                    // InternalVertrag.g:760:7: ( ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0 )*
+                    loop5:
                     do {
-                        int alt6=2;
-                        int LA6_0 = input.LA(1);
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
 
-                        if ( (LA6_0==16) ) {
-                            int LA6_2 = input.LA(2);
+                        if ( (LA5_0==16) ) {
+                            int LA5_2 = input.LA(2);
 
-                            if ( (LA6_2==RULE_FLOAT) ) {
-                                int LA6_3 = input.LA(3);
+                            if ( (LA5_2==RULE_ZEICHENFOLGE) ) {
+                                int LA5_3 = input.LA(3);
 
                                 if ( (synpred2_InternalVertrag()) ) {
-                                    alt6=1;
+                                    alt5=1;
                                 }
 
 
@@ -2841,11 +2413,11 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                         }
 
 
-                        switch (alt6) {
+                        switch (alt5) {
                     	case 1 :
-                    	    // InternalVertrag.g:895:8: ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0
+                    	    // InternalVertrag.g:760:8: ( rule__Vertrag__Group_2__0 )=> rule__Vertrag__Group_2__0
                     	    {
-                    	    pushFollow(FOLLOW_12);
+                    	    pushFollow(FOLLOW_11);
                     	    rule__Vertrag__Group_2__0();
 
                     	    state._fsp--;
@@ -2855,7 +2427,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     	    break;
 
                     	default :
-                    	    break loop6;
+                    	    break loop5;
                         }
                     } while (true);
 
@@ -2878,33 +2450,33 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalVertrag.g:901:3: ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) )
+                    // InternalVertrag.g:766:3: ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) )
                     {
-                    // InternalVertrag.g:901:3: ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) )
-                    // InternalVertrag.g:902:4: {...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) )
+                    // InternalVertrag.g:766:3: ({...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) ) )
+                    // InternalVertrag.g:767:4: {...}? => ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3)");
                     }
-                    // InternalVertrag.g:902:101: ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) )
-                    // InternalVertrag.g:903:5: ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) )
+                    // InternalVertrag.g:767:101: ( ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) ) )
+                    // InternalVertrag.g:768:5: ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 3);
                     selected = true;
-                    // InternalVertrag.g:909:5: ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) )
-                    // InternalVertrag.g:910:6: ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* )
+                    // InternalVertrag.g:774:5: ( ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* ) )
+                    // InternalVertrag.g:775:6: ( ( rule__Vertrag__Group_3__0 ) ) ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* )
                     {
-                    // InternalVertrag.g:910:6: ( ( rule__Vertrag__Group_3__0 ) )
-                    // InternalVertrag.g:911:7: ( rule__Vertrag__Group_3__0 )
+                    // InternalVertrag.g:775:6: ( ( rule__Vertrag__Group_3__0 ) )
+                    // InternalVertrag.g:776:7: ( rule__Vertrag__Group_3__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_3()); 
                     }
-                    // InternalVertrag.g:912:7: ( rule__Vertrag__Group_3__0 )
-                    // InternalVertrag.g:912:8: rule__Vertrag__Group_3__0
+                    // InternalVertrag.g:777:7: ( rule__Vertrag__Group_3__0 )
+                    // InternalVertrag.g:777:8: rule__Vertrag__Group_3__0
                     {
-                    pushFollow(FOLLOW_13);
+                    pushFollow(FOLLOW_12);
                     rule__Vertrag__Group_3__0();
 
                     state._fsp--;
@@ -2918,26 +2490,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                    // InternalVertrag.g:915:6: ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* )
-                    // InternalVertrag.g:916:7: ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )*
+                    // InternalVertrag.g:780:6: ( ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )* )
+                    // InternalVertrag.g:781:7: ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )*
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVertragAccess().getGroup_3()); 
                     }
-                    // InternalVertrag.g:917:7: ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )*
-                    loop7:
+                    // InternalVertrag.g:782:7: ( ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0 )*
+                    loop6:
                     do {
-                        int alt7=2;
-                        int LA7_0 = input.LA(1);
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
 
-                        if ( (LA7_0==17) ) {
-                            int LA7_2 = input.LA(2);
+                        if ( (LA6_0==17) ) {
+                            int LA6_2 = input.LA(2);
 
-                            if ( (LA7_2==RULE_ID) ) {
-                                int LA7_3 = input.LA(3);
+                            if ( (LA6_2==RULE_ZEICHENFOLGE) ) {
+                                int LA6_3 = input.LA(3);
 
                                 if ( (synpred3_InternalVertrag()) ) {
-                                    alt7=1;
+                                    alt6=1;
                                 }
 
 
@@ -2947,11 +2519,11 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                         }
 
 
-                        switch (alt7) {
+                        switch (alt6) {
                     	case 1 :
-                    	    // InternalVertrag.g:917:8: ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0
+                    	    // InternalVertrag.g:782:8: ( rule__Vertrag__Group_3__0 )=> rule__Vertrag__Group_3__0
                     	    {
-                    	    pushFollow(FOLLOW_13);
+                    	    pushFollow(FOLLOW_12);
                     	    rule__Vertrag__Group_3__0();
 
                     	    state._fsp--;
@@ -2961,7 +2533,7 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     	    break;
 
                     	default :
-                    	    break loop7;
+                    	    break loop6;
                         }
                     } while (true);
 
@@ -2984,141 +2556,35 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalVertrag.g:923:3: ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) )
+                    // InternalVertrag.g:788:3: ({...}? => ( ( ( '}' ) ) ) )
                     {
-                    // InternalVertrag.g:923:3: ({...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) ) )
-                    // InternalVertrag.g:924:4: {...}? => ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) )
+                    // InternalVertrag.g:788:3: ({...}? => ( ( ( '}' ) ) ) )
+                    // InternalVertrag.g:789:4: {...}? => ( ( ( '}' ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4)");
                     }
-                    // InternalVertrag.g:924:101: ( ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) ) )
-                    // InternalVertrag.g:925:5: ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) )
+                    // InternalVertrag.g:789:101: ( ( ( '}' ) ) )
+                    // InternalVertrag.g:790:5: ( ( '}' ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 4);
                     selected = true;
-                    // InternalVertrag.g:931:5: ( ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* ) )
-                    // InternalVertrag.g:932:6: ( ( rule__Vertrag__Group_4__0 ) ) ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* )
-                    {
-                    // InternalVertrag.g:932:6: ( ( rule__Vertrag__Group_4__0 ) )
-                    // InternalVertrag.g:933:7: ( rule__Vertrag__Group_4__0 )
+                    // InternalVertrag.g:796:5: ( ( '}' ) )
+                    // InternalVertrag.g:797:6: ( '}' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getVertragAccess().getGroup_4()); 
+                       before(grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4()); 
                     }
-                    // InternalVertrag.g:934:7: ( rule__Vertrag__Group_4__0 )
-                    // InternalVertrag.g:934:8: rule__Vertrag__Group_4__0
+                    // InternalVertrag.g:798:6: ( '}' )
+                    // InternalVertrag.g:798:7: '}'
                     {
-                    pushFollow(FOLLOW_14);
-                    rule__Vertrag__Group_4__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
+                    match(input,19,FOLLOW_2); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getVertragAccess().getGroup_4()); 
-                    }
-
-                    }
-
-                    // InternalVertrag.g:937:6: ( ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )* )
-                    // InternalVertrag.g:938:7: ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )*
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getVertragAccess().getGroup_4()); 
-                    }
-                    // InternalVertrag.g:939:7: ( ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0 )*
-                    loop8:
-                    do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
-
-                        if ( (LA8_0==18) ) {
-                            int LA8_2 = input.LA(2);
-
-                            if ( (LA8_2==RULE_ID) ) {
-                                int LA8_3 = input.LA(3);
-
-                                if ( (synpred4_InternalVertrag()) ) {
-                                    alt8=1;
-                                }
-
-
-                            }
-
-
-                        }
-
-
-                        switch (alt8) {
-                    	case 1 :
-                    	    // InternalVertrag.g:939:8: ( rule__Vertrag__Group_4__0 )=> rule__Vertrag__Group_4__0
-                    	    {
-                    	    pushFollow(FOLLOW_14);
-                    	    rule__Vertrag__Group_4__0();
-
-                    	    state._fsp--;
-                    	    if (state.failed) return ;
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop8;
-                        }
-                    } while (true);
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getVertragAccess().getGroup_4()); 
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalVertrag.g:945:3: ({...}? => ( ( ( '}' ) ) ) )
-                    {
-                    // InternalVertrag.g:945:3: ({...}? => ( ( ( '}' ) ) ) )
-                    // InternalVertrag.g:946:4: {...}? => ( ( ( '}' ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {
-                        if (state.backtracking>0) {state.failed=true; return ;}
-                        throw new FailedPredicateException(input, "rule__Vertrag__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5)");
-                    }
-                    // InternalVertrag.g:946:101: ( ( ( '}' ) ) )
-                    // InternalVertrag.g:947:5: ( ( '}' ) )
-                    {
-                    getUnorderedGroupHelper().select(grammarAccess.getVertragAccess().getUnorderedGroup(), 5);
-                    selected = true;
-                    // InternalVertrag.g:953:5: ( ( '}' ) )
-                    // InternalVertrag.g:954:6: ( '}' )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_5()); 
-                    }
-                    // InternalVertrag.g:955:6: ( '}' )
-                    // InternalVertrag.g:955:7: '}'
-                    {
-                    match(input,23,FOLLOW_2); if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_5()); 
+                       after(grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4()); 
                     }
 
                     }
@@ -3156,26 +2622,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__0"
-    // InternalVertrag.g:968:1: rule__Vertrag__UnorderedGroup__0 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )? ;
+    // InternalVertrag.g:811:1: rule__Vertrag__UnorderedGroup__0 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )? ;
     public final void rule__Vertrag__UnorderedGroup__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:972:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )? )
-            // InternalVertrag.g:973:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )?
+            // InternalVertrag.g:815:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )? )
+            // InternalVertrag.g:816:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__1 )?
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Vertrag__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalVertrag.g:974:2: ( rule__Vertrag__UnorderedGroup__1 )?
-            int alt10=2;
-            alt10 = dfa10.predict(input);
-            switch (alt10) {
+            // InternalVertrag.g:817:2: ( rule__Vertrag__UnorderedGroup__1 )?
+            int alt8=2;
+            alt8 = dfa8.predict(input);
+            switch (alt8) {
                 case 1 :
-                    // InternalVertrag.g:974:2: rule__Vertrag__UnorderedGroup__1
+                    // InternalVertrag.g:817:2: rule__Vertrag__UnorderedGroup__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Vertrag__UnorderedGroup__1();
@@ -3207,26 +2673,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__1"
-    // InternalVertrag.g:980:1: rule__Vertrag__UnorderedGroup__1 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )? ;
+    // InternalVertrag.g:823:1: rule__Vertrag__UnorderedGroup__1 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )? ;
     public final void rule__Vertrag__UnorderedGroup__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:984:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )? )
-            // InternalVertrag.g:985:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )?
+            // InternalVertrag.g:827:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )? )
+            // InternalVertrag.g:828:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__2 )?
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Vertrag__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalVertrag.g:986:2: ( rule__Vertrag__UnorderedGroup__2 )?
-            int alt11=2;
-            alt11 = dfa11.predict(input);
-            switch (alt11) {
+            // InternalVertrag.g:829:2: ( rule__Vertrag__UnorderedGroup__2 )?
+            int alt9=2;
+            alt9 = dfa9.predict(input);
+            switch (alt9) {
                 case 1 :
-                    // InternalVertrag.g:986:2: rule__Vertrag__UnorderedGroup__2
+                    // InternalVertrag.g:829:2: rule__Vertrag__UnorderedGroup__2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Vertrag__UnorderedGroup__2();
@@ -3258,26 +2724,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__2"
-    // InternalVertrag.g:992:1: rule__Vertrag__UnorderedGroup__2 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )? ;
+    // InternalVertrag.g:835:1: rule__Vertrag__UnorderedGroup__2 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )? ;
     public final void rule__Vertrag__UnorderedGroup__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:996:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )? )
-            // InternalVertrag.g:997:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )?
+            // InternalVertrag.g:839:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )? )
+            // InternalVertrag.g:840:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__3 )?
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Vertrag__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalVertrag.g:998:2: ( rule__Vertrag__UnorderedGroup__3 )?
-            int alt12=2;
-            alt12 = dfa12.predict(input);
-            switch (alt12) {
+            // InternalVertrag.g:841:2: ( rule__Vertrag__UnorderedGroup__3 )?
+            int alt10=2;
+            alt10 = dfa10.predict(input);
+            switch (alt10) {
                 case 1 :
-                    // InternalVertrag.g:998:2: rule__Vertrag__UnorderedGroup__3
+                    // InternalVertrag.g:841:2: rule__Vertrag__UnorderedGroup__3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Vertrag__UnorderedGroup__3();
@@ -3309,26 +2775,26 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__3"
-    // InternalVertrag.g:1004:1: rule__Vertrag__UnorderedGroup__3 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )? ;
+    // InternalVertrag.g:847:1: rule__Vertrag__UnorderedGroup__3 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )? ;
     public final void rule__Vertrag__UnorderedGroup__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1008:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )? )
-            // InternalVertrag.g:1009:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )?
+            // InternalVertrag.g:851:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )? )
+            // InternalVertrag.g:852:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__4 )?
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Vertrag__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalVertrag.g:1010:2: ( rule__Vertrag__UnorderedGroup__4 )?
-            int alt13=2;
-            alt13 = dfa13.predict(input);
-            switch (alt13) {
+            // InternalVertrag.g:853:2: ( rule__Vertrag__UnorderedGroup__4 )?
+            int alt11=2;
+            alt11 = dfa11.predict(input);
+            switch (alt11) {
                 case 1 :
-                    // InternalVertrag.g:1010:2: rule__Vertrag__UnorderedGroup__4
+                    // InternalVertrag.g:853:2: rule__Vertrag__UnorderedGroup__4
                     {
                     pushFollow(FOLLOW_2);
                     rule__Vertrag__UnorderedGroup__4();
@@ -3360,38 +2826,20 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__UnorderedGroup__4"
-    // InternalVertrag.g:1016:1: rule__Vertrag__UnorderedGroup__4 : rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__5 )? ;
+    // InternalVertrag.g:859:1: rule__Vertrag__UnorderedGroup__4 : rule__Vertrag__UnorderedGroup__Impl ;
     public final void rule__Vertrag__UnorderedGroup__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1020:1: ( rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__5 )? )
-            // InternalVertrag.g:1021:2: rule__Vertrag__UnorderedGroup__Impl ( rule__Vertrag__UnorderedGroup__5 )?
+            // InternalVertrag.g:863:1: ( rule__Vertrag__UnorderedGroup__Impl )
+            // InternalVertrag.g:864:2: rule__Vertrag__UnorderedGroup__Impl
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_2);
             rule__Vertrag__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalVertrag.g:1022:2: ( rule__Vertrag__UnorderedGroup__5 )?
-            int alt14=2;
-            alt14 = dfa14.predict(input);
-            switch (alt14) {
-                case 1 :
-                    // InternalVertrag.g:1022:2: rule__Vertrag__UnorderedGroup__5
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Vertrag__UnorderedGroup__5();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
 
             }
 
@@ -3410,518 +2858,18 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Vertrag__UnorderedGroup__4"
 
 
-    // $ANTLR start "rule__Vertrag__UnorderedGroup__5"
-    // InternalVertrag.g:1028:1: rule__Vertrag__UnorderedGroup__5 : rule__Vertrag__UnorderedGroup__Impl ;
-    public final void rule__Vertrag__UnorderedGroup__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1032:1: ( rule__Vertrag__UnorderedGroup__Impl )
-            // InternalVertrag.g:1033:2: rule__Vertrag__UnorderedGroup__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Vertrag__UnorderedGroup__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Vertrag__UnorderedGroup__5"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup"
-    // InternalVertrag.g:1040:1: rule__Handy__UnorderedGroup : rule__Handy__UnorderedGroup__0 {...}?;
-    public final void rule__Handy__UnorderedGroup() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        		getUnorderedGroupHelper().enter(grammarAccess.getHandyAccess().getUnorderedGroup());
-        	
-        try {
-            // InternalVertrag.g:1045:1: ( rule__Handy__UnorderedGroup__0 {...}?)
-            // InternalVertrag.g:1046:2: rule__Handy__UnorderedGroup__0 {...}?
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__UnorderedGroup__0();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {
-                if (state.backtracking>0) {state.failed=true; return ;}
-                throw new FailedPredicateException(input, "rule__Handy__UnorderedGroup", "getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup())");
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	getUnorderedGroupHelper().leave(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup__Impl"
-    // InternalVertrag.g:1054:1: rule__Handy__UnorderedGroup__Impl : ( ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) ;
-    public final void rule__Handy__UnorderedGroup__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        		boolean selected = false;
-        	
-        try {
-            // InternalVertrag.g:1059:1: ( ( ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) ) )
-            // InternalVertrag.g:1060:3: ( ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
-            {
-            // InternalVertrag.g:1060:3: ( ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) ) | ({...}? => ( ( ( '}' ) ) ) ) )
-            int alt15=4;
-            int LA15_0 = input.LA(1);
-
-            if ( LA15_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {
-                alt15=1;
-            }
-            else if ( LA15_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {
-                alt15=2;
-            }
-            else if ( LA15_0 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {
-                alt15=3;
-            }
-            else if ( LA15_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {
-                alt15=4;
-            }
-            else {
-                if (state.backtracking>0) {state.failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
-
-                throw nvae;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalVertrag.g:1061:3: ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) )
-                    {
-                    // InternalVertrag.g:1061:3: ({...}? => ( ( ( rule__Handy__Group_0__0 ) ) ) )
-                    // InternalVertrag.g:1062:4: {...}? => ( ( ( rule__Handy__Group_0__0 ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {
-                        if (state.backtracking>0) {state.failed=true; return ;}
-                        throw new FailedPredicateException(input, "rule__Handy__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0)");
-                    }
-                    // InternalVertrag.g:1062:99: ( ( ( rule__Handy__Group_0__0 ) ) )
-                    // InternalVertrag.g:1063:5: ( ( rule__Handy__Group_0__0 ) )
-                    {
-                    getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 0);
-                    selected = true;
-                    // InternalVertrag.g:1069:5: ( ( rule__Handy__Group_0__0 ) )
-                    // InternalVertrag.g:1070:6: ( rule__Handy__Group_0__0 )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getHandyAccess().getGroup_0()); 
-                    }
-                    // InternalVertrag.g:1071:6: ( rule__Handy__Group_0__0 )
-                    // InternalVertrag.g:1071:7: rule__Handy__Group_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__Group_0__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getHandyAccess().getGroup_0()); 
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalVertrag.g:1076:3: ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) )
-                    {
-                    // InternalVertrag.g:1076:3: ({...}? => ( ( ( rule__Handy__Group_1__0 ) ) ) )
-                    // InternalVertrag.g:1077:4: {...}? => ( ( ( rule__Handy__Group_1__0 ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {
-                        if (state.backtracking>0) {state.failed=true; return ;}
-                        throw new FailedPredicateException(input, "rule__Handy__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1)");
-                    }
-                    // InternalVertrag.g:1077:99: ( ( ( rule__Handy__Group_1__0 ) ) )
-                    // InternalVertrag.g:1078:5: ( ( rule__Handy__Group_1__0 ) )
-                    {
-                    getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 1);
-                    selected = true;
-                    // InternalVertrag.g:1084:5: ( ( rule__Handy__Group_1__0 ) )
-                    // InternalVertrag.g:1085:6: ( rule__Handy__Group_1__0 )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getHandyAccess().getGroup_1()); 
-                    }
-                    // InternalVertrag.g:1086:6: ( rule__Handy__Group_1__0 )
-                    // InternalVertrag.g:1086:7: rule__Handy__Group_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__Group_1__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getHandyAccess().getGroup_1()); 
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalVertrag.g:1091:3: ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) )
-                    {
-                    // InternalVertrag.g:1091:3: ({...}? => ( ( ( rule__Handy__Group_2__0 ) ) ) )
-                    // InternalVertrag.g:1092:4: {...}? => ( ( ( rule__Handy__Group_2__0 ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {
-                        if (state.backtracking>0) {state.failed=true; return ;}
-                        throw new FailedPredicateException(input, "rule__Handy__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2)");
-                    }
-                    // InternalVertrag.g:1092:99: ( ( ( rule__Handy__Group_2__0 ) ) )
-                    // InternalVertrag.g:1093:5: ( ( rule__Handy__Group_2__0 ) )
-                    {
-                    getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 2);
-                    selected = true;
-                    // InternalVertrag.g:1099:5: ( ( rule__Handy__Group_2__0 ) )
-                    // InternalVertrag.g:1100:6: ( rule__Handy__Group_2__0 )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getHandyAccess().getGroup_2()); 
-                    }
-                    // InternalVertrag.g:1101:6: ( rule__Handy__Group_2__0 )
-                    // InternalVertrag.g:1101:7: rule__Handy__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__Group_2__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getHandyAccess().getGroup_2()); 
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalVertrag.g:1106:3: ({...}? => ( ( ( '}' ) ) ) )
-                    {
-                    // InternalVertrag.g:1106:3: ({...}? => ( ( ( '}' ) ) ) )
-                    // InternalVertrag.g:1107:4: {...}? => ( ( ( '}' ) ) )
-                    {
-                    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {
-                        if (state.backtracking>0) {state.failed=true; return ;}
-                        throw new FailedPredicateException(input, "rule__Handy__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3)");
-                    }
-                    // InternalVertrag.g:1107:99: ( ( ( '}' ) ) )
-                    // InternalVertrag.g:1108:5: ( ( '}' ) )
-                    {
-                    getUnorderedGroupHelper().select(grammarAccess.getHandyAccess().getUnorderedGroup(), 3);
-                    selected = true;
-                    // InternalVertrag.g:1114:5: ( ( '}' ) )
-                    // InternalVertrag.g:1115:6: ( '}' )
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_3()); 
-                    }
-                    // InternalVertrag.g:1116:6: ( '}' )
-                    // InternalVertrag.g:1116:7: '}'
-                    {
-                    match(input,23,FOLLOW_2); if (state.failed) return ;
-
-                    }
-
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getHandyAccess().getRightCurlyBracketKeyword_3()); 
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	if (selected)
-            		getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHandyAccess().getUnorderedGroup());
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup__Impl"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup__0"
-    // InternalVertrag.g:1129:1: rule__Handy__UnorderedGroup__0 : rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__1 )? ;
-    public final void rule__Handy__UnorderedGroup__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1133:1: ( rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__1 )? )
-            // InternalVertrag.g:1134:2: rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__1 )?
-            {
-            pushFollow(FOLLOW_3);
-            rule__Handy__UnorderedGroup__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            // InternalVertrag.g:1135:2: ( rule__Handy__UnorderedGroup__1 )?
-            int alt16=2;
-            alt16 = dfa16.predict(input);
-            switch (alt16) {
-                case 1 :
-                    // InternalVertrag.g:1135:2: rule__Handy__UnorderedGroup__1
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__UnorderedGroup__1();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup__0"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup__1"
-    // InternalVertrag.g:1141:1: rule__Handy__UnorderedGroup__1 : rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__2 )? ;
-    public final void rule__Handy__UnorderedGroup__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1145:1: ( rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__2 )? )
-            // InternalVertrag.g:1146:2: rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__2 )?
-            {
-            pushFollow(FOLLOW_3);
-            rule__Handy__UnorderedGroup__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            // InternalVertrag.g:1147:2: ( rule__Handy__UnorderedGroup__2 )?
-            int alt17=2;
-            alt17 = dfa17.predict(input);
-            switch (alt17) {
-                case 1 :
-                    // InternalVertrag.g:1147:2: rule__Handy__UnorderedGroup__2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__UnorderedGroup__2();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup__1"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup__2"
-    // InternalVertrag.g:1153:1: rule__Handy__UnorderedGroup__2 : rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__3 )? ;
-    public final void rule__Handy__UnorderedGroup__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1157:1: ( rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__3 )? )
-            // InternalVertrag.g:1158:2: rule__Handy__UnorderedGroup__Impl ( rule__Handy__UnorderedGroup__3 )?
-            {
-            pushFollow(FOLLOW_3);
-            rule__Handy__UnorderedGroup__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            // InternalVertrag.g:1159:2: ( rule__Handy__UnorderedGroup__3 )?
-            int alt18=2;
-            alt18 = dfa18.predict(input);
-            switch (alt18) {
-                case 1 :
-                    // InternalVertrag.g:1159:2: rule__Handy__UnorderedGroup__3
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Handy__UnorderedGroup__3();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup__2"
-
-
-    // $ANTLR start "rule__Handy__UnorderedGroup__3"
-    // InternalVertrag.g:1165:1: rule__Handy__UnorderedGroup__3 : rule__Handy__UnorderedGroup__Impl ;
-    public final void rule__Handy__UnorderedGroup__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1169:1: ( rule__Handy__UnorderedGroup__Impl )
-            // InternalVertrag.g:1170:2: rule__Handy__UnorderedGroup__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Handy__UnorderedGroup__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__UnorderedGroup__3"
-
-
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalVertrag.g:1177:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
+    // InternalVertrag.g:871:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1181:1: ( ( ruleElement ) )
-            // InternalVertrag.g:1182:2: ( ruleElement )
+            // InternalVertrag.g:875:1: ( ( ruleElement ) )
+            // InternalVertrag.g:876:2: ( ruleElement )
             {
-            // InternalVertrag.g:1182:2: ( ruleElement )
-            // InternalVertrag.g:1183:3: ruleElement
+            // InternalVertrag.g:876:2: ( ruleElement )
+            // InternalVertrag.g:877:3: ruleElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getElementsElementParserRuleCall_0()); 
@@ -3956,24 +2904,24 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__NameAssignment_0_1"
-    // InternalVertrag.g:1192:1: rule__Vertrag__NameAssignment_0_1 : ( RULE_ID ) ;
+    // InternalVertrag.g:886:1: rule__Vertrag__NameAssignment_0_1 : ( RULE_ZEICHENFOLGE ) ;
     public final void rule__Vertrag__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1196:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1197:2: ( RULE_ID )
+            // InternalVertrag.g:890:1: ( ( RULE_ZEICHENFOLGE ) )
+            // InternalVertrag.g:891:2: ( RULE_ZEICHENFOLGE )
             {
-            // InternalVertrag.g:1197:2: ( RULE_ID )
-            // InternalVertrag.g:1198:3: RULE_ID
+            // InternalVertrag.g:891:2: ( RULE_ZEICHENFOLGE )
+            // InternalVertrag.g:892:3: RULE_ZEICHENFOLGE
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getNameIDTerminalRuleCall_0_1_0()); 
+               before(grammarAccess.getVertragAccess().getNameZEICHENFOLGETerminalRuleCall_0_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_ZEICHENFOLGE,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getNameIDTerminalRuleCall_0_1_0()); 
+               after(grammarAccess.getVertragAccess().getNameZEICHENFOLGETerminalRuleCall_0_1_0()); 
             }
 
             }
@@ -3996,25 +2944,25 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Vertrag__NameAssignment_0_1"
 
 
-    // $ANTLR start "rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1"
-    // InternalVertrag.g:1207:1: rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1 : ( RULE_INT ) ;
-    public final void rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Vertrag__DatenvolumenAssignment_0_3_1"
+    // InternalVertrag.g:901:1: rule__Vertrag__DatenvolumenAssignment_0_3_1 : ( RULE_ZEICHENFOLGE ) ;
+    public final void rule__Vertrag__DatenvolumenAssignment_0_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1211:1: ( ( RULE_INT ) )
-            // InternalVertrag.g:1212:2: ( RULE_INT )
+            // InternalVertrag.g:905:1: ( ( RULE_ZEICHENFOLGE ) )
+            // InternalVertrag.g:906:2: ( RULE_ZEICHENFOLGE )
             {
-            // InternalVertrag.g:1212:2: ( RULE_INT )
-            // InternalVertrag.g:1213:3: RULE_INT
+            // InternalVertrag.g:906:2: ( RULE_ZEICHENFOLGE )
+            // InternalVertrag.g:907:3: RULE_ZEICHENFOLGE
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0()); 
+               before(grammarAccess.getVertragAccess().getDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_ZEICHENFOLGE,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0()); 
+               after(grammarAccess.getVertragAccess().getDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0()); 
             }
 
             }
@@ -4034,28 +2982,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Vertrag__MindestvertragslaufzeitAssignment_0_3_1"
+    // $ANTLR end "rule__Vertrag__DatenvolumenAssignment_0_3_1"
 
 
-    // $ANTLR start "rule__Vertrag__DatenvolumenAssignment_1_1"
-    // InternalVertrag.g:1222:1: rule__Vertrag__DatenvolumenAssignment_1_1 : ( RULE_INT ) ;
-    public final void rule__Vertrag__DatenvolumenAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Vertrag__MindestvertragslaufzeitAssignment_1_1"
+    // InternalVertrag.g:916:1: rule__Vertrag__MindestvertragslaufzeitAssignment_1_1 : ( RULE_ZEICHENFOLGE ) ;
+    public final void rule__Vertrag__MindestvertragslaufzeitAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1226:1: ( ( RULE_INT ) )
-            // InternalVertrag.g:1227:2: ( RULE_INT )
+            // InternalVertrag.g:920:1: ( ( RULE_ZEICHENFOLGE ) )
+            // InternalVertrag.g:921:2: ( RULE_ZEICHENFOLGE )
             {
-            // InternalVertrag.g:1227:2: ( RULE_INT )
-            // InternalVertrag.g:1228:3: RULE_INT
+            // InternalVertrag.g:921:2: ( RULE_ZEICHENFOLGE )
+            // InternalVertrag.g:922:3: RULE_ZEICHENFOLGE
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getDatenvolumenINTTerminalRuleCall_1_1_0()); 
+               before(grammarAccess.getVertragAccess().getMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_ZEICHENFOLGE,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getDatenvolumenINTTerminalRuleCall_1_1_0()); 
+               after(grammarAccess.getVertragAccess().getMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0()); 
             }
 
             }
@@ -4075,28 +3023,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Vertrag__DatenvolumenAssignment_1_1"
+    // $ANTLR end "rule__Vertrag__MindestvertragslaufzeitAssignment_1_1"
 
 
     // $ANTLR start "rule__Vertrag__Monatl_kostenAssignment_2_1"
-    // InternalVertrag.g:1237:1: rule__Vertrag__Monatl_kostenAssignment_2_1 : ( RULE_FLOAT ) ;
+    // InternalVertrag.g:931:1: rule__Vertrag__Monatl_kostenAssignment_2_1 : ( RULE_ZEICHENFOLGE ) ;
     public final void rule__Vertrag__Monatl_kostenAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1241:1: ( ( RULE_FLOAT ) )
-            // InternalVertrag.g:1242:2: ( RULE_FLOAT )
+            // InternalVertrag.g:935:1: ( ( RULE_ZEICHENFOLGE ) )
+            // InternalVertrag.g:936:2: ( RULE_ZEICHENFOLGE )
             {
-            // InternalVertrag.g:1242:2: ( RULE_FLOAT )
-            // InternalVertrag.g:1243:3: RULE_FLOAT
+            // InternalVertrag.g:936:2: ( RULE_ZEICHENFOLGE )
+            // InternalVertrag.g:937:3: RULE_ZEICHENFOLGE
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getMonatl_kostenFLOATTerminalRuleCall_2_1_0()); 
+               before(grammarAccess.getVertragAccess().getMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0()); 
             }
-            match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_ZEICHENFOLGE,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getMonatl_kostenFLOATTerminalRuleCall_2_1_0()); 
+               after(grammarAccess.getVertragAccess().getMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0()); 
             }
 
             }
@@ -4120,24 +3068,24 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Vertrag__NetzanbieterAssignment_3_1"
-    // InternalVertrag.g:1252:1: rule__Vertrag__NetzanbieterAssignment_3_1 : ( RULE_ID ) ;
+    // InternalVertrag.g:946:1: rule__Vertrag__NetzanbieterAssignment_3_1 : ( RULE_ZEICHENFOLGE ) ;
     public final void rule__Vertrag__NetzanbieterAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1256:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1257:2: ( RULE_ID )
+            // InternalVertrag.g:950:1: ( ( RULE_ZEICHENFOLGE ) )
+            // InternalVertrag.g:951:2: ( RULE_ZEICHENFOLGE )
             {
-            // InternalVertrag.g:1257:2: ( RULE_ID )
-            // InternalVertrag.g:1258:3: RULE_ID
+            // InternalVertrag.g:951:2: ( RULE_ZEICHENFOLGE )
+            // InternalVertrag.g:952:3: RULE_ZEICHENFOLGE
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getNetzanbieterIDTerminalRuleCall_3_1_0()); 
+               before(grammarAccess.getVertragAccess().getNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            match(input,RULE_ZEICHENFOLGE,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getNetzanbieterIDTerminalRuleCall_3_1_0()); 
+               after(grammarAccess.getVertragAccess().getNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0()); 
             }
 
             }
@@ -4160,25 +3108,25 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Vertrag__NetzanbieterAssignment_3_1"
 
 
-    // $ANTLR start "rule__Vertrag__InternetseiteAssignment_4_1"
-    // InternalVertrag.g:1267:1: rule__Vertrag__InternetseiteAssignment_4_1 : ( RULE_ID ) ;
-    public final void rule__Vertrag__InternetseiteAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Handy__NameAssignment_1"
+    // InternalVertrag.g:961:1: rule__Handy__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Handy__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1271:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1272:2: ( RULE_ID )
+            // InternalVertrag.g:965:1: ( ( RULE_ID ) )
+            // InternalVertrag.g:966:2: ( RULE_ID )
             {
-            // InternalVertrag.g:1272:2: ( RULE_ID )
-            // InternalVertrag.g:1273:3: RULE_ID
+            // InternalVertrag.g:966:2: ( RULE_ID )
+            // InternalVertrag.g:967:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVertragAccess().getInternetseiteIDTerminalRuleCall_4_1_0()); 
+               before(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVertragAccess().getInternetseiteIDTerminalRuleCall_4_1_0()); 
+               after(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0()); 
             }
 
             }
@@ -4198,28 +3146,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Vertrag__InternetseiteAssignment_4_1"
+    // $ANTLR end "rule__Handy__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Handy__NameAssignment_0_1"
-    // InternalVertrag.g:1282:1: rule__Handy__NameAssignment_0_1 : ( RULE_ID ) ;
-    public final void rule__Handy__NameAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Handy__SystemAssignment_3"
+    // InternalVertrag.g:976:1: rule__Handy__SystemAssignment_3 : ( RULE_ID ) ;
+    public final void rule__Handy__SystemAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1286:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1287:2: ( RULE_ID )
+            // InternalVertrag.g:980:1: ( ( RULE_ID ) )
+            // InternalVertrag.g:981:2: ( RULE_ID )
             {
-            // InternalVertrag.g:1287:2: ( RULE_ID )
-            // InternalVertrag.g:1288:3: RULE_ID
+            // InternalVertrag.g:981:2: ( RULE_ID )
+            // InternalVertrag.g:982:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_0_1_0()); 
+               before(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_0_1_0()); 
+               after(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0()); 
             }
 
             }
@@ -4239,28 +3187,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__NameAssignment_0_1"
+    // $ANTLR end "rule__Handy__SystemAssignment_3"
 
 
-    // $ANTLR start "rule__Handy__SystemAssignment_0_3_1"
-    // InternalVertrag.g:1297:1: rule__Handy__SystemAssignment_0_3_1 : ( RULE_ID ) ;
-    public final void rule__Handy__SystemAssignment_0_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Handy__MarkeAssignment_4"
+    // InternalVertrag.g:991:1: rule__Handy__MarkeAssignment_4 : ( RULE_ID ) ;
+    public final void rule__Handy__MarkeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1301:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1302:2: ( RULE_ID )
+            // InternalVertrag.g:995:1: ( ( RULE_ID ) )
+            // InternalVertrag.g:996:2: ( RULE_ID )
             {
-            // InternalVertrag.g:1302:2: ( RULE_ID )
-            // InternalVertrag.g:1303:3: RULE_ID
+            // InternalVertrag.g:996:2: ( RULE_ID )
+            // InternalVertrag.g:997:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_0_3_1_0()); 
+               before(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_0_3_1_0()); 
+               after(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0()); 
             }
 
             }
@@ -4280,28 +3228,28 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__SystemAssignment_0_3_1"
+    // $ANTLR end "rule__Handy__MarkeAssignment_4"
 
 
-    // $ANTLR start "rule__Handy__MarkeAssignment_1_1"
-    // InternalVertrag.g:1312:1: rule__Handy__MarkeAssignment_1_1 : ( RULE_ID ) ;
-    public final void rule__Handy__MarkeAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Handy__SpeicherAssignment_5"
+    // InternalVertrag.g:1006:1: rule__Handy__SpeicherAssignment_5 : ( RULE_ID ) ;
+    public final void rule__Handy__SpeicherAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVertrag.g:1316:1: ( ( RULE_ID ) )
-            // InternalVertrag.g:1317:2: ( RULE_ID )
+            // InternalVertrag.g:1010:1: ( ( RULE_ID ) )
+            // InternalVertrag.g:1011:2: ( RULE_ID )
             {
-            // InternalVertrag.g:1317:2: ( RULE_ID )
-            // InternalVertrag.g:1318:3: RULE_ID
+            // InternalVertrag.g:1011:2: ( RULE_ID )
+            // InternalVertrag.g:1012:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_1_1_0()); 
+               before(grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_1_1_0()); 
+               after(grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0()); 
             }
 
             }
@@ -4321,53 +3269,12 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Handy__MarkeAssignment_1_1"
-
-
-    // $ANTLR start "rule__Handy__SpeicherAssignment_2_1"
-    // InternalVertrag.g:1327:1: rule__Handy__SpeicherAssignment_2_1 : ( RULE_INT ) ;
-    public final void rule__Handy__SpeicherAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalVertrag.g:1331:1: ( ( RULE_INT ) )
-            // InternalVertrag.g:1332:2: ( RULE_INT )
-            {
-            // InternalVertrag.g:1332:2: ( RULE_INT )
-            // InternalVertrag.g:1333:3: RULE_INT
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getHandyAccess().getSpeicherINTTerminalRuleCall_2_1_0()); 
-            }
-            match(input,RULE_INT,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getHandyAccess().getSpeicherINTTerminalRuleCall_2_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Handy__SpeicherAssignment_2_1"
+    // $ANTLR end "rule__Handy__SpeicherAssignment_5"
 
     // $ANTLR start synpred1_InternalVertrag
     public final void synpred1_InternalVertrag_fragment() throws RecognitionException {   
-        // InternalVertrag.g:873:8: ( rule__Vertrag__Group_1__0 )
-        // InternalVertrag.g:873:9: rule__Vertrag__Group_1__0
+        // InternalVertrag.g:738:8: ( rule__Vertrag__Group_1__0 )
+        // InternalVertrag.g:738:9: rule__Vertrag__Group_1__0
         {
         pushFollow(FOLLOW_2);
         rule__Vertrag__Group_1__0();
@@ -4381,8 +3288,8 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred2_InternalVertrag
     public final void synpred2_InternalVertrag_fragment() throws RecognitionException {   
-        // InternalVertrag.g:895:8: ( rule__Vertrag__Group_2__0 )
-        // InternalVertrag.g:895:9: rule__Vertrag__Group_2__0
+        // InternalVertrag.g:760:8: ( rule__Vertrag__Group_2__0 )
+        // InternalVertrag.g:760:9: rule__Vertrag__Group_2__0
         {
         pushFollow(FOLLOW_2);
         rule__Vertrag__Group_2__0();
@@ -4396,8 +3303,8 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred3_InternalVertrag
     public final void synpred3_InternalVertrag_fragment() throws RecognitionException {   
-        // InternalVertrag.g:917:8: ( rule__Vertrag__Group_3__0 )
-        // InternalVertrag.g:917:9: rule__Vertrag__Group_3__0
+        // InternalVertrag.g:782:8: ( rule__Vertrag__Group_3__0 )
+        // InternalVertrag.g:782:9: rule__Vertrag__Group_3__0
         {
         pushFollow(FOLLOW_2);
         rule__Vertrag__Group_3__0();
@@ -4409,21 +3316,6 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end synpred3_InternalVertrag
 
-    // $ANTLR start synpred4_InternalVertrag
-    public final void synpred4_InternalVertrag_fragment() throws RecognitionException {   
-        // InternalVertrag.g:939:8: ( rule__Vertrag__Group_4__0 )
-        // InternalVertrag.g:939:9: rule__Vertrag__Group_4__0
-        {
-        pushFollow(FOLLOW_2);
-        rule__Vertrag__Group_4__0();
-
-        state._fsp--;
-        if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred4_InternalVertrag
-
     // Delegated rules
 
     public final boolean synpred1_InternalVertrag() {
@@ -4431,20 +3323,6 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
         int start = input.mark();
         try {
             synpred1_InternalVertrag_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred4_InternalVertrag() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_InternalVertrag_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -4484,31 +3362,25 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     }
 
 
+    protected DFA8 dfa8 = new DFA8(this);
+    protected DFA9 dfa9 = new DFA9(this);
     protected DFA10 dfa10 = new DFA10(this);
     protected DFA11 dfa11 = new DFA11(this);
-    protected DFA12 dfa12 = new DFA12(this);
-    protected DFA13 dfa13 = new DFA13(this);
-    protected DFA14 dfa14 = new DFA14(this);
-    protected DFA16 dfa16 = new DFA16(this);
-    protected DFA17 dfa17 = new DFA17(this);
-    protected DFA18 dfa18 = new DFA18(this);
-    static final String dfa_1s = "\17\uffff";
-    static final String dfa_2s = "\1\7\16\uffff";
-    static final String dfa_3s = "\1\14\1\4\1\5\1\6\2\4\1\0\1\uffff\1\15\4\0\1\uffff\1\0";
-    static final String dfa_4s = "\1\27\1\4\1\5\1\6\2\4\1\0\1\uffff\1\15\4\0\1\uffff\1\0";
-    static final String dfa_5s = "\7\uffff\1\2\5\uffff\1\1\1\uffff";
-    static final String dfa_6s = "\6\uffff\1\0\2\uffff\1\2\1\4\1\5\1\3\1\uffff\1\1}>";
+    static final String dfa_1s = "\15\uffff";
+    static final String dfa_2s = "\1\6\14\uffff";
+    static final String dfa_3s = "\1\14\4\4\1\0\1\uffff\1\15\3\0\1\uffff\1\0";
+    static final String dfa_4s = "\1\23\4\4\1\0\1\uffff\1\15\3\0\1\uffff\1\0";
+    static final String dfa_5s = "\6\uffff\1\2\4\uffff\1\1\1\uffff";
+    static final String dfa_6s = "\5\uffff\1\3\2\uffff\1\2\1\1\1\4\1\uffff\1\0}>";
     static final String[] dfa_7s = {
-            "\1\1\2\uffff\1\2\1\3\1\4\1\5\1\7\1\uffff\2\7\1\6",
+            "\1\1\2\uffff\1\2\1\3\1\4\1\6\1\5",
+            "\1\7",
             "\1\10",
             "\1\11",
             "\1\12",
-            "\1\13",
-            "\1\14",
             "\1\uffff",
             "",
-            "\1\16",
-            "\1\uffff",
+            "\1\14",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -4524,6 +3396,218 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
+    class DFA8 extends DFA {
+
+        public DFA8(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 8;
+            this.eot = dfa_1;
+            this.eof = dfa_2;
+            this.min = dfa_3;
+            this.max = dfa_4;
+            this.accept = dfa_5;
+            this.special = dfa_6;
+            this.transition = dfa_7;
+        }
+        public String getDescription() {
+            return "817:2: ( rule__Vertrag__UnorderedGroup__1 )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA8_12 = input.LA(1);
+
+                         
+                        int index8_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index8_12);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA8_9 = input.LA(1);
+
+                         
+                        int index8_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index8_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA8_8 = input.LA(1);
+
+                         
+                        int index8_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index8_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA8_5 = input.LA(1);
+
+                         
+                        int index8_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index8_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA8_10 = input.LA(1);
+
+                         
+                        int index8_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index8_10);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 8, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String dfa_8s = "\5\uffff\1\2\2\uffff\1\1\1\0\1\3\1\uffff\1\4}>";
+    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
+
+    class DFA9 extends DFA {
+
+        public DFA9(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 9;
+            this.eot = dfa_1;
+            this.eof = dfa_2;
+            this.min = dfa_3;
+            this.max = dfa_4;
+            this.accept = dfa_5;
+            this.special = dfa_8;
+            this.transition = dfa_7;
+        }
+        public String getDescription() {
+            return "829:2: ( rule__Vertrag__UnorderedGroup__2 )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA9_9 = input.LA(1);
+
+                         
+                        int index9_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index9_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA9_8 = input.LA(1);
+
+                         
+                        int index9_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index9_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA9_5 = input.LA(1);
+
+                         
+                        int index9_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index9_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA9_10 = input.LA(1);
+
+                         
+                        int index9_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index9_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA9_12 = input.LA(1);
+
+                         
+                        int index9_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index9_12);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 9, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String dfa_9s = "\5\uffff\1\2\2\uffff\1\4\1\1\1\0\1\uffff\1\3}>";
+    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
+
     class DFA10 extends DFA {
 
         public DFA10(BaseRecognizer recognizer) {
@@ -4534,59 +3618,59 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             this.min = dfa_3;
             this.max = dfa_4;
             this.accept = dfa_5;
-            this.special = dfa_6;
+            this.special = dfa_9;
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "974:2: ( rule__Vertrag__UnorderedGroup__1 )?";
+            return "841:2: ( rule__Vertrag__UnorderedGroup__3 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA10_6 = input.LA(1);
+                        int LA10_10 = input.LA(1);
 
                          
-                        int index10_6 = input.index();
+                        int index10_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
-                        input.seek(index10_6);
+                        input.seek(index10_10);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA10_14 = input.LA(1);
-
-                         
-                        int index10_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index10_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA10_9 = input.LA(1);
 
                          
                         int index10_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
                         input.seek(index10_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA10_5 = input.LA(1);
+
+                         
+                        int index10_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 11;}
+
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
+
+                         
+                        input.seek(index10_5);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
@@ -4596,42 +3680,27 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
                         int index10_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
                         input.seek(index10_12);
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA10_10 = input.LA(1);
+                        int LA10_8 = input.LA(1);
 
                          
-                        int index10_10 = input.index();
+                        int index10_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index10_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA10_11 = input.LA(1);
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
-                        int index10_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index10_11);
+                        input.seek(index10_8);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -4642,8 +3711,8 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             throw nvae;
         }
     }
-    static final String dfa_8s = "\6\uffff\1\4\2\uffff\1\2\1\3\1\0\1\1\1\uffff\1\5}>";
-    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
+    static final String dfa_10s = "\5\uffff\1\4\2\uffff\1\1\1\3\1\2\1\uffff\1\0}>";
+    static final short[] dfa_10 = DFA.unpackEncodedString(dfa_10s);
 
     class DFA11 extends DFA {
 
@@ -4655,104 +3724,89 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             this.min = dfa_3;
             this.max = dfa_4;
             this.accept = dfa_5;
-            this.special = dfa_8;
+            this.special = dfa_10;
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "986:2: ( rule__Vertrag__UnorderedGroup__2 )?";
+            return "853:2: ( rule__Vertrag__UnorderedGroup__4 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA11_11 = input.LA(1);
-
-                         
-                        int index11_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index11_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA11_12 = input.LA(1);
 
                          
                         int index11_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
                         input.seek(index11_12);
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
-                        int LA11_9 = input.LA(1);
+                    case 1 : 
+                        int LA11_8 = input.LA(1);
 
                          
-                        int index11_9 = input.index();
+                        int index11_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
-                        input.seek(index11_9);
+                        input.seek(index11_8);
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
+                    case 2 : 
                         int LA11_10 = input.LA(1);
 
                          
                         int index11_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
                         input.seek(index11_10);
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
-                        int LA11_6 = input.LA(1);
+                    case 3 : 
+                        int LA11_9 = input.LA(1);
 
                          
-                        int index11_6 = input.index();
+                        int index11_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
-                        input.seek(index11_6);
+                        input.seek(index11_9);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
-                        int LA11_14 = input.LA(1);
+                    case 4 : 
+                        int LA11_5 = input.LA(1);
 
                          
-                        int index11_14 = input.index();
+                        int index11_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 13;}
+                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 11;}
 
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
+                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 6;}
 
                          
-                        input.seek(index11_14);
+                        input.seek(index11_5);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -4763,683 +3817,20 @@ public class InternalVertragParser extends AbstractInternalContentAssistParser {
             throw nvae;
         }
     }
-    static final String dfa_9s = "\6\uffff\1\3\2\uffff\1\5\1\1\1\2\1\0\1\uffff\1\4}>";
-    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
-
-    class DFA12 extends DFA {
-
-        public DFA12(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_9;
-            this.transition = dfa_7;
-        }
-        public String getDescription() {
-            return "998:2: ( rule__Vertrag__UnorderedGroup__3 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA12_12 = input.LA(1);
-
-                         
-                        int index12_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_12);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_10 = input.LA(1);
-
-                         
-                        int index12_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_11 = input.LA(1);
-
-                         
-                        int index12_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA12_6 = input.LA(1);
-
-                         
-                        int index12_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA12_14 = input.LA(1);
-
-                         
-                        int index12_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA12_9 = input.LA(1);
-
-                         
-                        int index12_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index12_9);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 12, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_10s = "\6\uffff\1\0\2\uffff\1\2\1\3\1\4\1\5\1\uffff\1\1}>";
-    static final short[] dfa_10 = DFA.unpackEncodedString(dfa_10s);
-
-    class DFA13 extends DFA {
-
-        public DFA13(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_10;
-            this.transition = dfa_7;
-        }
-        public String getDescription() {
-            return "1010:2: ( rule__Vertrag__UnorderedGroup__4 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA13_6 = input.LA(1);
-
-                         
-                        int index13_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA13_14 = input.LA(1);
-
-                         
-                        int index13_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA13_9 = input.LA(1);
-
-                         
-                        int index13_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA13_10 = input.LA(1);
-
-                         
-                        int index13_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA13_11 = input.LA(1);
-
-                         
-                        int index13_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA13_12 = input.LA(1);
-
-                         
-                        int index13_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index13_12);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 13, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_11s = "\6\uffff\1\0\2\uffff\1\2\1\4\1\3\1\5\1\uffff\1\1}>";
-    static final short[] dfa_11 = DFA.unpackEncodedString(dfa_11s);
-
-    class DFA14 extends DFA {
-
-        public DFA14(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 14;
-            this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_11;
-            this.transition = dfa_7;
-        }
-        public String getDescription() {
-            return "1022:2: ( rule__Vertrag__UnorderedGroup__5 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA14_6 = input.LA(1);
-
-                         
-                        int index14_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 5) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA14_14 = input.LA(1);
-
-                         
-                        int index14_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 0) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_9 = input.LA(1);
-
-                         
-                        int index14_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 1) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA14_11 = input.LA(1);
-
-                         
-                        int index14_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 3) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA14_10 = input.LA(1);
-
-                         
-                        int index14_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 2) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA14_12 = input.LA(1);
-
-                         
-                        int index14_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getVertragAccess().getUnorderedGroup(), 4) ) {s = 13;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getVertragAccess().getUnorderedGroup()) ) {s = 7;}
-
-                         
-                        input.seek(index14_12);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 14, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_12s = "\13\uffff";
-    static final String dfa_13s = "\1\5\12\uffff";
-    static final String dfa_14s = "\1\14\2\4\1\5\1\0\1\uffff\1\15\2\0\1\uffff\1\0";
-    static final String dfa_15s = "\1\27\2\4\1\5\1\0\1\uffff\1\15\2\0\1\uffff\1\0";
-    static final String dfa_16s = "\5\uffff\1\2\3\uffff\1\1\1\uffff";
-    static final String dfa_17s = "\4\uffff\1\3\2\uffff\1\2\1\1\1\uffff\1\0}>";
-    static final String[] dfa_18s = {
-            "\1\5\2\uffff\4\5\1\1\1\uffff\1\2\1\3\1\4",
-            "\1\6",
-            "\1\7",
-            "\1\10",
-            "\1\uffff",
-            "",
-            "\1\12",
-            "\1\uffff",
-            "\1\uffff",
-            "",
-            "\1\uffff"
-    };
-
-    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
-    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
-    static final char[] dfa_14 = DFA.unpackEncodedStringToUnsignedChars(dfa_14s);
-    static final char[] dfa_15 = DFA.unpackEncodedStringToUnsignedChars(dfa_15s);
-    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
-    static final short[] dfa_17 = DFA.unpackEncodedString(dfa_17s);
-    static final short[][] dfa_18 = unpackEncodedStringArray(dfa_18s);
-
-    class DFA16 extends DFA {
-
-        public DFA16(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 16;
-            this.eot = dfa_12;
-            this.eof = dfa_13;
-            this.min = dfa_14;
-            this.max = dfa_15;
-            this.accept = dfa_16;
-            this.special = dfa_17;
-            this.transition = dfa_18;
-        }
-        public String getDescription() {
-            return "1135:2: ( rule__Handy__UnorderedGroup__1 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA16_10 = input.LA(1);
-
-                         
-                        int index16_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index16_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA16_8 = input.LA(1);
-
-                         
-                        int index16_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index16_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA16_7 = input.LA(1);
-
-                         
-                        int index16_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index16_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA16_4 = input.LA(1);
-
-                         
-                        int index16_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index16_4);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 16, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_19s = "\4\uffff\1\0\2\uffff\1\2\1\1\1\uffff\1\3}>";
-    static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
-
-    class DFA17 extends DFA {
-
-        public DFA17(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 17;
-            this.eot = dfa_12;
-            this.eof = dfa_13;
-            this.min = dfa_14;
-            this.max = dfa_15;
-            this.accept = dfa_16;
-            this.special = dfa_19;
-            this.transition = dfa_18;
-        }
-        public String getDescription() {
-            return "1147:2: ( rule__Handy__UnorderedGroup__2 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA17_4 = input.LA(1);
-
-                         
-                        int index17_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index17_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA17_8 = input.LA(1);
-
-                         
-                        int index17_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index17_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA17_7 = input.LA(1);
-
-                         
-                        int index17_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index17_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA17_10 = input.LA(1);
-
-                         
-                        int index17_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index17_10);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 17, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
-    static final String dfa_20s = "\4\uffff\1\2\2\uffff\1\0\1\3\1\uffff\1\1}>";
-    static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
-
-    class DFA18 extends DFA {
-
-        public DFA18(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 18;
-            this.eot = dfa_12;
-            this.eof = dfa_13;
-            this.min = dfa_14;
-            this.max = dfa_15;
-            this.accept = dfa_16;
-            this.special = dfa_20;
-            this.transition = dfa_18;
-        }
-        public String getDescription() {
-            return "1159:2: ( rule__Handy__UnorderedGroup__3 )?";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA18_7 = input.LA(1);
-
-                         
-                        int index18_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 1) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index18_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA18_10 = input.LA(1);
-
-                         
-                        int index18_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 0) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index18_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA18_4 = input.LA(1);
-
-                         
-                        int index18_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 3) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index18_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA18_8 = input.LA(1);
-
-                         
-                        int index18_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( getUnorderedGroupHelper().canSelect(grammarAccess.getHandyAccess().getUnorderedGroup(), 2) ) {s = 9;}
-
-                        else if ( getUnorderedGroupHelper().canLeave(grammarAccess.getHandyAccess().getUnorderedGroup()) ) {s = 5;}
-
-                         
-                        input.seek(index18_8);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 18, _s, input);
-            error(nvae);
-            throw nvae;
-        }
-    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000EF9002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000000F9002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000879002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000000B9002L});
 
 }

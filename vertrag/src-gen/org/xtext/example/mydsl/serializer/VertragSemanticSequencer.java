@@ -11,7 +11,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.services.VertragGrammarAccess;
 import org.xtext.example.mydsl.vertrag.Handy;
 import org.xtext.example.mydsl.vertrag.Model;
@@ -52,10 +54,25 @@ public class VertragSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Handy returns Handy
 	 *
 	 * Constraint:
-	 *     ((marke=ID | speicher=INT)? (name=ID system=ID?)?)+
+	 *     (name=ID system?=ID marke?=ID speicher?=ID)
 	 */
 	protected void sequence_Handy(ISerializationContext context, Handy semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, VertragPackage.Literals.ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VertragPackage.Literals.ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, VertragPackage.Literals.HANDY__SYSTEM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VertragPackage.Literals.HANDY__SYSTEM));
+			if (transientValues.isValueTransient(semanticObject, VertragPackage.Literals.HANDY__MARKE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VertragPackage.Literals.HANDY__MARKE));
+			if (transientValues.isValueTransient(semanticObject, VertragPackage.Literals.HANDY__SPEICHER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VertragPackage.Literals.HANDY__SPEICHER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0(), semanticObject.isSystem());
+		feeder.accept(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0(), semanticObject.isMarke());
+		feeder.accept(grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0(), semanticObject.isSpeicher());
+		feeder.finish();
 	}
 	
 	
@@ -77,7 +94,10 @@ public class VertragSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Vertrag returns Vertrag
 	 *
 	 * Constraint:
-	 *     ((datenvolumen=INT | monatl_kosten=FLOAT | netzanbieter=ID | internetseite=ID)? (name=ID mindestvertragslaufzeit=INT*)?)+
+	 *     (
+	 *         (mindestvertragslaufzeit=ZEICHENFOLGE | monatl_kosten=ZEICHENFOLGE | netzanbieter=ZEICHENFOLGE)? 
+	 *         (name=ZEICHENFOLGE datenvolumen=ZEICHENFOLGE*)?
+	 *     )+
 	 */
 	protected void sequence_Vertrag(ISerializationContext context, Vertrag semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
