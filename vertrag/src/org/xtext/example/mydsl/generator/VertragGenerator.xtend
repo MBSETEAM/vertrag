@@ -42,7 +42,7 @@ class VertragGenerator extends AbstractGenerator {
 		import org.openqa.selenium.support.ui.ExpectedCondition;
 		import org.openqa.selenium.support.ui.WebDriverWait;
 		
-		public class Test {
+		public class Main {
 		
 			
 			
