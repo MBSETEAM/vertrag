@@ -15,11 +15,11 @@ Element:
 
 Vertrag:
 	'Vertrag' name=ZEICHENFOLGE '{'
-	('datenvolumen' datenvolumen=ZEICHENFOLGE)*&
-	('mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE)* &
-	('monatl_kosten' monatl_kosten=ZEICHENFOLGE)* &
-	('netzanbieter' netzanbieter=ZEICHENFOLGE)* &
-	('handy' handy=[Handy])* &
+	('datenvolumen' datenvolumen=ZEICHENFOLGE)?&
+	('mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE)? &
+	('monatl_kosten' monatl_kosten=ZEICHENFOLGE)? &
+	('netzanbieter' netzanbieter=ZEICHENFOLGE)? &
+	('handy' handy=[Handy])? &
 	'}';
 
 Handy:
