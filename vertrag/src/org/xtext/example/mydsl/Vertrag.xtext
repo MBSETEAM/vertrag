@@ -19,6 +19,7 @@ Vertrag:
 	('mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE)* &
 	('monatl_kosten' monatl_kosten=ZEICHENFOLGE)* &
 	('netzanbieter' netzanbieter=ZEICHENFOLGE)* &
+	('handy' handy=[Handy])* &
 	'}';
 
 Handy:

@@ -47,8 +47,6 @@ class VertragValidator extends AbstractVertragValidator {
 		if(datenvolumen <= 0) {
 			error("monatl_kosten muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
 		}
-		
-		
 	}
 	
 }
