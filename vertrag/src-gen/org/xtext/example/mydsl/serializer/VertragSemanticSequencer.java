@@ -54,7 +54,7 @@ public class VertragSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Handy returns Handy
 	 *
 	 * Constraint:
-	 *     (name=ID system?=ID marke?=ID speicher?=ID)
+	 *     (name=ID system?=Betriebssystem marke?=Marke speicher?=ID)
 	 */
 	protected void sequence_Handy(ISerializationContext context, Handy semanticObject) {
 		if (errorAcceptor != null) {
@@ -69,8 +69,8 @@ public class VertragSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getHandyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getHandyAccess().getSystemIDTerminalRuleCall_3_0(), semanticObject.isSystem());
-		feeder.accept(grammarAccess.getHandyAccess().getMarkeIDTerminalRuleCall_4_0(), semanticObject.isMarke());
+		feeder.accept(grammarAccess.getHandyAccess().getSystemBetriebssystemEnumRuleCall_3_0(), semanticObject.isSystem());
+		feeder.accept(grammarAccess.getHandyAccess().getMarkeMarkeEnumRuleCall_4_0(), semanticObject.isMarke());
 		feeder.accept(grammarAccess.getHandyAccess().getSpeicherIDTerminalRuleCall_5_0(), semanticObject.isSpeicher());
 		feeder.finish();
 	}
@@ -95,8 +95,16 @@ public class VertragSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (mindestvertragslaufzeit=ZEICHENFOLGE | monatl_kosten=ZEICHENFOLGE | netzanbieter=ZEICHENFOLGE)? 
-	 *         (name=ZEICHENFOLGE datenvolumen=ZEICHENFOLGE*)?
+	 *         (
+	 *             datenvolumen=INT | 
+	 *             monatl_kosten=PRICE | 
+	 *             internetseite=ID | 
+	 *             value=Netzanbieter | 
+	 *             telefonflat=ID | 
+	 *             smsflat=ID | 
+	 *             geraet=[Handy|ID]
+	 *         )? 
+	 *         (name=ZEICHENFOLGE mindestvertragslaufzeit=INT*)?
 	 *     )+
 	 */
 	protected void sequence_Vertrag(ISerializationContext context, Vertrag semanticObject) {

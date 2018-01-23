@@ -8,6 +8,9 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -17,6 +20,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.UnorderedGroup;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -67,36 +71,53 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameZEICHENFOLGETerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
-		private final Keyword cDatenvolumenKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
-		private final Assignment cDatenvolumenAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
-		private final RuleCall cDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0 = (RuleCall)cDatenvolumenAssignment_0_3_1.eContents().get(0);
+		private final Keyword cMindestvertragslaufzeitKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
+		private final Assignment cMindestvertragslaufzeitAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
+		private final RuleCall cMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0 = (RuleCall)cMindestvertragslaufzeitAssignment_0_3_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
-		private final Keyword cMindestvertragslaufzeitKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cMindestvertragslaufzeitAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0 = (RuleCall)cMindestvertragslaufzeitAssignment_1_1.eContents().get(0);
+		private final Keyword cDatenvolumenKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cDatenvolumenAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cDatenvolumenINTTerminalRuleCall_1_1_0 = (RuleCall)cDatenvolumenAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
 		private final Keyword cMonatl_kostenKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cMonatl_kostenAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0 = (RuleCall)cMonatl_kostenAssignment_2_1.eContents().get(0);
+		private final RuleCall cMonatl_kostenPRICETerminalRuleCall_2_1_0 = (RuleCall)cMonatl_kostenAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cUnorderedGroup.eContents().get(3);
-		private final Keyword cNetzanbieterKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNetzanbieterAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0 = (RuleCall)cNetzanbieterAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cUnorderedGroup.eContents().get(4);
+		private final Keyword cInternetseiteKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cInternetseiteAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cInternetseiteIDTerminalRuleCall_3_1_0 = (RuleCall)cInternetseiteAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cUnorderedGroup.eContents().get(4);
+		private final Keyword cNetzanbieterKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cValueNetzanbieterEnumRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cUnorderedGroup.eContents().get(5);
+		private final Keyword cTelefonFlatKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTelefonflatAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cTelefonflatIDTerminalRuleCall_5_1_0 = (RuleCall)cTelefonflatAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cUnorderedGroup.eContents().get(6);
+		private final Keyword cSmsFlatKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cSmsflatAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cSmsflatIDTerminalRuleCall_6_1_0 = (RuleCall)cSmsflatAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cUnorderedGroup.eContents().get(7);
+		private final Keyword cGeraetKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cGeraetAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cGeraetHandyCrossReference_7_1_0 = (CrossReference)cGeraetAssignment_7_1.eContents().get(0);
+		private final RuleCall cGeraetHandyIDTerminalRuleCall_7_1_0_1 = (RuleCall)cGeraetHandyCrossReference_7_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cUnorderedGroup.eContents().get(8);
 		
 		//Vertrag:
-		//	'Vertrag' name=ZEICHENFOLGE '{' ('datenvolumen' datenvolumen=ZEICHENFOLGE)* & ('mindestvertragslaufzeit'
-		//	mindestvertragslaufzeit=ZEICHENFOLGE)* & ('monatl_kosten' monatl_kosten=ZEICHENFOLGE)* & ('netzanbieter'
-		//	netzanbieter=ZEICHENFOLGE)* &
+		//	'Vertrag' name=ZEICHENFOLGE '{' ('mindestvertragslaufzeit' mindestvertragslaufzeit=INT)* & ('datenvolumen'
+		//	datenvolumen=INT)* & ('monatl_kosten' monatl_kosten=PRICE)* & ('internetseite' internetseite=ID)* & ('netzanbieter'
+		//	value=Netzanbieter)* & ('telefon-flat' telefonflat=ID)* & ('sms-flat' smsflat=ID)* & ('geraet' geraet=[Handy])* &
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Vertrag' name=ZEICHENFOLGE '{' ('datenvolumen' datenvolumen=ZEICHENFOLGE)* & ('mindestvertragslaufzeit'
-		//mindestvertragslaufzeit=ZEICHENFOLGE)* & ('monatl_kosten' monatl_kosten=ZEICHENFOLGE)* & ('netzanbieter'
-		//netzanbieter=ZEICHENFOLGE)* & '}'
+		//'Vertrag' name=ZEICHENFOLGE '{' ('mindestvertragslaufzeit' mindestvertragslaufzeit=INT)* & ('datenvolumen'
+		//datenvolumen=INT)* & ('monatl_kosten' monatl_kosten=PRICE)* & ('internetseite' internetseite=ID)* & ('netzanbieter'
+		//value=Netzanbieter)* & ('telefon-flat' telefonflat=ID)* & ('sms-flat' smsflat=ID)* & ('geraet' geraet=[Handy])* & '}'
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
-		//'Vertrag' name=ZEICHENFOLGE '{' ('datenvolumen' datenvolumen=ZEICHENFOLGE)*
+		//'Vertrag' name=ZEICHENFOLGE '{' ('mindestvertragslaufzeit' mindestvertragslaufzeit=INT)*
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'Vertrag'
@@ -111,56 +132,107 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_0_2() { return cLeftCurlyBracketKeyword_0_2; }
 		
-		//('datenvolumen' datenvolumen=ZEICHENFOLGE)*
+		//('mindestvertragslaufzeit' mindestvertragslaufzeit=INT)*
 		public Group getGroup_0_3() { return cGroup_0_3; }
 		
-		//'datenvolumen'
-		public Keyword getDatenvolumenKeyword_0_3_0() { return cDatenvolumenKeyword_0_3_0; }
+		//'mindestvertragslaufzeit'
+		public Keyword getMindestvertragslaufzeitKeyword_0_3_0() { return cMindestvertragslaufzeitKeyword_0_3_0; }
 		
-		//datenvolumen=ZEICHENFOLGE
-		public Assignment getDatenvolumenAssignment_0_3_1() { return cDatenvolumenAssignment_0_3_1; }
+		//mindestvertragslaufzeit=INT
+		public Assignment getMindestvertragslaufzeitAssignment_0_3_1() { return cMindestvertragslaufzeitAssignment_0_3_1; }
 		
-		//ZEICHENFOLGE
-		public RuleCall getDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0() { return cDatenvolumenZEICHENFOLGETerminalRuleCall_0_3_1_0; }
+		//INT
+		public RuleCall getMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0() { return cMindestvertragslaufzeitINTTerminalRuleCall_0_3_1_0; }
 		
-		//('mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE)*
+		//('datenvolumen' datenvolumen=INT)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'mindestvertragslaufzeit'
-		public Keyword getMindestvertragslaufzeitKeyword_1_0() { return cMindestvertragslaufzeitKeyword_1_0; }
+		//'datenvolumen'
+		public Keyword getDatenvolumenKeyword_1_0() { return cDatenvolumenKeyword_1_0; }
 		
-		//mindestvertragslaufzeit=ZEICHENFOLGE
-		public Assignment getMindestvertragslaufzeitAssignment_1_1() { return cMindestvertragslaufzeitAssignment_1_1; }
+		//datenvolumen=INT
+		public Assignment getDatenvolumenAssignment_1_1() { return cDatenvolumenAssignment_1_1; }
 		
-		//ZEICHENFOLGE
-		public RuleCall getMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0() { return cMindestvertragslaufzeitZEICHENFOLGETerminalRuleCall_1_1_0; }
+		//INT
+		public RuleCall getDatenvolumenINTTerminalRuleCall_1_1_0() { return cDatenvolumenINTTerminalRuleCall_1_1_0; }
 		
-		//('monatl_kosten' monatl_kosten=ZEICHENFOLGE)*
+		//('monatl_kosten' monatl_kosten=PRICE)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'monatl_kosten'
 		public Keyword getMonatl_kostenKeyword_2_0() { return cMonatl_kostenKeyword_2_0; }
 		
-		//monatl_kosten=ZEICHENFOLGE
+		//monatl_kosten=PRICE
 		public Assignment getMonatl_kostenAssignment_2_1() { return cMonatl_kostenAssignment_2_1; }
 		
-		//ZEICHENFOLGE
-		public RuleCall getMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0() { return cMonatl_kostenZEICHENFOLGETerminalRuleCall_2_1_0; }
+		//PRICE
+		public RuleCall getMonatl_kostenPRICETerminalRuleCall_2_1_0() { return cMonatl_kostenPRICETerminalRuleCall_2_1_0; }
 		
-		//('netzanbieter' netzanbieter=ZEICHENFOLGE)*
+		//('internetseite' internetseite=ID)*
 		public Group getGroup_3() { return cGroup_3; }
 		
+		//'internetseite'
+		public Keyword getInternetseiteKeyword_3_0() { return cInternetseiteKeyword_3_0; }
+		
+		//internetseite=ID
+		public Assignment getInternetseiteAssignment_3_1() { return cInternetseiteAssignment_3_1; }
+		
+		//ID
+		public RuleCall getInternetseiteIDTerminalRuleCall_3_1_0() { return cInternetseiteIDTerminalRuleCall_3_1_0; }
+		
+		//('netzanbieter' value=Netzanbieter)*
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'netzanbieter'
-		public Keyword getNetzanbieterKeyword_3_0() { return cNetzanbieterKeyword_3_0; }
+		public Keyword getNetzanbieterKeyword_4_0() { return cNetzanbieterKeyword_4_0; }
 		
-		//netzanbieter=ZEICHENFOLGE
-		public Assignment getNetzanbieterAssignment_3_1() { return cNetzanbieterAssignment_3_1; }
+		//value=Netzanbieter
+		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
 		
-		//ZEICHENFOLGE
-		public RuleCall getNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0() { return cNetzanbieterZEICHENFOLGETerminalRuleCall_3_1_0; }
+		//Netzanbieter
+		public RuleCall getValueNetzanbieterEnumRuleCall_4_1_0() { return cValueNetzanbieterEnumRuleCall_4_1_0; }
+		
+		//('telefon-flat' telefonflat=ID)*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'telefon-flat'
+		public Keyword getTelefonFlatKeyword_5_0() { return cTelefonFlatKeyword_5_0; }
+		
+		//telefonflat=ID
+		public Assignment getTelefonflatAssignment_5_1() { return cTelefonflatAssignment_5_1; }
+		
+		//ID
+		public RuleCall getTelefonflatIDTerminalRuleCall_5_1_0() { return cTelefonflatIDTerminalRuleCall_5_1_0; }
+		
+		//('sms-flat' smsflat=ID)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'sms-flat'
+		public Keyword getSmsFlatKeyword_6_0() { return cSmsFlatKeyword_6_0; }
+		
+		//smsflat=ID
+		public Assignment getSmsflatAssignment_6_1() { return cSmsflatAssignment_6_1; }
+		
+		//ID
+		public RuleCall getSmsflatIDTerminalRuleCall_6_1_0() { return cSmsflatIDTerminalRuleCall_6_1_0; }
+		
+		//('geraet' geraet=[Handy])*
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'geraet'
+		public Keyword getGeraetKeyword_7_0() { return cGeraetKeyword_7_0; }
+		
+		//geraet=[Handy]
+		public Assignment getGeraetAssignment_7_1() { return cGeraetAssignment_7_1; }
+		
+		//[Handy]
+		public CrossReference getGeraetHandyCrossReference_7_1_0() { return cGeraetHandyCrossReference_7_1_0; }
+		
+		//ID
+		public RuleCall getGeraetHandyIDTerminalRuleCall_7_1_0_1() { return cGeraetHandyIDTerminalRuleCall_7_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class HandyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.Handy");
@@ -170,22 +242,22 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSystemAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSystemIDTerminalRuleCall_3_0 = (RuleCall)cSystemAssignment_3.eContents().get(0);
+		private final RuleCall cSystemBetriebssystemEnumRuleCall_3_0 = (RuleCall)cSystemAssignment_3.eContents().get(0);
 		private final Assignment cMarkeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMarkeIDTerminalRuleCall_4_0 = (RuleCall)cMarkeAssignment_4.eContents().get(0);
+		private final RuleCall cMarkeMarkeEnumRuleCall_4_0 = (RuleCall)cMarkeAssignment_4.eContents().get(0);
 		private final Assignment cSpeicherAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cSpeicherIDTerminalRuleCall_5_0 = (RuleCall)cSpeicherAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Handy:
 		//	'handy' name=ID '{'
-		//	system?=ID
-		//	marke?=ID
+		//	system?=Betriebssystem
+		//	marke?=Marke
 		//	speicher?=ID
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'handy' name=ID '{' system?=ID marke?=ID speicher?=ID '}'
+		//'handy' name=ID '{' system?=Betriebssystem marke?=Marke speicher?=ID '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'handy'
@@ -200,17 +272,17 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//system?=ID
+		//system?=Betriebssystem
 		public Assignment getSystemAssignment_3() { return cSystemAssignment_3; }
 		
-		//ID
-		public RuleCall getSystemIDTerminalRuleCall_3_0() { return cSystemIDTerminalRuleCall_3_0; }
+		//Betriebssystem
+		public RuleCall getSystemBetriebssystemEnumRuleCall_3_0() { return cSystemBetriebssystemEnumRuleCall_3_0; }
 		
-		//marke?=ID
+		//marke?=Marke
 		public Assignment getMarkeAssignment_4() { return cMarkeAssignment_4; }
 		
-		//ID
-		public RuleCall getMarkeIDTerminalRuleCall_4_0() { return cMarkeIDTerminalRuleCall_4_0; }
+		//Marke
+		public RuleCall getMarkeMarkeEnumRuleCall_4_0() { return cMarkeMarkeEnumRuleCall_4_0; }
 		
 		//speicher?=ID
 		public Assignment getSpeicherAssignment_5() { return cSpeicherAssignment_5; }
@@ -222,10 +294,105 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	
+	public class NetzanbieterElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.Netzanbieter");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cO2EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cO2O2Keyword_0_0 = (Keyword)cO2EnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cTELEKOMEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cTELEKOMTELEKOMKeyword_1_0 = (Keyword)cTELEKOMEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cVODAFONEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cVODAFONVODAFONKeyword_2_0 = (Keyword)cVODAFONEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Netzanbieter:
+		//	O2 | TELEKOM | VODAFON;
+		public EnumRule getRule() { return rule; }
+		
+		//O2 | TELEKOM | VODAFON
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//O2
+		public EnumLiteralDeclaration getO2EnumLiteralDeclaration_0() { return cO2EnumLiteralDeclaration_0; }
+		
+		//"O2"
+		public Keyword getO2O2Keyword_0_0() { return cO2O2Keyword_0_0; }
+		
+		//TELEKOM
+		public EnumLiteralDeclaration getTELEKOMEnumLiteralDeclaration_1() { return cTELEKOMEnumLiteralDeclaration_1; }
+		
+		//"TELEKOM"
+		public Keyword getTELEKOMTELEKOMKeyword_1_0() { return cTELEKOMTELEKOMKeyword_1_0; }
+		
+		//VODAFON
+		public EnumLiteralDeclaration getVODAFONEnumLiteralDeclaration_2() { return cVODAFONEnumLiteralDeclaration_2; }
+		
+		//"VODAFON"
+		public Keyword getVODAFONVODAFONKeyword_2_0() { return cVODAFONVODAFONKeyword_2_0; }
+	}
+	public class BetriebssystemElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.Betriebssystem");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cANDROIDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cANDROIDANDROIDKeyword_0_0 = (Keyword)cANDROIDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIOSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIOSIOSKeyword_1_0 = (Keyword)cIOSEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Betriebssystem:
+		//	ANDROID | IOS;
+		public EnumRule getRule() { return rule; }
+		
+		//ANDROID | IOS
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ANDROID
+		public EnumLiteralDeclaration getANDROIDEnumLiteralDeclaration_0() { return cANDROIDEnumLiteralDeclaration_0; }
+		
+		//"ANDROID"
+		public Keyword getANDROIDANDROIDKeyword_0_0() { return cANDROIDANDROIDKeyword_0_0; }
+		
+		//IOS
+		public EnumLiteralDeclaration getIOSEnumLiteralDeclaration_1() { return cIOSEnumLiteralDeclaration_1; }
+		
+		//"IOS"
+		public Keyword getIOSIOSKeyword_1_0() { return cIOSIOSKeyword_1_0; }
+	}
+	public class MarkeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.Marke");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSAMSUNGEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSAMSUNGSAMSUNGKeyword_0_0 = (Keyword)cSAMSUNGEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIPHONEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIPHONEIPHONEKeyword_1_0 = (Keyword)cIPHONEEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Marke:
+		//	SAMSUNG | IPHONE;
+		public EnumRule getRule() { return rule; }
+		
+		//SAMSUNG | IPHONE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SAMSUNG
+		public EnumLiteralDeclaration getSAMSUNGEnumLiteralDeclaration_0() { return cSAMSUNGEnumLiteralDeclaration_0; }
+		
+		//"SAMSUNG"
+		public Keyword getSAMSUNGSAMSUNGKeyword_0_0() { return cSAMSUNGSAMSUNGKeyword_0_0; }
+		
+		//IPHONE
+		public EnumLiteralDeclaration getIPHONEEnumLiteralDeclaration_1() { return cIPHONEEnumLiteralDeclaration_1; }
+		
+		//"IPHONE"
+		public Keyword getIPHONEIPHONEKeyword_1_0() { return cIPHONEIPHONEKeyword_1_0; }
+	}
 	
 	private final ModelElements pModel;
 	private final TerminalRule tZEICHENFOLGE;
+	private final TerminalRule tINT;
+	private final TerminalRule tPRICE;
+	private final TerminalRule tID;
 	private final ElementElements pElement;
+	private final NetzanbieterElements eNetzanbieter;
+	private final BetriebssystemElements eBetriebssystem;
+	private final MarkeElements eMarke;
 	private final VertragElements pVertrag;
 	private final HandyElements pHandy;
 	
@@ -240,7 +407,13 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.tZEICHENFOLGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.ZEICHENFOLGE");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.INT");
+		this.tPRICE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.PRICE");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Vertrag.ID");
 		this.pElement = new ElementElements();
+		this.eNetzanbieter = new NetzanbieterElements();
+		this.eBetriebssystem = new BetriebssystemElements();
+		this.eMarke = new MarkeElements();
 		this.pVertrag = new VertragElements();
 		this.pHandy = new HandyElements();
 	}
@@ -284,9 +457,27 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ZEICHENFOLGE:
-	//	'0'..'9' | 'a'..'z'+;
+	//	'0'..'9' | 'a'..'z' | 'A'..'Z'+;
 	public TerminalRule getZEICHENFOLGERule() {
 		return tZEICHENFOLGE;
+	}
+	
+	//@ Override terminal INT returns ecore::EInt:
+	//	'0'..'9'+;
+	public TerminalRule getINTRule() {
+		return tINT;
+	}
+	
+	//terminal PRICE:
+	//	'0'..'9'+ ',' '0'..'9' '0'..'9';
+	public TerminalRule getPRICERule() {
+		return tPRICE;
+	}
+	
+	//@ Override terminal ID:
+	//	'0'..'9' | 'a'..'z' | 'A'..'Z'+;
+	public TerminalRule getIDRule() {
+		return tID;
 	}
 	
 	//Element:
@@ -299,10 +490,40 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementAccess().getRule();
 	}
 	
+	//enum Netzanbieter:
+	//	O2 | TELEKOM | VODAFON;
+	public NetzanbieterElements getNetzanbieterAccess() {
+		return eNetzanbieter;
+	}
+	
+	public EnumRule getNetzanbieterRule() {
+		return getNetzanbieterAccess().getRule();
+	}
+	
+	//enum Betriebssystem:
+	//	ANDROID | IOS;
+	public BetriebssystemElements getBetriebssystemAccess() {
+		return eBetriebssystem;
+	}
+	
+	public EnumRule getBetriebssystemRule() {
+		return getBetriebssystemAccess().getRule();
+	}
+	
+	//enum Marke:
+	//	SAMSUNG | IPHONE;
+	public MarkeElements getMarkeAccess() {
+		return eMarke;
+	}
+	
+	public EnumRule getMarkeRule() {
+		return getMarkeAccess().getRule();
+	}
+	
 	//Vertrag:
-	//	'Vertrag' name=ZEICHENFOLGE '{' ('datenvolumen' datenvolumen=ZEICHENFOLGE)* & ('mindestvertragslaufzeit'
-	//	mindestvertragslaufzeit=ZEICHENFOLGE)* & ('monatl_kosten' monatl_kosten=ZEICHENFOLGE)* & ('netzanbieter'
-	//	netzanbieter=ZEICHENFOLGE)* &
+	//	'Vertrag' name=ZEICHENFOLGE '{' ('mindestvertragslaufzeit' mindestvertragslaufzeit=INT)* & ('datenvolumen'
+	//	datenvolumen=INT)* & ('monatl_kosten' monatl_kosten=PRICE)* & ('internetseite' internetseite=ID)* & ('netzanbieter'
+	//	value=Netzanbieter)* & ('telefon-flat' telefonflat=ID)* & ('sms-flat' smsflat=ID)* & ('geraet' geraet=[Handy])* &
 	//	'}';
 	public VertragElements getVertragAccess() {
 		return pVertrag;
@@ -314,8 +535,8 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Handy:
 	//	'handy' name=ID '{'
-	//	system?=ID
-	//	marke?=ID
+	//	system?=Betriebssystem
+	//	marke?=Marke
 	//	speicher?=ID
 	//	'}';
 	public HandyElements getHandyAccess() {
@@ -324,18 +545,6 @@ public class VertragGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getHandyRule() {
 		return getHandyAccess().getRule();
-	}
-	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
-	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
-	}
-	
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:

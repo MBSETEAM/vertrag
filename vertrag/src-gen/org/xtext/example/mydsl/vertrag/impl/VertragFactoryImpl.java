@@ -4,6 +4,7 @@
 package org.xtext.example.mydsl.vertrag.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -79,6 +80,48 @@ public class VertragFactoryImpl extends EFactoryImpl implements VertragFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case VertragPackage.NETZANBIETER:
+        return createNetzanbieterFromString(eDataType, initialValue);
+      case VertragPackage.BETRIEBSSYSTEM:
+        return createBetriebssystemFromString(eDataType, initialValue);
+      case VertragPackage.MARKE:
+        return createMarkeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case VertragPackage.NETZANBIETER:
+        return convertNetzanbieterToString(eDataType, instanceValue);
+      case VertragPackage.BETRIEBSSYSTEM:
+        return convertBetriebssystemToString(eDataType, instanceValue);
+      case VertragPackage.MARKE:
+        return convertMarkeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Model createModel()
   {
     ModelImpl model = new ModelImpl();
@@ -116,6 +159,72 @@ public class VertragFactoryImpl extends EFactoryImpl implements VertragFactory
   {
     HandyImpl handy = new HandyImpl();
     return handy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Netzanbieter createNetzanbieterFromString(EDataType eDataType, String initialValue)
+  {
+    Netzanbieter result = Netzanbieter.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertNetzanbieterToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Betriebssystem createBetriebssystemFromString(EDataType eDataType, String initialValue)
+  {
+    Betriebssystem result = Betriebssystem.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertBetriebssystemToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Marke createMarkeFromString(EDataType eDataType, String initialValue)
+  {
+    Marke result = Marke.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMarkeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

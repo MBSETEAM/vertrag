@@ -13,10 +13,14 @@ package org.xtext.example.mydsl.vertrag;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getMonatl_kosten <em>Monatl kosten</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getNetzanbieter <em>Netzanbieter</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getTelefonflat <em>Telefonflat</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getSmsflat <em>Smsflat</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.Vertrag#getGeraet <em>Geraet</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag()
@@ -26,32 +30,6 @@ package org.xtext.example.mydsl.vertrag;
 public interface Vertrag extends Element
 {
   /**
-   * Returns the value of the '<em><b>Datenvolumen</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Datenvolumen</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Datenvolumen</em>' attribute.
-   * @see #setDatenvolumen(String)
-   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Datenvolumen()
-   * @model
-   * @generated
-   */
-  String getDatenvolumen();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Datenvolumen</em>' attribute.
-   * @see #getDatenvolumen()
-   * @generated
-   */
-  void setDatenvolumen(String value);
-
-  /**
    * Returns the value of the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -60,12 +38,12 @@ public interface Vertrag extends Element
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Mindestvertragslaufzeit</em>' attribute.
-   * @see #setMindestvertragslaufzeit(String)
+   * @see #setMindestvertragslaufzeit(int)
    * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Mindestvertragslaufzeit()
    * @model
    * @generated
    */
-  String getMindestvertragslaufzeit();
+  int getMindestvertragslaufzeit();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}' attribute.
@@ -75,7 +53,33 @@ public interface Vertrag extends Element
    * @see #getMindestvertragslaufzeit()
    * @generated
    */
-  void setMindestvertragslaufzeit(String value);
+  void setMindestvertragslaufzeit(int value);
+
+  /**
+   * Returns the value of the '<em><b>Datenvolumen</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Datenvolumen</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Datenvolumen</em>' attribute.
+   * @see #setDatenvolumen(int)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Datenvolumen()
+   * @model
+   * @generated
+   */
+  int getDatenvolumen();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Datenvolumen</em>' attribute.
+   * @see #getDatenvolumen()
+   * @generated
+   */
+  void setDatenvolumen(int value);
 
   /**
    * Returns the value of the '<em><b>Monatl kosten</b></em>' attribute.
@@ -104,29 +108,136 @@ public interface Vertrag extends Element
   void setMonatl_kosten(String value);
 
   /**
-   * Returns the value of the '<em><b>Netzanbieter</b></em>' attribute.
+   * Returns the value of the '<em><b>Internetseite</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Netzanbieter</em>' attribute isn't clear,
+   * If the meaning of the '<em>Internetseite</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Netzanbieter</em>' attribute.
-   * @see #setNetzanbieter(String)
-   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Netzanbieter()
+   * @return the value of the '<em>Internetseite</em>' attribute.
+   * @see #setInternetseite(String)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Internetseite()
    * @model
    * @generated
    */
-  String getNetzanbieter();
+  String getInternetseite();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getNetzanbieter <em>Netzanbieter</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Netzanbieter</em>' attribute.
-   * @see #getNetzanbieter()
+   * @param value the new value of the '<em>Internetseite</em>' attribute.
+   * @see #getInternetseite()
    * @generated
    */
-  void setNetzanbieter(String value);
+  void setInternetseite(String value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * The literals are from the enumeration {@link org.xtext.example.mydsl.vertrag.Netzanbieter}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see org.xtext.example.mydsl.vertrag.Netzanbieter
+   * @see #setValue(Netzanbieter)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Value()
+   * @model
+   * @generated
+   */
+  Netzanbieter getValue();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getValue <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see org.xtext.example.mydsl.vertrag.Netzanbieter
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(Netzanbieter value);
+
+  /**
+   * Returns the value of the '<em><b>Telefonflat</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Telefonflat</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Telefonflat</em>' attribute.
+   * @see #setTelefonflat(String)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Telefonflat()
+   * @model
+   * @generated
+   */
+  String getTelefonflat();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getTelefonflat <em>Telefonflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Telefonflat</em>' attribute.
+   * @see #getTelefonflat()
+   * @generated
+   */
+  void setTelefonflat(String value);
+
+  /**
+   * Returns the value of the '<em><b>Smsflat</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Smsflat</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Smsflat</em>' attribute.
+   * @see #setSmsflat(String)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Smsflat()
+   * @model
+   * @generated
+   */
+  String getSmsflat();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getSmsflat <em>Smsflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Smsflat</em>' attribute.
+   * @see #getSmsflat()
+   * @generated
+   */
+  void setSmsflat(String value);
+
+  /**
+   * Returns the value of the '<em><b>Geraet</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Geraet</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Geraet</em>' reference.
+   * @see #setGeraet(Handy)
+   * @see org.xtext.example.mydsl.vertrag.VertragPackage#getVertrag_Geraet()
+   * @model
+   * @generated
+   */
+  Handy getGeraet();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.vertrag.Vertrag#getGeraet <em>Geraet</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Geraet</em>' reference.
+   * @see #getGeraet()
+   * @generated
+   */
+  void setGeraet(Handy value);
 
 } // Vertrag

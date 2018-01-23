@@ -24,17 +24,74 @@ class VertragGenerator extends AbstractGenerator {
 //				.map[name]
 //				.join(', '))
 		//fsa.generateFile("Main.java", compile());
-		        for (e : resource.allContents.toIterable.filter(Vertrag)) {
-            fsa.generateFile(
-                "Main.java",
-                e.compile)
-        }
+		
+		fsa.generateFile("Vertrag.java", vertrag())
+		
+//		for (e : resource.allContents.toIterable.filter(Vertrag)) {
+//			fsa.generateFile("Main.java", e.compile)
+//		}
 		//«v.datenvolumen»
 	}
 	
+	
+	def vertrag(){
+		'''public class Vertrag {
+	int minlaufzeit=0;
+	int datenvolumen=0;
+	float preis= .0f;
+	String netzanbieter = "egal";
+	//String seite;
+	boolean tele_flat = true;
+	int freiminuten = 0;
+	boolean sms_flat = true;
+	float sms_preis = .0f;
+	String name;
+	//Handy device = NULL;
+	
+	public Vertrag(String n){
+		name = n;
+	}
+	
+	//TODO Setter vlt auch generisch erzeugen lassen?
+	
+	public void setLaufzeit(int x){
+		minlaufzeit = x;
+	}
+	
+	public void setVolume(int x){
+		datenvolumen = x;
+	}
+	
+	public void setPrice(float p){
+		preis = p;
+	}
+	
+	public void setProvider(String p){
+			netzanbieter = p;
+	}
+	
+	public void setTeleFlat(boolean x){
+			tele_flat = x;
+	}
+	
+	public void setFreemin(int f){
+			freiminuten = f;
+	}
+	
+	public void setSmsFlat(boolean x){
+			sms_flat = x;
+	}
+		
+	public void setSmsPrice(int f){
+			sms_preis = f;
+	}
+}'''
+	}
+	
+	
+	
 	def compile(Vertrag v) {
 		'''
-		
 		import java.io.FileNotFoundException;
 		import java.io.PrintWriter;
 		import java.io.UnsupportedEncodingException;
@@ -70,6 +127,8 @@ class VertragGenerator extends AbstractGenerator {
 			public static String Vodafone_netz = "Vodafone"; //1
 			public static String o2_netz = "O2"; //3
 			public static String Telekom_netz = "Telekom"; //4
+			
+			
 			public static void main(String[] args) throws InterruptedException, FileNotFoundException, UnsupportedEncodingException {
 		
 				System.setProperty("webdriver.chrome.driver", "/home/toghrul/Downloads/chromedriver");

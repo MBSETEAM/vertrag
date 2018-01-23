@@ -6,9 +6,12 @@ package org.xtext.example.mydsl.vertrag.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.xtext.example.mydsl.vertrag.Handy;
+import org.xtext.example.mydsl.vertrag.Netzanbieter;
 import org.xtext.example.mydsl.vertrag.Vertrag;
 import org.xtext.example.mydsl.vertrag.VertragPackage;
 
@@ -20,36 +23,20 @@ import org.xtext.example.mydsl.vertrag.VertragPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getDatenvolumen <em>Datenvolumen</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getDatenvolumen <em>Datenvolumen</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getMonatl_kosten <em>Monatl kosten</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getNetzanbieter <em>Netzanbieter</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getInternetseite <em>Internetseite</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getTelefonflat <em>Telefonflat</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getSmsflat <em>Smsflat</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.vertrag.impl.VertragImpl#getGeraet <em>Geraet</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VertragImpl extends ElementImpl implements Vertrag
 {
-  /**
-   * The default value of the '{@link #getDatenvolumen() <em>Datenvolumen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatenvolumen()
-   * @generated
-   * @ordered
-   */
-  protected static final String DATENVOLUMEN_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDatenvolumen() <em>Datenvolumen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatenvolumen()
-   * @generated
-   * @ordered
-   */
-  protected String datenvolumen = DATENVOLUMEN_EDEFAULT;
-
   /**
    * The default value of the '{@link #getMindestvertragslaufzeit() <em>Mindestvertragslaufzeit</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -58,7 +45,7 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * @generated
    * @ordered
    */
-  protected static final String MINDESTVERTRAGSLAUFZEIT_EDEFAULT = null;
+  protected static final int MINDESTVERTRAGSLAUFZEIT_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getMindestvertragslaufzeit() <em>Mindestvertragslaufzeit</em>}' attribute.
@@ -68,7 +55,27 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * @generated
    * @ordered
    */
-  protected String mindestvertragslaufzeit = MINDESTVERTRAGSLAUFZEIT_EDEFAULT;
+  protected int mindestvertragslaufzeit = MINDESTVERTRAGSLAUFZEIT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDatenvolumen() <em>Datenvolumen</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatenvolumen()
+   * @generated
+   * @ordered
+   */
+  protected static final int DATENVOLUMEN_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDatenvolumen() <em>Datenvolumen</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatenvolumen()
+   * @generated
+   * @ordered
+   */
+  protected int datenvolumen = DATENVOLUMEN_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMonatl_kosten() <em>Monatl kosten</em>}' attribute.
@@ -91,24 +98,94 @@ public class VertragImpl extends ElementImpl implements Vertrag
   protected String monatl_kosten = MONATL_KOSTEN_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getNetzanbieter() <em>Netzanbieter</em>}' attribute.
+   * The default value of the '{@link #getInternetseite() <em>Internetseite</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNetzanbieter()
+   * @see #getInternetseite()
    * @generated
    * @ordered
    */
-  protected static final String NETZANBIETER_EDEFAULT = null;
+  protected static final String INTERNETSEITE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNetzanbieter() <em>Netzanbieter</em>}' attribute.
+   * The cached value of the '{@link #getInternetseite() <em>Internetseite</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNetzanbieter()
+   * @see #getInternetseite()
    * @generated
    * @ordered
    */
-  protected String netzanbieter = NETZANBIETER_EDEFAULT;
+  protected String internetseite = INTERNETSEITE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final Netzanbieter VALUE_EDEFAULT = Netzanbieter.O2;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected Netzanbieter value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTelefonflat() <em>Telefonflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTelefonflat()
+   * @generated
+   * @ordered
+   */
+  protected static final String TELEFONFLAT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTelefonflat() <em>Telefonflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTelefonflat()
+   * @generated
+   * @ordered
+   */
+  protected String telefonflat = TELEFONFLAT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSmsflat() <em>Smsflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSmsflat()
+   * @generated
+   * @ordered
+   */
+  protected static final String SMSFLAT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSmsflat() <em>Smsflat</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSmsflat()
+   * @generated
+   * @ordered
+   */
+  protected String smsflat = SMSFLAT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getGeraet() <em>Geraet</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGeraet()
+   * @generated
+   * @ordered
+   */
+  protected Handy geraet;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,30 +213,7 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDatenvolumen()
-  {
-    return datenvolumen;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDatenvolumen(String newDatenvolumen)
-  {
-    String oldDatenvolumen = datenvolumen;
-    datenvolumen = newDatenvolumen;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__DATENVOLUMEN, oldDatenvolumen, datenvolumen));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getMindestvertragslaufzeit()
+  public int getMindestvertragslaufzeit()
   {
     return mindestvertragslaufzeit;
   }
@@ -169,12 +223,35 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMindestvertragslaufzeit(String newMindestvertragslaufzeit)
+  public void setMindestvertragslaufzeit(int newMindestvertragslaufzeit)
   {
-    String oldMindestvertragslaufzeit = mindestvertragslaufzeit;
+    int oldMindestvertragslaufzeit = mindestvertragslaufzeit;
     mindestvertragslaufzeit = newMindestvertragslaufzeit;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__MINDESTVERTRAGSLAUFZEIT, oldMindestvertragslaufzeit, mindestvertragslaufzeit));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getDatenvolumen()
+  {
+    return datenvolumen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDatenvolumen(int newDatenvolumen)
+  {
+    int oldDatenvolumen = datenvolumen;
+    datenvolumen = newDatenvolumen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__DATENVOLUMEN, oldDatenvolumen, datenvolumen));
   }
 
   /**
@@ -205,9 +282,9 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNetzanbieter()
+  public String getInternetseite()
   {
-    return netzanbieter;
+    return internetseite;
   }
 
   /**
@@ -215,12 +292,124 @@ public class VertragImpl extends ElementImpl implements Vertrag
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNetzanbieter(String newNetzanbieter)
+  public void setInternetseite(String newInternetseite)
   {
-    String oldNetzanbieter = netzanbieter;
-    netzanbieter = newNetzanbieter;
+    String oldInternetseite = internetseite;
+    internetseite = newInternetseite;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__NETZANBIETER, oldNetzanbieter, netzanbieter));
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__INTERNETSEITE, oldInternetseite, internetseite));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Netzanbieter getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(Netzanbieter newValue)
+  {
+    Netzanbieter oldValue = value;
+    value = newValue == null ? VALUE_EDEFAULT : newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getTelefonflat()
+  {
+    return telefonflat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTelefonflat(String newTelefonflat)
+  {
+    String oldTelefonflat = telefonflat;
+    telefonflat = newTelefonflat;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__TELEFONFLAT, oldTelefonflat, telefonflat));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getSmsflat()
+  {
+    return smsflat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSmsflat(String newSmsflat)
+  {
+    String oldSmsflat = smsflat;
+    smsflat = newSmsflat;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__SMSFLAT, oldSmsflat, smsflat));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Handy getGeraet()
+  {
+    if (geraet != null && geraet.eIsProxy())
+    {
+      InternalEObject oldGeraet = (InternalEObject)geraet;
+      geraet = (Handy)eResolveProxy(oldGeraet);
+      if (geraet != oldGeraet)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VertragPackage.VERTRAG__GERAET, oldGeraet, geraet));
+      }
+    }
+    return geraet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Handy basicGetGeraet()
+  {
+    return geraet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setGeraet(Handy newGeraet)
+  {
+    Handy oldGeraet = geraet;
+    geraet = newGeraet;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VertragPackage.VERTRAG__GERAET, oldGeraet, geraet));
   }
 
   /**
@@ -233,14 +422,23 @@ public class VertragImpl extends ElementImpl implements Vertrag
   {
     switch (featureID)
     {
-      case VertragPackage.VERTRAG__DATENVOLUMEN:
-        return getDatenvolumen();
       case VertragPackage.VERTRAG__MINDESTVERTRAGSLAUFZEIT:
         return getMindestvertragslaufzeit();
+      case VertragPackage.VERTRAG__DATENVOLUMEN:
+        return getDatenvolumen();
       case VertragPackage.VERTRAG__MONATL_KOSTEN:
         return getMonatl_kosten();
-      case VertragPackage.VERTRAG__NETZANBIETER:
-        return getNetzanbieter();
+      case VertragPackage.VERTRAG__INTERNETSEITE:
+        return getInternetseite();
+      case VertragPackage.VERTRAG__VALUE:
+        return getValue();
+      case VertragPackage.VERTRAG__TELEFONFLAT:
+        return getTelefonflat();
+      case VertragPackage.VERTRAG__SMSFLAT:
+        return getSmsflat();
+      case VertragPackage.VERTRAG__GERAET:
+        if (resolve) return getGeraet();
+        return basicGetGeraet();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -255,17 +453,29 @@ public class VertragImpl extends ElementImpl implements Vertrag
   {
     switch (featureID)
     {
-      case VertragPackage.VERTRAG__DATENVOLUMEN:
-        setDatenvolumen((String)newValue);
-        return;
       case VertragPackage.VERTRAG__MINDESTVERTRAGSLAUFZEIT:
-        setMindestvertragslaufzeit((String)newValue);
+        setMindestvertragslaufzeit((Integer)newValue);
+        return;
+      case VertragPackage.VERTRAG__DATENVOLUMEN:
+        setDatenvolumen((Integer)newValue);
         return;
       case VertragPackage.VERTRAG__MONATL_KOSTEN:
         setMonatl_kosten((String)newValue);
         return;
-      case VertragPackage.VERTRAG__NETZANBIETER:
-        setNetzanbieter((String)newValue);
+      case VertragPackage.VERTRAG__INTERNETSEITE:
+        setInternetseite((String)newValue);
+        return;
+      case VertragPackage.VERTRAG__VALUE:
+        setValue((Netzanbieter)newValue);
+        return;
+      case VertragPackage.VERTRAG__TELEFONFLAT:
+        setTelefonflat((String)newValue);
+        return;
+      case VertragPackage.VERTRAG__SMSFLAT:
+        setSmsflat((String)newValue);
+        return;
+      case VertragPackage.VERTRAG__GERAET:
+        setGeraet((Handy)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -281,17 +491,29 @@ public class VertragImpl extends ElementImpl implements Vertrag
   {
     switch (featureID)
     {
-      case VertragPackage.VERTRAG__DATENVOLUMEN:
-        setDatenvolumen(DATENVOLUMEN_EDEFAULT);
-        return;
       case VertragPackage.VERTRAG__MINDESTVERTRAGSLAUFZEIT:
         setMindestvertragslaufzeit(MINDESTVERTRAGSLAUFZEIT_EDEFAULT);
+        return;
+      case VertragPackage.VERTRAG__DATENVOLUMEN:
+        setDatenvolumen(DATENVOLUMEN_EDEFAULT);
         return;
       case VertragPackage.VERTRAG__MONATL_KOSTEN:
         setMonatl_kosten(MONATL_KOSTEN_EDEFAULT);
         return;
-      case VertragPackage.VERTRAG__NETZANBIETER:
-        setNetzanbieter(NETZANBIETER_EDEFAULT);
+      case VertragPackage.VERTRAG__INTERNETSEITE:
+        setInternetseite(INTERNETSEITE_EDEFAULT);
+        return;
+      case VertragPackage.VERTRAG__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
+      case VertragPackage.VERTRAG__TELEFONFLAT:
+        setTelefonflat(TELEFONFLAT_EDEFAULT);
+        return;
+      case VertragPackage.VERTRAG__SMSFLAT:
+        setSmsflat(SMSFLAT_EDEFAULT);
+        return;
+      case VertragPackage.VERTRAG__GERAET:
+        setGeraet((Handy)null);
         return;
     }
     super.eUnset(featureID);
@@ -307,14 +529,22 @@ public class VertragImpl extends ElementImpl implements Vertrag
   {
     switch (featureID)
     {
-      case VertragPackage.VERTRAG__DATENVOLUMEN:
-        return DATENVOLUMEN_EDEFAULT == null ? datenvolumen != null : !DATENVOLUMEN_EDEFAULT.equals(datenvolumen);
       case VertragPackage.VERTRAG__MINDESTVERTRAGSLAUFZEIT:
-        return MINDESTVERTRAGSLAUFZEIT_EDEFAULT == null ? mindestvertragslaufzeit != null : !MINDESTVERTRAGSLAUFZEIT_EDEFAULT.equals(mindestvertragslaufzeit);
+        return mindestvertragslaufzeit != MINDESTVERTRAGSLAUFZEIT_EDEFAULT;
+      case VertragPackage.VERTRAG__DATENVOLUMEN:
+        return datenvolumen != DATENVOLUMEN_EDEFAULT;
       case VertragPackage.VERTRAG__MONATL_KOSTEN:
         return MONATL_KOSTEN_EDEFAULT == null ? monatl_kosten != null : !MONATL_KOSTEN_EDEFAULT.equals(monatl_kosten);
-      case VertragPackage.VERTRAG__NETZANBIETER:
-        return NETZANBIETER_EDEFAULT == null ? netzanbieter != null : !NETZANBIETER_EDEFAULT.equals(netzanbieter);
+      case VertragPackage.VERTRAG__INTERNETSEITE:
+        return INTERNETSEITE_EDEFAULT == null ? internetseite != null : !INTERNETSEITE_EDEFAULT.equals(internetseite);
+      case VertragPackage.VERTRAG__VALUE:
+        return value != VALUE_EDEFAULT;
+      case VertragPackage.VERTRAG__TELEFONFLAT:
+        return TELEFONFLAT_EDEFAULT == null ? telefonflat != null : !TELEFONFLAT_EDEFAULT.equals(telefonflat);
+      case VertragPackage.VERTRAG__SMSFLAT:
+        return SMSFLAT_EDEFAULT == null ? smsflat != null : !SMSFLAT_EDEFAULT.equals(smsflat);
+      case VertragPackage.VERTRAG__GERAET:
+        return geraet != null;
     }
     return super.eIsSet(featureID);
   }
@@ -330,14 +560,20 @@ public class VertragImpl extends ElementImpl implements Vertrag
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (datenvolumen: ");
-    result.append(datenvolumen);
-    result.append(", mindestvertragslaufzeit: ");
+    result.append(" (mindestvertragslaufzeit: ");
     result.append(mindestvertragslaufzeit);
+    result.append(", datenvolumen: ");
+    result.append(datenvolumen);
     result.append(", monatl_kosten: ");
     result.append(monatl_kosten);
-    result.append(", netzanbieter: ");
-    result.append(netzanbieter);
+    result.append(", internetseite: ");
+    result.append(internetseite);
+    result.append(", value: ");
+    result.append(value);
+    result.append(", telefonflat: ");
+    result.append(telefonflat);
+    result.append(", smsflat: ");
+    result.append(smsflat);
     result.append(')');
     return result.toString();
   }

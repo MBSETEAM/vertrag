@@ -5,6 +5,7 @@ package org.xtext.example.mydsl.vertrag;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -133,22 +134,22 @@ public interface VertragPackage extends EPackage
   int VERTRAG__NAME = ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Datenvolumen</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERTRAG__DATENVOLUMEN = ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERTRAG__MINDESTVERTRAGSLAUFZEIT = ELEMENT_FEATURE_COUNT + 1;
+  int VERTRAG__MINDESTVERTRAGSLAUFZEIT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Datenvolumen</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__DATENVOLUMEN = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Monatl kosten</b></em>' attribute.
@@ -160,13 +161,49 @@ public interface VertragPackage extends EPackage
   int VERTRAG__MONATL_KOSTEN = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Netzanbieter</b></em>' attribute.
+   * The feature id for the '<em><b>Internetseite</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERTRAG__NETZANBIETER = ELEMENT_FEATURE_COUNT + 3;
+  int VERTRAG__INTERNETSEITE = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__VALUE = ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Telefonflat</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__TELEFONFLAT = ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Smsflat</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__SMSFLAT = ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Geraet</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERTRAG__GERAET = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Vertrag</em>' class.
@@ -175,7 +212,7 @@ public interface VertragPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERTRAG_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
+  int VERTRAG_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl <em>Handy</em>}' class.
@@ -232,6 +269,36 @@ public interface VertragPackage extends EPackage
    */
   int HANDY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.vertrag.Netzanbieter <em>Netzanbieter</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.vertrag.Netzanbieter
+   * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getNetzanbieter()
+   * @generated
+   */
+  int NETZANBIETER = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.vertrag.Betriebssystem <em>Betriebssystem</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.vertrag.Betriebssystem
+   * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getBetriebssystem()
+   * @generated
+   */
+  int BETRIEBSSYSTEM = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.vertrag.Marke <em>Marke</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.vertrag.Marke
+   * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getMarke()
+   * @generated
+   */
+  int MARKE = 6;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.vertrag.Model <em>Model</em>}'.
@@ -286,17 +353,6 @@ public interface VertragPackage extends EPackage
   EClass getVertrag();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Datenvolumen</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen()
-   * @see #getVertrag()
-   * @generated
-   */
-  EAttribute getVertrag_Datenvolumen();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMindestvertragslaufzeit <em>Mindestvertragslaufzeit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,6 +362,17 @@ public interface VertragPackage extends EPackage
    * @generated
    */
   EAttribute getVertrag_Mindestvertragslaufzeit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen <em>Datenvolumen</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Datenvolumen</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getDatenvolumen()
+   * @see #getVertrag()
+   * @generated
+   */
+  EAttribute getVertrag_Datenvolumen();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getMonatl_kosten <em>Monatl kosten</em>}'.
@@ -319,15 +386,59 @@ public interface VertragPackage extends EPackage
   EAttribute getVertrag_Monatl_kosten();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getNetzanbieter <em>Netzanbieter</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite <em>Internetseite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Netzanbieter</em>'.
-   * @see org.xtext.example.mydsl.vertrag.Vertrag#getNetzanbieter()
+   * @return the meta object for the attribute '<em>Internetseite</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getInternetseite()
    * @see #getVertrag()
    * @generated
    */
-  EAttribute getVertrag_Netzanbieter();
+  EAttribute getVertrag_Internetseite();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getValue()
+   * @see #getVertrag()
+   * @generated
+   */
+  EAttribute getVertrag_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getTelefonflat <em>Telefonflat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Telefonflat</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getTelefonflat()
+   * @see #getVertrag()
+   * @generated
+   */
+  EAttribute getVertrag_Telefonflat();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.vertrag.Vertrag#getSmsflat <em>Smsflat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Smsflat</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getSmsflat()
+   * @see #getVertrag()
+   * @generated
+   */
+  EAttribute getVertrag_Smsflat();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.vertrag.Vertrag#getGeraet <em>Geraet</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Geraet</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Vertrag#getGeraet()
+   * @see #getVertrag()
+   * @generated
+   */
+  EReference getVertrag_Geraet();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.vertrag.Handy <em>Handy</em>}'.
@@ -371,6 +482,36 @@ public interface VertragPackage extends EPackage
    * @generated
    */
   EAttribute getHandy_Speicher();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl.vertrag.Netzanbieter <em>Netzanbieter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Netzanbieter</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Netzanbieter
+   * @generated
+   */
+  EEnum getNetzanbieter();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl.vertrag.Betriebssystem <em>Betriebssystem</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Betriebssystem</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Betriebssystem
+   * @generated
+   */
+  EEnum getBetriebssystem();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.mydsl.vertrag.Marke <em>Marke</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Marke</em>'.
+   * @see org.xtext.example.mydsl.vertrag.Marke
+   * @generated
+   */
+  EEnum getMarke();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -442,20 +583,20 @@ public interface VertragPackage extends EPackage
     EClass VERTRAG = eINSTANCE.getVertrag();
 
     /**
-     * The meta object literal for the '<em><b>Datenvolumen</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERTRAG__DATENVOLUMEN = eINSTANCE.getVertrag_Datenvolumen();
-
-    /**
      * The meta object literal for the '<em><b>Mindestvertragslaufzeit</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute VERTRAG__MINDESTVERTRAGSLAUFZEIT = eINSTANCE.getVertrag_Mindestvertragslaufzeit();
+
+    /**
+     * The meta object literal for the '<em><b>Datenvolumen</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERTRAG__DATENVOLUMEN = eINSTANCE.getVertrag_Datenvolumen();
 
     /**
      * The meta object literal for the '<em><b>Monatl kosten</b></em>' attribute feature.
@@ -466,12 +607,44 @@ public interface VertragPackage extends EPackage
     EAttribute VERTRAG__MONATL_KOSTEN = eINSTANCE.getVertrag_Monatl_kosten();
 
     /**
-     * The meta object literal for the '<em><b>Netzanbieter</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Internetseite</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VERTRAG__NETZANBIETER = eINSTANCE.getVertrag_Netzanbieter();
+    EAttribute VERTRAG__INTERNETSEITE = eINSTANCE.getVertrag_Internetseite();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERTRAG__VALUE = eINSTANCE.getVertrag_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Telefonflat</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERTRAG__TELEFONFLAT = eINSTANCE.getVertrag_Telefonflat();
+
+    /**
+     * The meta object literal for the '<em><b>Smsflat</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERTRAG__SMSFLAT = eINSTANCE.getVertrag_Smsflat();
+
+    /**
+     * The meta object literal for the '<em><b>Geraet</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERTRAG__GERAET = eINSTANCE.getVertrag_Geraet();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.vertrag.impl.HandyImpl <em>Handy</em>}' class.
@@ -506,6 +679,36 @@ public interface VertragPackage extends EPackage
      * @generated
      */
     EAttribute HANDY__SPEICHER = eINSTANCE.getHandy_Speicher();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.vertrag.Netzanbieter <em>Netzanbieter</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.vertrag.Netzanbieter
+     * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getNetzanbieter()
+     * @generated
+     */
+    EEnum NETZANBIETER = eINSTANCE.getNetzanbieter();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.vertrag.Betriebssystem <em>Betriebssystem</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.vertrag.Betriebssystem
+     * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getBetriebssystem()
+     * @generated
+     */
+    EEnum BETRIEBSSYSTEM = eINSTANCE.getBetriebssystem();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.vertrag.Marke <em>Marke</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.vertrag.Marke
+     * @see org.xtext.example.mydsl.vertrag.impl.VertragPackageImpl#getMarke()
+     * @generated
+     */
+    EEnum MARKE = eINSTANCE.getMarke();
 
   }
 

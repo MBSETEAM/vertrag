@@ -6,6 +6,19 @@
     copyrightFields="false" runtimeVersion="2.13">
   <genPackages prefix="Vertrag" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="vertrag" ecorePackage="Vertrag.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Vertrag.ecore#//Netzanbieter">
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Netzanbieter/O2"/>
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Netzanbieter/TELEKOM"/>
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Netzanbieter/VODAFON"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Vertrag.ecore#//Betriebssystem">
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Betriebssystem/ANDROID"/>
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Betriebssystem/IOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Vertrag.ecore#//Marke">
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Marke/SAMSUNG"/>
+      <genEnumLiterals ecoreEnumLiteral="Vertrag.ecore#//Marke/IPHONE"/>
+    </genEnums>
     <genClasses ecoreClass="Vertrag.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Vertrag.ecore#//Model/elements"/>
     </genClasses>
@@ -13,10 +26,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Element/name"/>
     </genClasses>
     <genClasses ecoreClass="Vertrag.ecore#//Vertrag">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/datenvolumen"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/mindestvertragslaufzeit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/datenvolumen"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/monatl_kosten"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/netzanbieter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/internetseite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/telefonflat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Vertrag/smsflat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vertrag.ecore#//Vertrag/geraet"/>
     </genClasses>
     <genClasses ecoreClass="Vertrag.ecore#//Handy">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vertrag.ecore#//Handy/system"/>

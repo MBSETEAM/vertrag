@@ -20,27 +20,53 @@ import org.xtext.example.mydsl.services.VertragGrammarAccess;
 public class VertragSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VertragGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Vertrag_RightCurlyBracketKeyword_4_a;
-	protected AbstractElementAlias match_Vertrag_RightCurlyBracketKeyword_4_p;
+	protected AbstractElementAlias match_Vertrag_RightCurlyBracketKeyword_8_a;
+	protected AbstractElementAlias match_Vertrag_RightCurlyBracketKeyword_8_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VertragGrammarAccess) access;
-		match_Vertrag_RightCurlyBracketKeyword_4_a = new TokenAlias(true, true, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4());
-		match_Vertrag_RightCurlyBracketKeyword_4_p = new TokenAlias(true, false, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_4());
+		match_Vertrag_RightCurlyBracketKeyword_8_a = new TokenAlias(true, true, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_8());
+		match_Vertrag_RightCurlyBracketKeyword_8_p = new TokenAlias(true, false, grammarAccess.getVertragAccess().getRightCurlyBracketKeyword_8());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getIDRule())
+		if (ruleCall.getRule() == grammarAccess.getBetriebssystemRule())
+			return getBetriebssystemToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getMarkeRule())
+			return getMarkeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 * enum Betriebssystem:
+	 * 	ANDROID | IOS;
+	 */
+	protected String getBetriebssystemToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * @Override	
+	 * terminal ID returns ecore::EString:
+	 * 	('0'..'9' | 'a'..'z' | 'A'..'Z')+;
 	 */
 	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * enum Marke:
+	 * 	SAMSUNG | IPHONE;
+	 */
+	protected String getMarkeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "";
@@ -52,10 +78,10 @@ public class VertragSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Vertrag_RightCurlyBracketKeyword_4_a.equals(syntax))
-				emit_Vertrag_RightCurlyBracketKeyword_4_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Vertrag_RightCurlyBracketKeyword_4_p.equals(syntax))
-				emit_Vertrag_RightCurlyBracketKeyword_4_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Vertrag_RightCurlyBracketKeyword_8_a.equals(syntax))
+				emit_Vertrag_RightCurlyBracketKeyword_8_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Vertrag_RightCurlyBracketKeyword_8_p.equals(syntax))
+				emit_Vertrag_RightCurlyBracketKeyword_8_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -66,37 +92,97 @@ public class VertragSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     (rule start) (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     (rule start) (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     (rule start) (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
+	 *     (rule start) (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     (rule start) (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     (rule start) (ambiguity) 'internetseite' internetseite=ID
+	 *     (rule start) (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     (rule start) (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     (rule start) (ambiguity) 'sms-flat' smsflat=ID
+	 *     (rule start) (ambiguity) 'telefon-flat' telefonflat=ID
 	 *     (rule start) (ambiguity) (rule start)
-	 *     datenvolumen=ZEICHENFOLGE (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     datenvolumen=ZEICHENFOLGE (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     datenvolumen=ZEICHENFOLGE (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     datenvolumen=ZEICHENFOLGE (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
-	 *     datenvolumen=ZEICHENFOLGE (ambiguity) (rule end)
-	 *     mindestvertragslaufzeit=ZEICHENFOLGE (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     mindestvertragslaufzeit=ZEICHENFOLGE (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     mindestvertragslaufzeit=ZEICHENFOLGE (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     mindestvertragslaufzeit=ZEICHENFOLGE (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
-	 *     mindestvertragslaufzeit=ZEICHENFOLGE (ambiguity) (rule end)
-	 *     monatl_kosten=ZEICHENFOLGE (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     monatl_kosten=ZEICHENFOLGE (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     monatl_kosten=ZEICHENFOLGE (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     monatl_kosten=ZEICHENFOLGE (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
-	 *     monatl_kosten=ZEICHENFOLGE (ambiguity) (rule end)
+	 *     datenvolumen=INT (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     datenvolumen=INT (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     datenvolumen=INT (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     datenvolumen=INT (ambiguity) 'internetseite' internetseite=ID
+	 *     datenvolumen=INT (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     datenvolumen=INT (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     datenvolumen=INT (ambiguity) 'sms-flat' smsflat=ID
+	 *     datenvolumen=INT (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     datenvolumen=INT (ambiguity) (rule end)
+	 *     geraet=[Handy|ID] (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     geraet=[Handy|ID] (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     geraet=[Handy|ID] (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     geraet=[Handy|ID] (ambiguity) 'internetseite' internetseite=ID
+	 *     geraet=[Handy|ID] (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     geraet=[Handy|ID] (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     geraet=[Handy|ID] (ambiguity) 'sms-flat' smsflat=ID
+	 *     geraet=[Handy|ID] (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     geraet=[Handy|ID] (ambiguity) (rule end)
+	 *     internetseite=ID (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     internetseite=ID (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     internetseite=ID (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     internetseite=ID (ambiguity) 'internetseite' internetseite=ID
+	 *     internetseite=ID (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     internetseite=ID (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     internetseite=ID (ambiguity) 'sms-flat' smsflat=ID
+	 *     internetseite=ID (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     internetseite=ID (ambiguity) (rule end)
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'internetseite' internetseite=ID
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'sms-flat' smsflat=ID
+	 *     mindestvertragslaufzeit=INT (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     mindestvertragslaufzeit=INT (ambiguity) (rule end)
+	 *     monatl_kosten=PRICE (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     monatl_kosten=PRICE (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     monatl_kosten=PRICE (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     monatl_kosten=PRICE (ambiguity) 'internetseite' internetseite=ID
+	 *     monatl_kosten=PRICE (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     monatl_kosten=PRICE (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     monatl_kosten=PRICE (ambiguity) 'sms-flat' smsflat=ID
+	 *     monatl_kosten=PRICE (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     monatl_kosten=PRICE (ambiguity) (rule end)
 	 *     name=ZEICHENFOLGE '{' (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     name=ZEICHENFOLGE '{' (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     name=ZEICHENFOLGE '{' (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     name=ZEICHENFOLGE '{' (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'internetseite' internetseite=ID
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'sms-flat' smsflat=ID
+	 *     name=ZEICHENFOLGE '{' (ambiguity) 'telefon-flat' telefonflat=ID
 	 *     name=ZEICHENFOLGE '{' (ambiguity) (rule end)
-	 *     netzanbieter=ZEICHENFOLGE (ambiguity) 'Vertrag' name=ZEICHENFOLGE
-	 *     netzanbieter=ZEICHENFOLGE (ambiguity) 'mindestvertragslaufzeit' mindestvertragslaufzeit=ZEICHENFOLGE
-	 *     netzanbieter=ZEICHENFOLGE (ambiguity) 'monatl_kosten' monatl_kosten=ZEICHENFOLGE
-	 *     netzanbieter=ZEICHENFOLGE (ambiguity) 'netzanbieter' netzanbieter=ZEICHENFOLGE
-	 *     netzanbieter=ZEICHENFOLGE (ambiguity) (rule end)
+	 *     smsflat=ID (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     smsflat=ID (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     smsflat=ID (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     smsflat=ID (ambiguity) 'internetseite' internetseite=ID
+	 *     smsflat=ID (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     smsflat=ID (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     smsflat=ID (ambiguity) 'sms-flat' smsflat=ID
+	 *     smsflat=ID (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     smsflat=ID (ambiguity) (rule end)
+	 *     telefonflat=ID (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     telefonflat=ID (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     telefonflat=ID (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     telefonflat=ID (ambiguity) 'internetseite' internetseite=ID
+	 *     telefonflat=ID (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     telefonflat=ID (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     telefonflat=ID (ambiguity) 'sms-flat' smsflat=ID
+	 *     telefonflat=ID (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     telefonflat=ID (ambiguity) (rule end)
+	 *     value=Netzanbieter (ambiguity) 'Vertrag' name=ZEICHENFOLGE
+	 *     value=Netzanbieter (ambiguity) 'datenvolumen' datenvolumen=INT
+	 *     value=Netzanbieter (ambiguity) 'geraet' geraet=[Handy|ID]
+	 *     value=Netzanbieter (ambiguity) 'internetseite' internetseite=ID
+	 *     value=Netzanbieter (ambiguity) 'monatl_kosten' monatl_kosten=PRICE
+	 *     value=Netzanbieter (ambiguity) 'netzanbieter' value=Netzanbieter
+	 *     value=Netzanbieter (ambiguity) 'sms-flat' smsflat=ID
+	 *     value=Netzanbieter (ambiguity) 'telefon-flat' telefonflat=ID
+	 *     value=Netzanbieter (ambiguity) (rule end)
 	 */
-	protected void emit_Vertrag_RightCurlyBracketKeyword_4_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Vertrag_RightCurlyBracketKeyword_8_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -107,7 +193,7 @@ public class VertragSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Vertrag_RightCurlyBracketKeyword_4_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Vertrag_RightCurlyBracketKeyword_8_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

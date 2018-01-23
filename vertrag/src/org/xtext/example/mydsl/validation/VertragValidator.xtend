@@ -28,25 +28,35 @@ class VertragValidator extends AbstractVertragValidator {
 	
 	@Check
 	def checkVertrag(Vertrag ver) {
-		var datenvolumen = -12;
-		try {
-			datenvolumen = Integer.parseInt(ver.datenvolumen);
-		}catch(Exception e){
-			error("datenvolumen muss Integer sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
-		}
-		if(datenvolumen <= 0) {
-			error("datenvolumen muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
-		}
-		
-		var monatl_kosten = -12.0;
-		try {
-			monatl_kosten = Float.parseFloat(ver.monatl_kosten);
-		}catch(Exception e){
-			error("monatl_kosten muss Float sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
-		}
-		if(datenvolumen <= 0) {
-			error("monatl_kosten muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
-		}
+//		try {
+//			ver.datenvolumen = Integer.parseInt(ver.datenvolumen);
+//		}catch(Exception e){
+//			error("datenvolumen muss Integer sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+//		}
+//		if(ver.datenvolumen <= 0) {
+//			error("datenvolumen muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+//		}
+//		if(ver.mindestvertragslaufzeit <= 0) {
+//			warning('Mindestvertragslaufzeit muss >= 0', VertragPackage.Literals.VERTRAG__MINDESTVERTRAGSLAUFZEIT,'invalidName');
+//		}
+//		if(!ver.smsflat.equals("True")){
+//			if(Float.parseFloat(ver.smsflat)<0.0){
+//				warning('Preis für SMS muss >= 0', VertragPackage.Literals.VERTRAG__SMSFLAT,'invalidName');
+//			}
+//		}
+//		if(!ver.telefonflat.equals("True")){
+//			if(Integer.parseInt(ver.telefonflat)<0){
+//				warning('Freiminuten müssen >= 0', VertragPackage.Literals.VERTRAG__TELEFONFLAT,'invalidName');
+//			}
+//		}
+//		try {
+//			ver.monatl_kosten = Float.parseFloat(ver.monatl_kosten);
+//		}catch(Exception e){
+//			error("monatl_kosten muss Float sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+//		}
+//		if(ver.monatl_kosten <= 0) {
+//			error("monatl_kosten muss >=0 sein", VertragPackage.Literals.VERTRAG__DATENVOLUMEN, "");
+//		}
 	}
 	
 }
